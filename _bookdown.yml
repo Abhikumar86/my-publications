@@ -1,0 +1,11 @@
+book_filename: "my-publications" # name of output file
+delete_merged_file: true # delete unwanted files after building book
+language:
+  ui:
+    chapter_name: "Chapter " # word to appear before each main file
+    
+repo: https://github.com/Abhikumar86/my-publications
+output_dir: docs
+#rmd_files: ["index.Rmd", "01-Introduction.Rmd", "02-Diving-In.Rmd"] # manual arrangement of files 
+clean: [packages.bib, bookdown.bbl]
+new_session: yes
