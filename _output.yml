@@ -1,16 +1,28 @@
 bookdown::gitbook:
+  highlight: tango
+  split_by: chapter
+  split_bib: yes
   css: style.css
+  
   config:
+    edit:
+      link: https://github.com/abhikumar86/my-publications/edit/master/%s
+      text: "suggest an edit"
     toc:
       before: |
         <li><a href="./">My Publications</a></li>
       after: |
         <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
-    download: ["pdf", "epub"]
+    download: ["pdf"]
+    sharing:
+      github: yes
+      twitter: yes
+      all: no
+    
+
 bookdown::pdf_book:
   includes:
     in_header: preamble.tex
   latex_engine: xelatex
   citation_package: natbib
   keep_tex: yes
-bookdown::epub_book: default
