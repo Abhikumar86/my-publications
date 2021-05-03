@@ -4,6 +4,10 @@ fig:fig3
 fig:fig4
 fig:fig5
 tab:tab1
+tab:tab2
+tab:tab3
+tab:tab4
+tab:unnamed-chunk-13
 siwalik-terms
 abstract
 introduction
@@ -36,7 +40,3 @@ applications
 example-one
 example-two
 final-words
-tab:tab2
-tab:tab3
-tab:unnamed-chunk-13
-tab:tab4

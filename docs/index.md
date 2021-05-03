@@ -1,7 +1,7 @@
 --- 
 title: "A Compilation of My Publications"
 author: "Abhishek Kumar"
-date: "2021-05-02"
+date: "2021-05-03"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]

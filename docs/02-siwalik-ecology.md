@@ -229,64 +229,75 @@ Full-text screening resulted in exclusion of 71 articles and we left with 40 art
 
 
 ```r
-DiagrammeR::grViz("
-			digraph G{
+library(DiagrammeR)
+grViz("digraph G{
 			
-			graph[ranksep=0.05]
+	graph[ranksep=0.35, newrank=true, nodesep=0.25, splines=ortho]
 			
-			subgraph cluster_searching{
-			label=Searching; style=filled; color=mintcream;fontsize=18
-			node[label='Scopus\n(n = 1,876)', shape=box, width=2, fillcolor=grey95]searching_A;
-			node[label='Web of Science\n(n = 1,013)', shape=box, width=3]searching_B;
-			node[label='Total articles\n(n = 2,888)', shape=box, width=3]searching_C;
-			searching_A -> searching_C[constraint=false]
-			searching_B -> searching_C
-			{rank=same;searching_A;searching_C}
-			}
-			
-			subgraph cluster_screening{
-			label=Screening; style=filled; color=lightyellow; shape=box;fontsize=18
-			node[label='Records after duplicates removed \n (n = 2,171)', shape=box, width=3]screening_1
-			node[label='Records after title screening \n (n = 375)', shape=box, width=3]screening_2
-			node[label='Records after abstract screening \n (n = 111)',shape=box, width=3]screening_3
-			node[label='Articles retrieved at full text \n (n = 100)',shape=box, width=3]screening_4
-			node[label='Articles after full text screening \n (n = 40)',shape=box, width=3]screening_5
-			
-			node[label='Duplicates \n (n = 717)', shape=box, width=2]screening_a
-			node[label='Excluded titles \n (n = 1,796)', shape=box, width=2]screening_b
-			node[label='Excluded abstracts \n (n = 264)', shape=box, width=2]screening_c
-			node[label='Unretrievable full text \n (n = 11)', shape=box, width=2]screening_d
-			node[label='Excluded articles \n (n = 71)', shape=box, width=2]screening_e
-		
-			searching_C -> screening_1 -> screening_2 -> screening_3 -> screening_4 -> screening_5
-			screening_1 -> screening_a
-			screening_2 -> screening_b
-			screening_3 -> screening_c
-			screening_4 -> screening_d
-			screening_5 -> screening_e
-		
-			{rank=same;screening_1;screening_a;}
-			{rank=same;screening_2;screening_b;}
-			{rank=same;screening_3;screening_c;}
-			{rank=same;screening_4;screening_d;}
-			{rank=same;screening_5;screening_e;}
-			}
-			
-			subgraph cluster_articles{
-			label='';style=filled;color=whitesmoke;
-			node[label='Studies included in synthesis \n (n = 40)', shape=box, width=3]articles_A
-		
-			screening_5 -> articles_A[label='Included articles';fontsize=18]
-			}
-			
-			}
-			",
-			height = 800, width = 750)
+	subgraph cluster_searching{
+	label='Searching'; style=filled; color=mintcream; fontsize=18
+	node[label='Scopus\n(n = 1,876)', shape=box, width=1.25, 
+	fillcolor=grey95]searching_A;
+	node[label='Web of Science\n(n = 1,013)', shape=box, width=1.25]searching_B;
+	node[label='Total records\n(n = 2,888)', shape=box, width=3]searching_C;
+	searching_A -> searching_C
+	searching_B -> searching_C
+	{rank=same;searching_A;searching_B}
+	}
+	
+	subgraph cluster_screening{
+	label=''; style=filled; color=lightyellow; shape=box; fontsize=18
+	node[label='Records after duplicates removed \n (n = 2,171)', shape=box, 
+	width=3]screening_1
+	node[label='Records after title screening \n (n = 375)', shape=box, 
+	width=3]screening_2
+	node[label='Records after abstract screening \n (n = 111)',shape=box, 
+	width=3]screening_3
+	node[label='Articles retrieved at full text \n (n = 100)',shape=box, 
+	width=3]screening_4
+	node[label='Articles after full text screening \n (n = 40)',shape=box, 
+	width=3]screening_5
+	searching_C -> screening_1[minlen=2, label='    Screening']
+	screening_1 -> screening_2 -> screening_3 -> screening_4 -> screening_5
+	}
+	
+	node[label='Duplicates \n (n = 717)', shape=box, width=2, style=filled,
+	fillcolor=seashell]screening_a
+	node[label='Excluded titles \n (n = 1,796)', shape=box, width=2, style=filled,
+	fillcolor=seashell]screening_b
+	node[label='Excluded abstracts \n (n = 264)', shape=box, width=2, style=filled,
+	fillcolor=seashell]screening_c
+	node[label='Unretrievable full text \n (n = 11)', shape=box, width=2, style=filled,
+	fillcolor=seashell]screening_d
+	node[label='Excluded articles \n (n = 71)', shape=box, width=2, style=filled,
+	fillcolor=seashell]screening_e
+	
+	screening_1 -> screening_a
+	screening_2 -> screening_b
+	screening_3 -> screening_c
+	screening_4 -> screening_d
+	screening_5 -> screening_e
+	
+	{rank=same;screening_1;screening_a;}
+	{rank=same;screening_2;screening_b;}
+	{rank=same;screening_3;screening_c;}
+	{rank=same;screening_4;screening_d;}
+	{rank=same;screening_5;screening_e;}
+	
+	subgraph cluster_articles{
+	label='';style=filled;color=grey95;
+	node[label='Studies included in synthesis \n (n = 40)', shape=box, width=3, 
+	style=filled, fillcolor=grey95]articles_A
+	screening_5 -> articles_A[minlen=2, label='    Synthesis']
+	}
+	
+	}",
+	height = 800, width = 750)
 ```
 
 ```{=html}
-<div id="htmlwidget-b78097dbeb4e49dc8cb7" style="width:750px;height:800px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-b78097dbeb4e49dc8cb7">{"x":{"diagram":"\n\t\t\tdigraph G{\n\t\t\t\n\t\t\tgraph[ranksep=0.05]\n\t\t\t\n\t\t\tsubgraph cluster_searching{\n\t\t\tlabel=Searching; style=filled; color=mintcream;fontsize=18\n\t\t\tnode[label=\"Scopus\n(n = 1,876)\", shape=box, width=2, fillcolor=grey95]searching_A;\n\t\t\tnode[label=\"Web of Science\n(n = 1,013)\", shape=box, width=3]searching_B;\n\t\t\tnode[label=\"Total articles\n(n = 2,888)\", shape=box, width=3]searching_C;\n\t\t\tsearching_A -> searching_C[constraint=false]\n\t\t\tsearching_B -> searching_C\n\t\t\t{rank=same;searching_A;searching_C}\n\t\t\t}\n\t\t\t\n\t\t\tsubgraph cluster_screening{\n\t\t\tlabel=Screening; style=filled; color=lightyellow; shape=box;fontsize=18\n\t\t\tnode[label=\"Records after duplicates removed \n (n = 2,171)\", shape=box, width=3]screening_1\n\t\t\tnode[label=\"Records after title screening \n (n = 375)\", shape=box, width=3]screening_2\n\t\t\tnode[label=\"Records after abstract screening \n (n = 111)\",shape=box, width=3]screening_3\n\t\t\tnode[label=\"Articles retrieved at full text \n (n = 100)\",shape=box, width=3]screening_4\n\t\t\tnode[label=\"Articles after full text screening \n (n = 40)\",shape=box, width=3]screening_5\n\t\t\t\n\t\t\tnode[label=\"Duplicates \n (n = 717)\", shape=box, width=2]screening_a\n\t\t\tnode[label=\"Excluded titles \n (n = 1,796)\", shape=box, width=2]screening_b\n\t\t\tnode[label=\"Excluded abstracts \n (n = 264)\", shape=box, width=2]screening_c\n\t\t\tnode[label=\"Unretrievable full text \n (n = 11)\", shape=box, width=2]screening_d\n\t\t\tnode[label=\"Excluded articles \n (n = 71)\", shape=box, width=2]screening_e\n\t\t\n\t\t\tsearching_C -> screening_1 -> screening_2 -> screening_3 -> screening_4 -> screening_5\n\t\t\tscreening_1 -> screening_a\n\t\t\tscreening_2 -> screening_b\n\t\t\tscreening_3 -> screening_c\n\t\t\tscreening_4 -> screening_d\n\t\t\tscreening_5 -> screening_e\n\t\t\n\t\t\t{rank=same;screening_1;screening_a;}\n\t\t\t{rank=same;screening_2;screening_b;}\n\t\t\t{rank=same;screening_3;screening_c;}\n\t\t\t{rank=same;screening_4;screening_d;}\n\t\t\t{rank=same;screening_5;screening_e;}\n\t\t\t}\n\t\t\t\n\t\t\tsubgraph cluster_articles{\n\t\t\tlabel=\"\";style=filled;color=whitesmoke;\n\t\t\tnode[label=\"Studies included in synthesis \n (n = 40)\", shape=box, width=3]articles_A\n\t\t\n\t\t\tscreening_5 -> articles_A[label=\"Included articles\";fontsize=18]\n\t\t\t}\n\t\t\t\n\t\t\t}\n\t\t\t","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-ffc56c622dadf9032914" style="width:750px;height:800px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-ffc56c622dadf9032914">{"x":{"diagram":"digraph G{\n\t\t\t\n\tgraph[ranksep=0.35, newrank=true, nodesep=0.25, splines=ortho]\n\t\t\t\n\tsubgraph cluster_searching{\n\tlabel=\"Searching\"; style=filled; color=mintcream; fontsize=18\n\tnode[label=\"Scopus\n(n = 1,876)\", shape=box, width=1.25, \n\tfillcolor=grey95]searching_A;\n\tnode[label=\"Web of Science\n(n = 1,013)\", shape=box, width=1.25]searching_B;\n\tnode[label=\"Total records\n(n = 2,888)\", shape=box, width=3]searching_C;\n\tsearching_A -> searching_C\n\tsearching_B -> searching_C\n\t{rank=same;searching_A;searching_B}\n\t}\n\t\n\tsubgraph cluster_screening{\n\tlabel=\"\"; style=filled; color=lightyellow; shape=box; fontsize=18\n\tnode[label=\"Records after duplicates removed \n (n = 2,171)\", shape=box, \n\twidth=3]screening_1\n\tnode[label=\"Records after title screening \n (n = 375)\", shape=box, \n\twidth=3]screening_2\n\tnode[label=\"Records after abstract screening \n (n = 111)\",shape=box, \n\twidth=3]screening_3\n\tnode[label=\"Articles retrieved at full text \n (n = 100)\",shape=box, \n\twidth=3]screening_4\n\tnode[label=\"Articles after full text screening \n (n = 40)\",shape=box, \n\twidth=3]screening_5\n\tsearching_C -> screening_1[minlen=2, label=\"    Screening\"]\n\tscreening_1 -> screening_2 -> screening_3 -> screening_4 -> screening_5\n\t}\n\t\n\tnode[label=\"Duplicates \n (n = 717)\", shape=box, width=2, style=filled,\n\tfillcolor=seashell]screening_a\n\tnode[label=\"Excluded titles \n (n = 1,796)\", shape=box, width=2, style=filled,\n\tfillcolor=seashell]screening_b\n\tnode[label=\"Excluded abstracts \n (n = 264)\", shape=box, width=2, style=filled,\n\tfillcolor=seashell]screening_c\n\tnode[label=\"Unretrievable full text \n (n = 11)\", shape=box, width=2, style=filled,\n\tfillcolor=seashell]screening_d\n\tnode[label=\"Excluded articles \n (n = 71)\", shape=box, width=2, style=filled,\n\tfillcolor=seashell]screening_e\n\t\n\tscreening_1 -> screening_a\n\tscreening_2 -> screening_b\n\tscreening_3 -> screening_c\n\tscreening_4 -> screening_d\n\tscreening_5 -> screening_e\n\t\n\t{rank=same;screening_1;screening_a;}\n\t{rank=same;screening_2;screening_b;}\n\t{rank=same;screening_3;screening_c;}\n\t{rank=same;screening_4;screening_d;}\n\t{rank=same;screening_5;screening_e;}\n\t\n\tsubgraph cluster_articles{\n\tlabel=\"\";style=filled;color=grey95;\n\tnode[label=\"Studies included in synthesis \n (n = 40)\", shape=box, width=3, \n\tstyle=filled, fillcolor=grey95]articles_A\n\tscreening_5 -> articles_A[minlen=2, label=\"    Synthesis\"]\n\t}\n\t\n\t}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 ```
 
 
