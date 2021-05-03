@@ -1,0 +1,53 @@
+digraph G {
+	
+	graph[ranksep=0.35,newrank=true,nodesep=0.25,splines=ortho]
+	
+	subgraph cluster_searching{
+		label=""; style=filled; color=mintcream; fontsize=18
+		node[label="Scopus \n (n = 1,876)", shape=box, width=1.25]searching_A;
+		node[label="Web of Science \n (n = 1,013)", shape=box, width=1.25]searching_B;
+		node[label="Total records \n (n = 2,888)", shape=box, width=3]searching_C;
+		searching_A -> searching_C
+		searching_B -> searching_C
+		
+		{rank=same;searching_A;searching_B}
+	}
+	
+	subgraph cluster_screening{
+		label=""; style=filled; color=lightyellow; shape=box;fontsize=18
+		node[label="Records after duplicates removed \n (n = 2,171)", shape=box, width=3]screening_1
+		node[label="Records after title screening \n (n = 375)", shape=box, width=3]screening_2
+		node[label="Records after abstract screening \n (n = 111)",shape=box, width=3]screening_3
+		node[label="Articles retrieved at full text \n (n = 100)",shape=box, width=3]screening_4
+		node[label="Articles after full text screening \n (n = 40)",shape=box, width=3]screening_5
+	}
+		searching_C -> screening_1[minlen=2]
+		screening_1 -> screening_2 -> screening_3 -> screening_4 -> screening_5
+		
+		node[label="Duplicates \n (n = 717)", shape=box, width=2,style=filled,fillcolor=seashell] excluded_a
+    		node[label="Excluded titles \n (n = 1,796)", shape=box, width=2,style=filled,fillcolor=seashell] excluded_b
+	    	node[label="Excluded abstracts \n (n = 264)", shape=box, width=2,style=filled,fillcolor=seashell] excluded_c
+	    	node[label="Unretrievable full text \n (n = 11)", shape=box, width=2,style=filled,fillcolor=seashell] excluded_d
+	    	node[label="Excluded articles \n (n = 71)", shape=box, width=2,style=filled,fillcolor=seashell] excluded_e
+		
+		screening_1 -> excluded_a[minlen=1.3]
+	    	screening_2 -> excluded_b
+	    	screening_3 -> excluded_c
+	    	screening_4 -> excluded_d
+	    	screening_5 -> excluded_e
+
+		{rank=same;screening_1;excluded_a;}
+		{rank=same;screening_2;excluded_b;}
+		{rank=same;screening_3;excluded_c;}
+		{rank=same;screening_4;excluded_d;}
+		{rank=same;screening_5;excluded_e;}
+	
+	
+	subgraph cluster_articles{
+		label=""; style=filled; color=grey95;
+		node[label="Studies included in synthesis \n (n = 40)",shape=box, width=3,style=filled,fillcolor=grey95]articles_A
+		
+		screening_5 -> articles_A[minlen=2]
+	}
+	
+}

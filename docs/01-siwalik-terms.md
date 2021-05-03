@@ -12,14 +12,10 @@ The Himalayas is the younger most mountain system of the world which can be divi
 
 
 
-\begin{figure}
-
-{\centering \includegraphics[width=0.8\linewidth]{./data/siwalik-terms/Fig1_map} 
-
-}
-
-\caption{The geographic distribution of the Siwaliks in the North-western region of India. Data were acquired from the Bhukosh portal of the Geological Survey of India (http://bhukosh.gsi.gov.in/)}(\#fig:fig1-map)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="./data/siwalik-terms/Fig1_map.png" alt="The geographic distribution of the Siwaliks in the North-western region of India. Data were acquired from the Bhukosh portal of the Geological Survey of India (http://bhukosh.gsi.gov.in/)" width="80%" />
+<p class="caption">(\#fig:fig1-map)The geographic distribution of the Siwaliks in the North-western region of India. Data were acquired from the Bhukosh portal of the Geological Survey of India (http://bhukosh.gsi.gov.in/)</p>
+</div>
 
 However, available evidence indicate that the Siwaliks were formed during the upper Miocene to Pliocene epoch and are chiefly consist of clay, sandstones and conglomerates [@vredenburg1910; @bose1972]. This region is well-known for its rich vertebrate faunal deposits, indicating that a rich diversity of plants would have supported these animals [@wadia1944]. The silicified wood or the whole tree trunks can be found in sandstones, whereas leaf impressions in shales of the same region were also reported, which supports the abundance of vegetation [@vredenburg1910; @wadia1944]. However, the literature indicates large inconsistencies in the spelling use while describing these foothills and as many as four spelling variants viz. Siwalik [@cautley1839; @shukla2019], Shiwalik [@batra1963; @kaur2019], Shivalik [@campbell1879; @kumar2019] and Sivalik [@asiaticsocietyofbengal1836; @ghosh2016] are used. These inconsistencies are not prevalent only in scientific literature, but also exist in the non-scientific literature such as various governmental reports of India (like the annual reports of the ministry of environment forest and climate change, MoEFCC; The Project Tiger, Forest Survey of India, Zoological Survey of India, etc.), Gazettes of India (The Gazette of India and its States, Encyclopaedias [@editorsofthecolumbiaencyclopedia2019; @editorsoftheencyclopaediabrittanica2011] and dictionaries [@siwalik]. Therefore, it is imperative to resolve these conflicts of the spelling usages, so as to maintain uniformity and avoid any confusions in the future. Here, we have addressed this issue by providing evidence through votecounting approach (i.e. the total number of publications for each spelling variant) and years of publications so as to track their origin and abundance in the literature.
 
@@ -45,14 +41,10 @@ ggplot(data = sw_longer, aes(x = db, y = y, fill = terms)) +
 	theme(legend.position = "bottom", legend.title = element_blank())
 ```
 
-\begin{figure}
-
-{\centering \includegraphics[width=0.8\linewidth]{01-siwalik-terms_files/figure-latex/fig2-1} 
-
-}
-
-\caption{The distribution of Spelling variants (in the title of publications) among different scientific databases}(\#fig:fig2)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="01-siwalik-terms_files/figure-html/fig2-1.png" alt="The distribution of Spelling variants (in the title of publications) among different scientific databases" width="80%" />
+<p class="caption">(\#fig:fig2)The distribution of Spelling variants (in the title of publications) among different scientific databases</p>
+</div>
 
 Each selected database depicted the same pattern i.e. the term 'Siwalik' was most dominant whereas the term 'Sivalik' was least represented. On the other hand, the terms 'Shivalik' and 'Shiwalik' were more or less equally represented. Further, the annual production of published articles in the Scopus and Web of Science database has revealed that the number of publications with term 'Siwalik' has exponentially increased, whereas it is only during the past two decades when the usage of the terms 'Shivalik' and 'Shiwalik' has become more frequent (Figure \@ref(fig:fig3)).
 
@@ -70,14 +62,10 @@ ggplot(data = df, aes(x = Year, y = Articles, color = Term)) +
 		axis.title = element_text(face = "bold"))
 ```
 
-\begin{figure}
-
-{\centering \includegraphics[width=0.8\linewidth]{01-siwalik-terms_files/figure-latex/fig3-1} 
-
-}
-
-\caption{The trend of annual scientific production of publications with spelling variants from both the Scopus and Web of Science database. The smooth lines were fitted using the loess (y ~ x) method}(\#fig:fig3)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="01-siwalik-terms_files/figure-html/fig3-1.png" alt="The trend of annual scientific production of publications with spelling variants from both the Scopus and Web of Science database. The smooth lines were fitted using the loess (y ~ x) method" width="80%" />
+<p class="caption">(\#fig:fig3)The trend of annual scientific production of publications with spelling variants from both the Scopus and Web of Science database. The smooth lines were fitted using the loess (y ~ x) method</p>
+</div>
 
 Furthermore, the analysis of Scopus and Web of Science database revealed that the term 'Siwalik' was the oldest term (1878) which has increased rapidly and continues to increase, but the term 'Shivalik' (1955) and 'Shiwalik' (1973) were relatively recent terms which are increasing only during the recent decades. Another term 'Sivalik' is also one of the oldest terms (1880) but the usage of this term has been diminished during the past decades (Figure \@ref(fig:fig3)). However, a more extensive survey of available literature from other sources ([Internet Archive](https://archive.org/) and [Biodiversity Heritage Library](https://www.biodiversitylibrary.org/)) suggested that the term 'Sivalik' was the oldest term and first appeared in 1836 [@asiaticsocietyofbengal1836]. Though the usage of the term 'Siwalik' can be traced from 1528 A. D. in memoirs of the Emperor Babar [@burrard1907], the term was first introduced to scientific literature in 1839 by Capt. P. T. Cautley (a palaeontologist) and Hugh Falconer (a geologist and botanist) of the East India Company, who surveyed the hills located near to the Haridwar a pilgrimage site dedicated to Lord Shiva, therefore, the hills were termed as -― Siwalik hills [@cautley1839; @sorkhabi2010]. Similarly, the term 'Shivalik' seems to be first introduced by J. P. Campbell in 1879 while describing his observations on the Glacial period from India [@campbell1879] and this term seems to be second most frequently used term in modern literature. Further, the term 'Shiwalik' was first observed in 1963 while describing the Discomycetes fungi from the region [@batra1963]. Thus, the term 'Sivalik' was the oldest followed by 'Siwalik' and 'Shivalik' whereas the term 'Shiwalik' is the most recently used term. The dominance of the term 'Siwalik' may be due to its popularity, widespread use and is one of the oldest terms. All these terms are inspired by Lord Shiva, but it is the perception of author and subsequent translation into English which may have caused the observed variations in the spellings. Most of the early researchers who explored the area were non-native foreigners (from Britain, USA, etc.) and they named this hilly region according to their perception. That's why the terms 'Siwalik' and 'Sivalik' were prevalent during the past century. However, the Indian authors have explored the region only during the past 4-5 decades, and they have introduced the terms 'Shiwalik' and 'Shivalik' referring to its correct translation.
 
@@ -96,14 +84,10 @@ ggplot(data = df, aes(x = Articles, y = Country, fill = Term)) +
 	theme(legend.position = "bottom", legend.title = element_blank())
 ```
 
-\begin{figure}
-
-{\centering \includegraphics[width=0.8\linewidth]{01-siwalik-terms_files/figure-latex/fig4-1} 
-
-}
-
-\caption{The distribution of terms in the countries of the corresponding author}(\#fig:fig4)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="01-siwalik-terms_files/figure-html/fig4-1.png" alt="The distribution of terms in the countries of the corresponding author" width="80%" />
+<p class="caption">(\#fig:fig4)The distribution of terms in the countries of the corresponding author</p>
+</div>
 
 The variation of spellings of these terms is most commonly originates from India and therefore the publications from the country India are most diverse in the use of these terms. However, some countries like China, France, Germany, Nepal and Thailand have also used different spelling variants whereas other countries have used either of the spelling consistently. Since a large part of these foothills is shared by India; therefore, the country has the greatest number of publications mentioning these terms. 
 The distribution of these terms across the top ten most relevant sources (like Journals, Books, etc.) is represented in Figure \@ref(fig:fig5) and these spelling variants were prevalent within some journals like Annals of Agri Bio Research, Current Science, Indian Journal of Agricultural Sciences, Indian Journal of Ecology, Journal of Human Evolution, Nature and Palaeogeography, Palaeoclimatology, Palaeoecology. But this variation is less prominent in the Web of Science as compared to Scopus (Figure \@ref(fig:fig5)). 
@@ -122,14 +106,10 @@ ggplot(data = df, aes(x = Y, y = Source, fill = Sw)) +
 	theme(legend.position = "bottom", legend.title = element_blank())
 ```
 
-\begin{figure}
-
-{\centering \includegraphics[width=0.9\linewidth]{01-siwalik-terms_files/figure-latex/fig5-1} 
-
-}
-
-\caption{The distribution of terms in the top 10 most relevant sources of publications (Journals, Books, etc.) for each term in Scopus and Web of Science database}(\#fig:fig5)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="01-siwalik-terms_files/figure-html/fig5-1.png" alt="The distribution of terms in the top 10 most relevant sources of publications (Journals, Books, etc.) for each term in Scopus and Web of Science database" width="90%" />
+<p class="caption">(\#fig:fig5)The distribution of terms in the top 10 most relevant sources of publications (Journals, Books, etc.) for each term in Scopus and Web of Science database</p>
+</div>
 
 It has been further observed that the term 'Siwalik' was most consistently used in the fields of Geosciences and related fields which is still in practice. On the other hand, almost all the terms were used interchangeably in agricultural and biological sciences or other fields. General information about bibliometric indicators of the publications with the terms from the Scopus and Web of Science database is presented in Table \@ref(tab:tab1).
 
@@ -146,32 +126,106 @@ df %>% kbl(digits = 2, col.names = c("Bibliometric Indicator",
 	add_header_above(c(" " = 1, "Web of Science" = 4, "Scopus" = 4))
 ```
 
-\begin{table}
-
-\caption{(\#tab:tab1)Bibliometric indicators for the publications with spelling variants}
-\centering
-\begin{tabular}[t]{l|r|r|r|r|r|r|r|r}
-\hline
-\multicolumn{1}{c|}{ } & \multicolumn{4}{c|}{Web of Science} & \multicolumn{4}{c}{Scopus} \\
-\cline{2-5} \cline{6-9}
-Bibliometric Indicator & Siwalik & Shivalik & Shiwalik & Sivalik & Siwalik & Shivalik & Shiwalik & Sivalik\\
-\hline
-Total Number of Documents & 890.00 & 72.00 & 59.00 & 2.00 & 1167.00 & 141.00 & 99.00 & 18.00\\
-\hline
-Average Citations per Document & 23.35 & 10.94 & 7.73 & 5.50 & 22.69 & 7.69 & 5.32 & 13.56\\
-\hline
-Total Number of Authors & 1552.00 & 180.00 & 142.00 & 9.00 & 1797.00 & 304.00 & 217.00 & 17.00\\
-\hline
-Documents per Author & 0.57 & 0.40 & 0.41 & 0.22 & 0.65 & 0.46 & 0.45 & 1.06\\
-\hline
-Authors per Document & 1.74 & 2.50 & 2.41 & 4.50 & 1.54 & 2.16 & 2.19 & 0.94\\
-\hline
-Co-Authors per Document & 3.75 & 3.65 & 3.32 & 4.50 & 3.26 & 3.17 & 3.38 & 2.06\\
-\hline
-Collaboration Index & 1.91 & 2.59 & 2.54 & 4.50 & 1.77 & 2.39 & 2.28 & 0.92\\
-\hline
-\end{tabular}
-\end{table}
+<table class=" lightable-classic" style='font-family: "Arial Narrow", "Source Sans Pro", sans-serif; margin-left: auto; margin-right: auto;'>
+<caption>(\#tab:tab1)Bibliometric indicators for the publications with spelling variants</caption>
+ <thead>
+<tr>
+<th style="empty-cells: hide;" colspan="1"></th>
+<th style="padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="4"><div style="border-bottom: 1px solid #111111; margin-bottom: -1px; ">Web of Science</div></th>
+<th style="padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="4"><div style="border-bottom: 1px solid #111111; margin-bottom: -1px; ">Scopus</div></th>
+</tr>
+  <tr>
+   <th style="text-align:left;"> Bibliometric Indicator </th>
+   <th style="text-align:right;"> Siwalik </th>
+   <th style="text-align:right;"> Shivalik </th>
+   <th style="text-align:right;"> Shiwalik </th>
+   <th style="text-align:right;"> Sivalik </th>
+   <th style="text-align:right;"> Siwalik </th>
+   <th style="text-align:right;"> Shivalik </th>
+   <th style="text-align:right;"> Shiwalik </th>
+   <th style="text-align:right;"> Sivalik </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Total Number of Documents </td>
+   <td style="text-align:right;"> 890.00 </td>
+   <td style="text-align:right;"> 72.00 </td>
+   <td style="text-align:right;"> 59.00 </td>
+   <td style="text-align:right;"> 2.00 </td>
+   <td style="text-align:right;"> 1167.00 </td>
+   <td style="text-align:right;"> 141.00 </td>
+   <td style="text-align:right;"> 99.00 </td>
+   <td style="text-align:right;"> 18.00 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Average Citations per Document </td>
+   <td style="text-align:right;"> 23.35 </td>
+   <td style="text-align:right;"> 10.94 </td>
+   <td style="text-align:right;"> 7.73 </td>
+   <td style="text-align:right;"> 5.50 </td>
+   <td style="text-align:right;"> 22.69 </td>
+   <td style="text-align:right;"> 7.69 </td>
+   <td style="text-align:right;"> 5.32 </td>
+   <td style="text-align:right;"> 13.56 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Total Number of Authors </td>
+   <td style="text-align:right;"> 1552.00 </td>
+   <td style="text-align:right;"> 180.00 </td>
+   <td style="text-align:right;"> 142.00 </td>
+   <td style="text-align:right;"> 9.00 </td>
+   <td style="text-align:right;"> 1797.00 </td>
+   <td style="text-align:right;"> 304.00 </td>
+   <td style="text-align:right;"> 217.00 </td>
+   <td style="text-align:right;"> 17.00 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Documents per Author </td>
+   <td style="text-align:right;"> 0.57 </td>
+   <td style="text-align:right;"> 0.40 </td>
+   <td style="text-align:right;"> 0.41 </td>
+   <td style="text-align:right;"> 0.22 </td>
+   <td style="text-align:right;"> 0.65 </td>
+   <td style="text-align:right;"> 0.46 </td>
+   <td style="text-align:right;"> 0.45 </td>
+   <td style="text-align:right;"> 1.06 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Authors per Document </td>
+   <td style="text-align:right;"> 1.74 </td>
+   <td style="text-align:right;"> 2.50 </td>
+   <td style="text-align:right;"> 2.41 </td>
+   <td style="text-align:right;"> 4.50 </td>
+   <td style="text-align:right;"> 1.54 </td>
+   <td style="text-align:right;"> 2.16 </td>
+   <td style="text-align:right;"> 2.19 </td>
+   <td style="text-align:right;"> 0.94 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Co-Authors per Document </td>
+   <td style="text-align:right;"> 3.75 </td>
+   <td style="text-align:right;"> 3.65 </td>
+   <td style="text-align:right;"> 3.32 </td>
+   <td style="text-align:right;"> 4.50 </td>
+   <td style="text-align:right;"> 3.26 </td>
+   <td style="text-align:right;"> 3.17 </td>
+   <td style="text-align:right;"> 3.38 </td>
+   <td style="text-align:right;"> 2.06 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Collaboration Index </td>
+   <td style="text-align:right;"> 1.91 </td>
+   <td style="text-align:right;"> 2.59 </td>
+   <td style="text-align:right;"> 2.54 </td>
+   <td style="text-align:right;"> 4.50 </td>
+   <td style="text-align:right;"> 1.77 </td>
+   <td style="text-align:right;"> 2.39 </td>
+   <td style="text-align:right;"> 2.28 </td>
+   <td style="text-align:right;"> 0.92 </td>
+  </tr>
+</tbody>
+</table>
 
 ## Conclusion
 

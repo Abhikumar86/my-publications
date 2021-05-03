@@ -1,0 +1,41 @@
+,label,journal,year,fulltext,taxa,lat,lon,location,domain,subdomain
+1,Mishra_JOOFTHINSOOFRESE,JOURNAL OF THE INDIAN SOCIETY OF REMOTE SENSING,2020,selected,NA,29.0794,79.8685,Uttarakhand,Landscape Ecology,forest characterisation
+2,Bargali_1993_JoofVeSc,Journal of Vegetation Science,1993,selected,angiosperms,29.2,79.3833,Uttarakhand,Ecosystem Ecology,soil
+3,Lodhiyal_2003_ForEcoandMan,Forest Ecology and Management,2003,selected,angiosperm,29.2993,79.4805,Uttarakhand,Ecosystem Ecology,biomass production
+4,Rana_1988_ProcPlanScie,Proceedings: Plant Sciences,1988,selected,NA,29.346085,79.392612,Uttarakhand,Ecosystem Ecology,biomass production
+5,Areendran_2017_TropEcol,Tropical Ecology,2017,selected,NA,29.4664608,79.1405014,Uttarakhand,Landscape Ecology,lulc
+6,Singh_1995_Vege,Vegetatio,1995,selected,NA,29.532673,78.8248143,Uttarakhand,Community Ecology,vegetation
+7,Joshi_2011_BioandCon,Biodiversity and Conservation,2011,selected,NA,29.5862,78.6569,Uttarakhand,Applied Ecology,biodiversity conservation
+8,Singh_2020_InJoofEc,Indian Journal of Ecology,2020,selected,NA,29.777654,78.6030013,Uttarakhand,Physiological Ecology,phenology
+9,Kumar_2019_EnvMonandAss,Environmental Monitoring and Assessment,2019,selected,angiosperm,29.8374,78.2624,Uttarakhand,Landscape Ecology,modelling
+10,Sharma_2010_ForEcoandMan,Forest Ecology and Management,2010,selected,NA,29.843125,78.4024113,Uttarakhand,Ecosystem Ecology,carbon stock
+11,Kimothi_2010_INJOOFRESE,INTERNATIONAL JOURNAL OF REMOTE SENSING,2010,selected,angiosperm,30.0068105,78.0515617,Uttarakhand,Landscape Ecology,modelling
+12,Vasudeva_2021_INJOOFRESE,INTERNATIONAL JOURNAL OF REMOTE SENSING,2021,selected,NA,30.1123,78.212,Uttarakhand,Landscape Ecology,leaf N and C
+13,Watham_2020_Biog,Biogeochemistry,2020,selected,NA,30.1123,78.212,Uttarakhand,Ecosystem Ecology,carbon exchange
+14,Watham_2021_EnvMonandAss,Environmental Monitoring and Assessment,2021,selected,NA,30.1123,78.212,Uttarakhand,Landscape Ecology,carbon exchange
+15,Mandal_2015_ForSciandTec,Forest Science and Technology,2015,selected,angiosperm,30.1278,78.0577,Uttarakhand,Community Ecology,"species diversity, soil"
+16,Sanyal_2005_PalaPalaPala,"Palaeogeography, Palaeoclimatology, Palaeoecology",2005,selected,NA,30.1667,77.9167,Uttarakhand,Palaeoecology,vegetation
+17,Munsi_2010_JOOFTHINSOOFRESE,JOURNAL OF THE INDIAN SOCIETY OF REMOTE SENSING,2010,selected,NA,30.1812844,77.9383274,Uttarakhand,Landscape Ecology,forest characterisation
+18,Munsi_2012_RegiEnviChan,Regional Environmental Change,2012,selected,NA,30.1812844,77.9383274,Uttarakhand,Landscape Ecology,forest change modelling
+19,Padalia_2013_INJOOFRESE,INTERNATIONAL JOURNAL OF REMOTE SENSING,2013,selected,NA,30.1812844,77.9383274,Uttarakhand,Landscape Ecology,distribution mapping
+20,Rawat_1999_TropEcol,Tropical Ecology,1999,selected,NA,30.1812844,77.9383274,Uttarakhand,Community Ecology,forest structure
+21,Sharma_2018_3B,3 Biotech,2018,selected,NA,30.3336271,77.9826116,Uttarakhand,Physiological Ecology,response to co2
+22,Bhat_2017_PlanArch,Plant Archives,2017,selected,"angiosperms, gymno",30.5026,77.3408,Himachal Pradesh,Community Ecology,forest struture
+23,Singh_2018_TROPECOL,TROPICAL ECOLOGY,2018,selected,NA,30.5087,77.3224,Himachal Pradesh,Ecosystem Ecology ,biomass production
+24,Dinesh_2020_InJoofEc,Indian Journal of Ecology,2020,selected,NA,30.663,77.099,Haryana,Ecosystem Ecology,soil nutrients
+25,Rout_1989_ProcPlanScie,Proceedings: Plant Sciences,1989,selected,NA,30.675387,77.0948483,Haryana,Community Ecology,forest structure
+26,ROUT_1990_FLOR,FLORA,1990,selected,NA,30.675387,77.0948483,Haryana,Ecosystem Ecology,nutrient cycling
+27,ROUT_1990_FLOR_1,FLORA,1990,selected,NA,30.675387,77.0948483,Haryana,Ecosystem Ecology,nutrient cycling
+28,Ghosh_2018_PalaPalaPala,"Palaeogeography, Palaeoclimatology, Palaeoecology",2018,selected,angiosperms,30.6977,76.9248,Haryana,Palaeoecology,vegetation
+29,Sharma_2017_ModEarSysandEnv,Modeling Earth Systems and Environment,2017,selected,NA,30.71088781,77.02707005,Haryana,Ecosystem Ecology,soil
+30,Bhatnagar_1993_ForEcoandMan,Forest Ecology and Management,1993,selected,angiosperms,30.7333,76.8833,Chandigarh ,Species Interactions,competition
+31,Hussain_2019_CATE,CATENA,2019,selected,NA,32.706,74.9925,Jammu and Kashmir,Ecosystem Ecology,soil nutrients
+32,Gupta_2010_TropEcol,Tropical Ecology,2010,selected,NA,32.8701,74.856,Jammu and Kashmir,Ecosystem Ecology,soil
+33,Joshi_2012_JoofFoRe,Journal of Forestry Research,2012,selected,angiosperm,NA,NA,All,Applied Ecology,forest change
+34,Lamsal_2018_Ambi,Ambio,2018,selected,angiosperm,NA,NA,All,Landscape Ecology,modelling
+35,Kumar_2021_EcolIndi,Ecological Indicators,2021,selected,NA,NA,NA,All,Landscape Ecology,modelling
+36,Mishra_2015_ApplGeog,Applied Geography,2015,selected,NA,NA,NA,Uttarakhand,Landscape Ecology,"Productivity, NDVI"
+37,Singh_2019_RanManandAgr,Range Management and Agroforestry,2019,selected,NA,NA,NA,Himachal Pradesh,Ecosystem Ecology ,biomass production
+38,Srinet_2020_GeocInte,Geocarto International,2020,selected,NA,NA,NA,All,Landscape Ecology,productivity
+39,Srinet_2020_INJOOFRESE,INTERNATIONAL JOURNAL OF REMOTE SENSING,2020,selected,NA,NA,NA,All,Landscape Ecology,plant functional type
+40,Yang_2013_EcolEngi,Ecological Engineering,2013,selected,NA,NA,NA,Uttarakhand,Landscape Ecology,modelling
