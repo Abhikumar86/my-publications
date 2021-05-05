@@ -27,43 +27,15 @@ We have explored the literature using all the variant terms as keywords (Shivali
 
 The results of the vote count approach from different databases have indicated the dominance of the term Siwalik and the distribution pattern of these terms is shown in Figure \@ref(fig:fig2).
 
-
-```r
-library(ggplot2)
-sw <- read.csv("./data/siwalik-terms/terms-in-database.csv")
-sw_longer <- tidyr::pivot_longer(sw, cols = -db, names_to = "terms", values_to = "y")
-ggplot(data = sw_longer, aes(x = db, y = y, fill = terms)) + 
-	geom_bar(stat = "identity", position = "fill", width = 0.7, color = "black") +
-	scale_y_continuous(labels = scales::percent_format()) +
-	scale_fill_brewer(palette = "Paired") +
-	labs(x = "", y = "") +
-	theme_bw() +
-	theme(legend.position = "bottom", legend.title = element_blank())
-```
-
 <div class="figure" style="text-align: center">
-<img src="01-siwalik-terms_files/figure-html/fig2-1.png" alt="The distribution of Spelling variants (in the title of publications) among different scientific databases" width="80%" />
+<img src="01-siwalik-terms_files/figure-html/fig2-1.svg" alt="The distribution of Spelling variants (in the title of publications) among different scientific databases" width="80%" />
 <p class="caption">(\#fig:fig2)The distribution of Spelling variants (in the title of publications) among different scientific databases</p>
 </div>
 
 Each selected database depicted the same pattern i.e. the term 'Siwalik' was most dominant whereas the term 'Sivalik' was least represented. On the other hand, the terms 'Shivalik' and 'Shiwalik' were more or less equally represented. Further, the annual production of published articles in the Scopus and Web of Science database has revealed that the number of publications with term 'Siwalik' has exponentially increased, whereas it is only during the past two decades when the usage of the terms 'Shivalik' and 'Shiwalik' has become more frequent (Figure \@ref(fig:fig3)).
 
-
-```r
-
-library(ggplot2)
-df <- read.csv("./data/siwalik-terms/AnnSciProd.csv")
-ggplot(data = df, aes(x = Year, y = Articles, color = Term)) +
-	geom_point(shape = 21) +
-	geom_smooth(se = FALSE, span = 1) +
-	labs(x = "Year", y = "Articles") +
-	theme_bw() +
-	theme(legend.position = "bottom", legend.title = element_blank(),
-		axis.title = element_text(face = "bold"))
-```
-
 <div class="figure" style="text-align: center">
-<img src="01-siwalik-terms_files/figure-html/fig3-1.png" alt="The trend of annual scientific production of publications with spelling variants from both the Scopus and Web of Science database. The smooth lines were fitted using the loess (y ~ x) method" width="80%" />
+<img src="01-siwalik-terms_files/figure-html/fig3-1.svg" alt="The trend of annual scientific production of publications with spelling variants from both the Scopus and Web of Science database. The smooth lines were fitted using the loess (y ~ x) method" width="80%" />
 <p class="caption">(\#fig:fig3)The trend of annual scientific production of publications with spelling variants from both the Scopus and Web of Science database. The smooth lines were fitted using the loess (y ~ x) method</p>
 </div>
 
@@ -71,60 +43,21 @@ Furthermore, the analysis of Scopus and Web of Science database revealed that th
 
 The origin of these terms across countries was evaluated by analysing the ten most frequent countries with the corresponding author in their publications with different terms. The distribution of these terms across countries is represented in Figure \@ref(fig:fig4).
 
-
-```r
-library(ggplot2)
-df <- read.csv("./data/siwalik-terms/CorrAuthCount.csv")
-ggplot(data = df, aes(x = Articles, y = Country, fill = Term)) +
-	geom_bar(stat = "identity", position = "fill", width = 0.6, color = "black") +
-	scale_x_continuous(labels = scales::percent_format()) +
-	scale_fill_brewer(palette = "Paired") +
-	facet_wrap(~dbsource) +
-	theme_bw() +
-	theme(legend.position = "bottom", legend.title = element_blank())
-```
-
 <div class="figure" style="text-align: center">
-<img src="01-siwalik-terms_files/figure-html/fig4-1.png" alt="The distribution of terms in the countries of the corresponding author" width="80%" />
+<img src="01-siwalik-terms_files/figure-html/fig4-1.svg" alt="The distribution of terms in the countries of the corresponding author" width="80%" />
 <p class="caption">(\#fig:fig4)The distribution of terms in the countries of the corresponding author</p>
 </div>
 
 The variation of spellings of these terms is most commonly originates from India and therefore the publications from the country India are most diverse in the use of these terms. However, some countries like China, France, Germany, Nepal and Thailand have also used different spelling variants whereas other countries have used either of the spelling consistently. Since a large part of these foothills is shared by India; therefore, the country has the greatest number of publications mentioning these terms. 
 The distribution of these terms across the top ten most relevant sources (like Journals, Books, etc.) is represented in Figure \@ref(fig:fig5) and these spelling variants were prevalent within some journals like Annals of Agri Bio Research, Current Science, Indian Journal of Agricultural Sciences, Indian Journal of Ecology, Journal of Human Evolution, Nature and Palaeogeography, Palaeoclimatology, Palaeoecology. But this variation is less prominent in the Web of Science as compared to Scopus (Figure \@ref(fig:fig5)). 
 
-
-```r
-library(ggplot2)
-df <- read.csv("./data/siwalik-terms/relevant-sources.csv")
-ggplot(data = df, aes(x = Y, y = Source, fill = Sw)) +
-	geom_bar(stat = "identity", position = "fill", width = 0.7, color = "black") +
-	scale_x_continuous(labels = scales::percent_format()) +
-	scale_fill_brewer(palette = "Paired") +
-	facet_wrap(~db) +
-	labs(x = "", y = "") + 
-	theme_bw() +
-	theme(legend.position = "bottom", legend.title = element_blank())
-```
-
 <div class="figure" style="text-align: center">
-<img src="01-siwalik-terms_files/figure-html/fig5-1.png" alt="The distribution of terms in the top 10 most relevant sources of publications (Journals, Books, etc.) for each term in Scopus and Web of Science database" width="90%" />
+<img src="01-siwalik-terms_files/figure-html/fig5-1.svg" alt="The distribution of terms in the top 10 most relevant sources of publications (Journals, Books, etc.) for each term in Scopus and Web of Science database" width="90%" />
 <p class="caption">(\#fig:fig5)The distribution of terms in the top 10 most relevant sources of publications (Journals, Books, etc.) for each term in Scopus and Web of Science database</p>
 </div>
 
 It has been further observed that the term 'Siwalik' was most consistently used in the fields of Geosciences and related fields which is still in practice. On the other hand, almost all the terms were used interchangeably in agricultural and biological sciences or other fields. General information about bibliometric indicators of the publications with the terms from the Scopus and Web of Science database is presented in Table \@ref(tab:tab1).
 
-
-
-```r
-library(kableExtra)
-df <- read.csv("./data/siwalik-terms/biblio-table.csv")
-df %>% kbl(digits = 2, col.names = c("Bibliometric Indicator", 
-						 rep(x = c("Siwalik", "Shivalik", "Shiwalik", 
-						 	    "Sivalik"), 2)),
-	     caption = "Bibliometric indicators for the publications with spelling variants") %>%
-	kable_classic() %>% 
-	add_header_above(c(" " = 1, "Web of Science" = 4, "Scopus" = 4))
-```
 
 <table class=" lightable-classic" style='font-family: "Arial Narrow", "Source Sans Pro", sans-serif; margin-left: auto; margin-right: auto;'>
 <caption>(\#tab:tab1)Bibliometric indicators for the publications with spelling variants</caption>

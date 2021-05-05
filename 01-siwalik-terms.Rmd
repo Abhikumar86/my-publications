@@ -13,7 +13,7 @@ The Himalayas is the younger most mountain system of the world which can be divi
 ```{r echo=FALSE}
 knitr::opts_chunk$set(comment = "#>", collapse = TRUE, fig.align = 'center', 
 			    fig.width = 7, fig.height = 5, out.width = '80%', 
-			    message=FALSE, warning=FALSE)
+			    echo = FALSE, message=FALSE, warning=FALSE)
 ```
 
 ```{r fig1-map, echo=FALSE, fig.cap="The geographic distribution of the Siwaliks in the North-western region of India. Data were acquired from the Bhukosh portal of the Geological Survey of India (http://bhukosh.gsi.gov.in/)"}
