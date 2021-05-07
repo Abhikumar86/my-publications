@@ -8,7 +8,6 @@ editor_options:
 
 
 
-
 ## Abstract
 
 Conservation science and practice commonly draw on the theories and methods of
@@ -98,26 +97,49 @@ and gaps in the current knowledge, which will guide the future investigations.
 
 ## Methodology
 
+We adopted the guidelines and recommendations established by Collaboration for
+Environmental Evidence (CEE) for evidence synthesis in environmental management
+[@CEE2018]. These recommendations are designed to improve transparency and
+reproducibility of reviews in environmental contexts [@CEE2018; @grames2020]. We
+departed from recommended practises as we neither consulted stakeholders nor
+registered a protocol. A review team comprising of individuals with relevant
+skills and knowledge (subject and methodological) was formed. The roles and
+responsibilities of each participant has been defined during the initial project
+development. We organised meetings and discussions at every weekend to develop
+the protocol, search strategy, screening, data extraction, analyses and writing.
+The selection of appropriate studies for the present review involved of three
+phases: searching, screening, and inclusion (Figure \@ref(fig:fig21)).
+
+<div class="figure" style="text-align: center">
+
+```{=html}
+<div id="htmlwidget-a814cd2959733f0ea72d" style="width:750px;height:800px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-a814cd2959733f0ea72d">{"x":{"diagram":"digraph G{\n\t\t\t\n\tgraph[ranksep=0.35, newrank=true, nodesep=0.25, splines=ortho]\n\t\t\t\n\tsubgraph cluster_searching{\n\tlabel=\"Searching\"; style=filled; color=mintcream; fontsize=18\n\tnode[label=\"Scopus\n(n = 1,876)\", shape=box, width=1.25, \n\tfillcolor=grey95]searching_A;\n\tnode[label=\"Web of Science\n(n = 1,013)\", shape=box, width=1.25]searching_B;\n\tnode[label=\"Total records\n(n = 2,888)\", shape=box, width=3]searching_C;\n\tsearching_A -> searching_C\n\tsearching_B -> searching_C\n\t{rank=same;searching_A;searching_B}\n\t}\n\t\n\tsubgraph cluster_screening{\n\tlabel=\"\"; style=filled; color=lightyellow; shape=box; fontsize=18\n\tnode[label=\"Records after duplicates removed \n (n = 2,171)\", shape=box, \n\twidth=3]screening_1\n\tnode[label=\"Records after title screening \n (n = 375)\", shape=box, \n\twidth=3]screening_2\n\tnode[label=\"Records after abstract screening \n (n = 111)\",shape=box, \n\twidth=3]screening_3\n\tnode[label=\"Articles retrieved at full text \n (n = 100)\",shape=box, \n\twidth=3]screening_4\n\tnode[label=\"Articles after full text screening \n (n = 40)\",shape=box, \n\twidth=3]screening_5\n\tsearching_C -> screening_1[minlen=2, label=\"    Screening\"]\n\tscreening_1 -> screening_2 -> screening_3 -> screening_4 -> screening_5\n\t}\n\t\n\tnode[label=\"Duplicates \n (n = 717)\", shape=box, width=2, style=filled,\n\tfillcolor=seashell]screening_a\n\tnode[label=\"Excluded titles \n (n = 1,796)\", shape=box, width=2, style=filled,\n\tfillcolor=seashell]screening_b\n\tnode[label=\"Excluded abstracts \n (n = 264)\", shape=box, width=2, style=filled,\n\tfillcolor=seashell]screening_c\n\tnode[label=\"Unretrievable full text \n (n = 11)\", shape=box, width=2, style=filled,\n\tfillcolor=seashell]screening_d\n\tnode[label=\"Excluded articles \n (n = 71)\", shape=box, width=2, style=filled,\n\tfillcolor=seashell]screening_e\n\t\n\tscreening_1 -> screening_a\n\tscreening_2 -> screening_b\n\tscreening_3 -> screening_c\n\tscreening_4 -> screening_d\n\tscreening_5 -> screening_e\n\t\n\t{rank=same;screening_1;screening_a;}\n\t{rank=same;screening_2;screening_b;}\n\t{rank=same;screening_3;screening_c;}\n\t{rank=same;screening_4;screening_d;}\n\t{rank=same;screening_5;screening_e;}\n\t\n\tsubgraph cluster_articles{\n\tlabel=\"\";style=filled;color=grey95;\n\tnode[label=\"Studies included in synthesis \n (n = 40)\", shape=box, width=3, \n\tstyle=filled, fillcolor=grey95]articles_A\n\tscreening_5 -> articles_A[minlen=2, label=\"    Synthesis\"]\n\t}\n\t\n\t}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+```
+
+<p class="caption">(\#fig:fig21)ROSES flow diagram scheme for literature search, screening and inclusion process based on [@haddaway2018]</p>
+</div>
+
 ### Literature Database
 
-Scopus (<https://scopus.com/>) and Web of Science Core Collection
+Scopus (<https://scopus.com/>) and Web of Science
 (<https://webofknowledge.com/>) are the most reliable databases for retrieval of
-high-quality peer-reviewed scientific literature in the fields of Science and
-Technology. The Web of Science Core Collection TM consists of Science Citation
-Index Expanded (SCIE), Social Sciences Citation Index (SSCI), Arts & Humanities
-Citation Index (AHCI), Conference Proceedings Citation Index (CPCI), Book
-Citation Index (BCI), Emerging Sources Citation Index (ESCI), and Current
-Chemical Reactions and Index Chemicus
-(<https://clarivate.com/webofsciencegroup/solutions/web-of-science-core-collection/>).
-For this database ("Web of Science Core Collection"), our institution provided
-us access to "Science Citation Index Expanded" (SCI-EXPANDED), "Social Sciences
-Citation Index" (SSCI) and "Arts & Humanities Citation Index" (A&HCI) for the
-timespan 1989-present. Both databases allow to export bibliographic meta-data
-offer great accuracy and reproducibility of literature search. However, access
-to these databases required a subscription through payment of large money.
-Although both databases emerged in 2004, Scopus offers relatively larger
-coverage of scientific literature whereas Web of Science provides offers
-coverage from early 1900.\
+high-quality peer-reviewed scientific literature in the fields of science and
+technology. Although the Web of Science Core Collection consists of seven
+indices: (i) Science Citation Index Expanded (SCIE), (ii) Social Sciences
+Citation Index (SSCI), (iii) Arts & Humanities Citation Index (AHCI), (iv)
+Conference Proceedings Citation Index (CPCI), (v) Book Citation Index (BCI),
+(vi) Emerging Sources Citation Index (ESCI), and (vii) Current Chemical
+Reactions and Index Chemicus
+(<https://clarivate.com/webofsciencegroup/solutions/web-of-science-core-collection/>),
+our institution provided us access to SCIE, SSCI and AHCI for the timespan
+1989-present. Both databases allow to export bibliographic meta-data offer great
+accuracy and reproducibility of literature search. However, access to these
+databases required a subscription through payment of large money. Although both
+databases emerged in 2004, Scopus offers relatively larger coverage of
+scientific literature whereas Web of Science provides offers coverage from early
+1900.
+
 On the other hand, Google Scholar (<https://scholar.google.com/>) is freely
 available and has most comprehensive coverage as it offers retrieval of most
 obscure information. Although it also provides access to full text articles, it
@@ -125,7 +147,8 @@ is not a bibliographic database. Its content is dynamic and has compromised
 accuracy. Further, it lacks several functionalities in literature search like
 subject filtering and tagging. Considering these limitations, we limited our
 literature search to two bibliographic databases of peer-reviewed literature
-(Web of Science Core Collection and Scopus).
+([Web of Science Core Collection](https://webofknowledge.com/) and
+[Scopus](https://scopus.com/)).
 
 ### Search strings
 
@@ -135,7 +158,7 @@ combination of these terms, we developed a common search string for Web of
 Science and Scopus.
 
 > (Siwalik OR Siwalik OR Shivalik OR Sivalik) OR (himalaya\* AND (foothill\* OR
-> outer OR sub)) OR (hill\* AND (jammu OR kangra Or morni or mohand)) OR
+> outer OR sub)) OR (hill\* AND (jammu OR kangra OR morni OR mohand)) OR
 > (range\* AND (dudhwa OR dundwa))
 
 ### Literature Search
@@ -179,17 +202,12 @@ Science and Scopus.
     the "BibTex" option under the "Other File Formats". The same process was
     repeated for records 501 to 1,000 and 1,001 to 1,013.
 
+Thus, we identified 2,888 records out of which 33 were non-English.
+
 ### Article screening
 
-<div class="figure" style="text-align: center">
-
-```{=html}
-<div id="htmlwidget-a0e31ce81ecfab6eb22c" style="width:750px;height:800px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-a0e31ce81ecfab6eb22c">{"x":{"diagram":"digraph G{\n\t\t\t\n\tgraph[ranksep=0.35, newrank=true, nodesep=0.25, splines=ortho]\n\t\t\t\n\tsubgraph cluster_searching{\n\tlabel=\"Searching\"; style=filled; color=mintcream; fontsize=18\n\tnode[label=\"Scopus\n(n = 1,876)\", shape=box, width=1.25, \n\tfillcolor=grey95]searching_A;\n\tnode[label=\"Web of Science\n(n = 1,013)\", shape=box, width=1.25]searching_B;\n\tnode[label=\"Total records\n(n = 2,888)\", shape=box, width=3]searching_C;\n\tsearching_A -> searching_C\n\tsearching_B -> searching_C\n\t{rank=same;searching_A;searching_B}\n\t}\n\t\n\tsubgraph cluster_screening{\n\tlabel=\"\"; style=filled; color=lightyellow; shape=box; fontsize=18\n\tnode[label=\"Records after duplicates removed \n (n = 2,171)\", shape=box, \n\twidth=3]screening_1\n\tnode[label=\"Records after title screening \n (n = 375)\", shape=box, \n\twidth=3]screening_2\n\tnode[label=\"Records after abstract screening \n (n = 111)\",shape=box, \n\twidth=3]screening_3\n\tnode[label=\"Articles retrieved at full text \n (n = 100)\",shape=box, \n\twidth=3]screening_4\n\tnode[label=\"Articles after full text screening \n (n = 40)\",shape=box, \n\twidth=3]screening_5\n\tsearching_C -> screening_1[minlen=2, label=\"    Screening\"]\n\tscreening_1 -> screening_2 -> screening_3 -> screening_4 -> screening_5\n\t}\n\t\n\tnode[label=\"Duplicates \n (n = 717)\", shape=box, width=2, style=filled,\n\tfillcolor=seashell]screening_a\n\tnode[label=\"Excluded titles \n (n = 1,796)\", shape=box, width=2, style=filled,\n\tfillcolor=seashell]screening_b\n\tnode[label=\"Excluded abstracts \n (n = 264)\", shape=box, width=2, style=filled,\n\tfillcolor=seashell]screening_c\n\tnode[label=\"Unretrievable full text \n (n = 11)\", shape=box, width=2, style=filled,\n\tfillcolor=seashell]screening_d\n\tnode[label=\"Excluded articles \n (n = 71)\", shape=box, width=2, style=filled,\n\tfillcolor=seashell]screening_e\n\t\n\tscreening_1 -> screening_a\n\tscreening_2 -> screening_b\n\tscreening_3 -> screening_c\n\tscreening_4 -> screening_d\n\tscreening_5 -> screening_e\n\t\n\t{rank=same;screening_1;screening_a;}\n\t{rank=same;screening_2;screening_b;}\n\t{rank=same;screening_3;screening_c;}\n\t{rank=same;screening_4;screening_d;}\n\t{rank=same;screening_5;screening_e;}\n\t\n\tsubgraph cluster_articles{\n\tlabel=\"\";style=filled;color=grey95;\n\tnode[label=\"Studies included in synthesis \n (n = 40)\", shape=box, width=3, \n\tstyle=filled, fillcolor=grey95]articles_A\n\tscreening_5 -> articles_A[minlen=2, label=\"    Synthesis\"]\n\t}\n\t\n\t}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
-```
-
-<p class="caption">(\#fig:fig21)Scheme for literature search and screening process based on [@haddaway2018]</p>
-</div>
+We used the package `revtools` [@revtools2019] in R programming environment [@R-base]
+for article screening phase.
 
 #### De-duplication
 
@@ -228,7 +246,7 @@ relevant to plant ecology were excluded.
 
 
 
-Table: (\#tab:tab1)Summary of title screening
+Table: (\#tab:tab11)Summary of title screening
 
 | excluded| selected| unknown|
 |--------:|--------:|-------:|
@@ -237,7 +255,7 @@ Table: (\#tab:tab1)Summary of title screening
 We excluded 1,796 articles based on title screen and remaining 375 articles were
 selected for abstract screening out of which 158 articles were assigned
 "selected" and 217 articles were assigned "unknown" during the title screening
-(Table \@ref(tab:tab1)). Next, we removed the "excluded" articles and screened
+(Table \@ref(tab:tab11)). Next, we removed the "excluded" articles and screened
 for abstracts.
 
 
@@ -282,7 +300,7 @@ to retrieve fulltext of following 11 articles.
 8.  Rajwar, G. S. (1993). *Garhwal Himalaya: Ecology and Environment*. Ashish
     Publishing House, New Delhi.
 9.  Ram, N., & Jana, M. M. (1997). Ecological impact of compaction under teak
-    plantation in the foothill of darjeeling himalaya. *Indian Forester, 123*,
+    plantation in the foothill of Darjeeling himalaya. *Indian Forester, 123*,
     623--630.
 10. Rout, S., & Gupta, S. (1989). Soil respiration in relation to abiotic
     factors, forest floor litter, root biomass and litter quality in forest
@@ -328,29 +346,29 @@ information (if available) for each article:
     areas often overlap. However, we followed the following broad classification
     system for the present study.
 
-+----------------------+------------------------------------------------------+
-| Ecology Domain       | Included sub-domains                                 |
-+:=====================+:=====================================================+
-| Organismal Ecology   | Population genetics, natural selection, behaviour    |
-+----------------------+------------------------------------------------------+
-| Physiological        | Adaptations to abiotic factors like temperature,     |
-| Ecology              | light                                                |
-+----------------------+------------------------------------------------------+
-| Population Ecology   | Population growth, demography, age structure         |
-+----------------------+------------------------------------------------------+
-| Species Interactions | Competition, facilitation, parasitism, symbiosis     |
-+----------------------+------------------------------------------------------+
-| Community Ecology    | Species diversity, succession, biogeography          |
-+----------------------+------------------------------------------------------+
-| Ecosystem Ecology    | Food web, biomass production, nutrient cycling, soil |
-+----------------------+------------------------------------------------------+
-| Palaeoecology        | Fossil records, palaeo-vegetation                    |
-+----------------------+------------------------------------------------------+
-| Landscape Ecology    | Land use and land cover, ecological modelling,       |
-|                      | spatial and global Ecology                           |
-+----------------------+------------------------------------------------------+
-| Applied Ecology      | Conservation, management and restoration ecology     |
-+----------------------+------------------------------------------------------+
++----------------------+-------------------------------------------------------+
+| Ecology Domain       | Included sub-domains                                  |
++:=====================+:======================================================+
+| Organismal Ecology   | Population genetics, natural selection, behaviour     |
++----------------------+-------------------------------------------------------+
+| Physiological        | Adaptations to abiotic factors like temperature,      |
+| Ecology              | light                                                 |
++----------------------+-------------------------------------------------------+
+| Population Ecology   | Population growth, demography, age structure          |
++----------------------+-------------------------------------------------------+
+| Species Interactions | Competition, facilitation, parasitism, symbiosis      |
++----------------------+-------------------------------------------------------+
+| Community Ecology    | Species diversity, succession, biogeography           |
++----------------------+-------------------------------------------------------+
+| Ecosystem Ecology    | Food web, biomass production, nutrient cycling, soil  |
++----------------------+-------------------------------------------------------+
+| Palaeoecology        | Fossil records, palaeo-vegetation                     |
++----------------------+-------------------------------------------------------+
+| Landscape Ecology    | Land use and land cover, ecological modelling,        |
+|                      | spatial and global Ecology                            |
++----------------------+-------------------------------------------------------+
+| Applied Ecology      | Conservation, management and restoration ecology      |
++----------------------+-------------------------------------------------------+
 
 : (\#tab:tab4) Classification scheme
 

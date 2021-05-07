@@ -19,8 +19,10 @@ library(raster) # for raster data operations
 library(revtools) # review tools functions for bibliography and article screening
 library(sf) # spatial data operations
 library(tmap) # spatial data visualisation and mapping
-```
 
+## citations for the used packages
+knitr::write_bib(c(.packages(), "bookdown"), "packages.bib") 
+```
 
 ## Abstract
 
@@ -111,90 +113,20 @@ and gaps in the current knowledge, which will guide the future investigations.
 
 ## Methodology
 
-### Literature Database
+We adopted the guidelines and recommendations established by Collaboration for
+Environmental Evidence (CEE) for evidence synthesis in environmental management
+[@CEE2018]. These recommendations are designed to improve transparency and
+reproducibility of reviews in environmental contexts [@CEE2018; @grames2020]. We
+departed from recommended practises as we neither consulted stakeholders nor
+registered a protocol. A review team comprising of individuals with relevant
+skills and knowledge (subject and methodological) was formed. The roles and
+responsibilities of each participant has been defined during the initial project
+development. We organised meetings and discussions at every weekend to develop
+the protocol, search strategy, screening, data extraction, analyses and writing.
+The selection of appropriate studies for the present review involved of three
+phases: searching, screening, and inclusion (Figure \@ref(fig:fig21)).
 
-Scopus (<https://scopus.com/>) and Web of Science Core Collection
-(<https://webofknowledge.com/>) are the most reliable databases for retrieval of
-high-quality peer-reviewed scientific literature in the fields of Science and
-Technology. The Web of Science Core Collection TM consists of Science Citation
-Index Expanded (SCIE), Social Sciences Citation Index (SSCI), Arts & Humanities
-Citation Index (AHCI), Conference Proceedings Citation Index (CPCI), Book
-Citation Index (BCI), Emerging Sources Citation Index (ESCI), and Current
-Chemical Reactions and Index Chemicus
-(<https://clarivate.com/webofsciencegroup/solutions/web-of-science-core-collection/>).
-For this database ("Web of Science Core Collection"), our institution provided
-us access to "Science Citation Index Expanded" (SCI-EXPANDED), "Social Sciences
-Citation Index" (SSCI) and "Arts & Humanities Citation Index" (A&HCI) for the
-timespan 1989-present. Both databases allow to export bibliographic meta-data
-offer great accuracy and reproducibility of literature search. However, access
-to these databases required a subscription through payment of large money.
-Although both databases emerged in 2004, Scopus offers relatively larger
-coverage of scientific literature whereas Web of Science provides offers
-coverage from early 1900.\
-On the other hand, Google Scholar (<https://scholar.google.com/>) is freely
-available and has most comprehensive coverage as it offers retrieval of most
-obscure information. Although it also provides access to full text articles, it
-is not a bibliographic database. Its content is dynamic and has compromised
-accuracy. Further, it lacks several functionalities in literature search like
-subject filtering and tagging. Considering these limitations, we limited our
-literature search to two bibliographic databases of peer-reviewed literature
-(Web of Science Core Collection and Scopus).
-
-### Search strings
-
-We identified the terms that are frequently applied to the region using a
-preliminary literature search and discussion with review team members. Using
-combination of these terms, we developed a common search string for Web of
-Science and Scopus.
-
-> (Siwalik OR Siwalik OR Shivalik OR Sivalik) OR (himalaya\* AND (foothill\* OR
-> outer OR sub)) OR (hill\* AND (jammu OR kangra Or morni or mohand)) OR
-> (range\* AND (dudhwa OR dundwa))
-
-### Literature Search
-
--   [Scopus](https://scopus.com/): We have queried the above defined search
-    string to the "Article title, Abstract, Keywords" in "Documents" using the
-    default options for "Limit" (Date range (inclusive): Published from "All
-    years" to "Present"; Document type: "ALL"). This query returned a total of
-    4,102 document results on 03 April 2021. Then, we have filtered the results
-    by limiting subject to "Agricultural and Biological Sciences" and
-    "Environmental Science" subject areas, which yielded a total of 1,875
-    documents. All these documents were selected by choosing "Select All" option
-    and then exported all information by selecting "Citation information",
-    "Bibliographical information", "Abstract & keywords", "Funding details" and
-    "Other information" in the BibTex format.
-
--   [Web of Science Core Collection](https://webofknowledge.com/): The same
-    keyword combination was queried in the "Topic" field of Web of Science by
-    selecting the database "Web of Science Core Collection". Default settings
-    (Web of Science Core Collection: Citation Indexes - Science Citation Index
-    Expanded (SCI-EXPANDED) --1989-present, Social Sciences Citation Index
-    (SSCI) --1989-present, and Arts & Humanities Citation Index (A&HCI)
-    --1989-present; Auto-suggest publication names: On; and Default Number of
-    Search Fields to Display: 1 field (Topic)) were used under the more settings
-    option. This yielded us 2,978 results on 03 April 2021. Then the results
-    were refined by selecting following Web of Science categories: ENVIRONMENTAL
-    SCIENCES, PLANT SCIENCES, PALEONTOLOGY, ECOLOGY, BIOLOGY, REMOTE SENSING,
-    SOIL SCIENCE, BIODIVERSITY CONSERVATION, FORESTRY, EVOLUTIONARY BIOLOGY, and
-    ENVIRONMENTAL STUDIES. This yielded a total of 1,013 results. Then the
-    "Show" option was changed from "10 per page" (Default) to "50 per page".
-    Next, all entries on a page were first selected using the "Select Page"
-    option and then added to "Marked List" using the "Add to Marked List"
-    button. This was repeated for all the 21 pages and thus all the 1,103
-    entries were added to the "Marked List". Since Web of Science allows export
-    of 500 records at time, we have first selected the first 500 records by
-    defining the record range "Records: 1 to 500" under the "Step 1: Select
-    records." option. Then we have selected all the fields using the "Select
-    All" option under "Step 2: Select content. Select from the fields below:"
-    option. Next, we have exported the records in BibTex format using the
-    "Export" option under the "Step 3: Select destination." And then choosing
-    the "BibTex" option under the "Other File Formats". The same process was
-    repeated for records 501 to 1,000 and 1,001 to 1,013.
-
-### Article screening
-
-```{r fig21, fig.cap="Scheme for literature search and screening process based on [@haddaway2018]"}
+```{r fig21, fig.cap="ROSES flow diagram scheme for literature search, screening and inclusion process based on [@haddaway2018]"}
 library(DiagrammeR)
 grViz("digraph G{
 			
@@ -261,6 +193,95 @@ grViz("digraph G{
 	height = 800, width = 750)
 
 ```
+
+### Literature Database
+
+Scopus (<https://scopus.com/>) and Web of Science
+(<https://webofknowledge.com/>) are the most reliable databases for retrieval of
+high-quality peer-reviewed scientific literature in the fields of science and
+technology. Although the Web of Science Core Collection consists of seven
+indices: (i) Science Citation Index Expanded (SCIE), (ii) Social Sciences
+Citation Index (SSCI), (iii) Arts & Humanities Citation Index (AHCI), (iv)
+Conference Proceedings Citation Index (CPCI), (v) Book Citation Index (BCI),
+(vi) Emerging Sources Citation Index (ESCI), and (vii) Current Chemical
+Reactions and Index Chemicus
+(<https://clarivate.com/webofsciencegroup/solutions/web-of-science-core-collection/>),
+our institution provided us access to SCIE, SSCI and AHCI for the timespan
+1989-present. Both databases allow to export bibliographic meta-data offer great
+accuracy and reproducibility of literature search. However, access to these
+databases required a subscription through payment of large money. Although both
+databases emerged in 2004, Scopus offers relatively larger coverage of
+scientific literature whereas Web of Science provides offers coverage from early
+1900.
+
+On the other hand, Google Scholar (<https://scholar.google.com/>) is freely
+available and has most comprehensive coverage as it offers retrieval of most
+obscure information. Although it also provides access to full text articles, it
+is not a bibliographic database. Its content is dynamic and has compromised
+accuracy. Further, it lacks several functionalities in literature search like
+subject filtering and tagging. Considering these limitations, we limited our
+literature search to two bibliographic databases of peer-reviewed literature
+([Web of Science Core Collection](https://webofknowledge.com/) and
+[Scopus](https://scopus.com/)).
+
+### Search strings
+
+We identified the terms that are frequently applied to the region using a
+preliminary literature search and discussion with review team members. Using
+combination of these terms, we developed a common search string for Web of
+Science and Scopus.
+
+> (Siwalik OR Siwalik OR Shivalik OR Sivalik) OR (himalaya\* AND (foothill\* OR
+> outer OR sub)) OR (hill\* AND (jammu OR kangra OR morni OR mohand)) OR
+> (range\* AND (dudhwa OR dundwa))
+
+### Literature Search
+
+-   [Scopus](https://scopus.com/): We have queried the above defined search
+    string to the "Article title, Abstract, Keywords" in "Documents" using the
+    default options for "Limit" (Date range (inclusive): Published from "All
+    years" to "Present"; Document type: "ALL"). This query returned a total of
+    4,102 document results on 03 April 2021. Then, we have filtered the results
+    by limiting subject to "Agricultural and Biological Sciences" and
+    "Environmental Science" subject areas, which yielded a total of 1,875
+    documents. All these documents were selected by choosing "Select All" option
+    and then exported all information by selecting "Citation information",
+    "Bibliographical information", "Abstract & keywords", "Funding details" and
+    "Other information" in the BibTex format.
+
+-   [Web of Science Core Collection](https://webofknowledge.com/): The same
+    keyword combination was queried in the "Topic" field of Web of Science by
+    selecting the database "Web of Science Core Collection". Default settings
+    (Web of Science Core Collection: Citation Indexes - Science Citation Index
+    Expanded (SCI-EXPANDED) --1989-present, Social Sciences Citation Index
+    (SSCI) --1989-present, and Arts & Humanities Citation Index (A&HCI)
+    --1989-present; Auto-suggest publication names: On; and Default Number of
+    Search Fields to Display: 1 field (Topic)) were used under the more settings
+    option. This yielded us 2,978 results on 03 April 2021. Then the results
+    were refined by selecting following Web of Science categories: ENVIRONMENTAL
+    SCIENCES, PLANT SCIENCES, PALEONTOLOGY, ECOLOGY, BIOLOGY, REMOTE SENSING,
+    SOIL SCIENCE, BIODIVERSITY CONSERVATION, FORESTRY, EVOLUTIONARY BIOLOGY, and
+    ENVIRONMENTAL STUDIES. This yielded a total of 1,013 results. Then the
+    "Show" option was changed from "10 per page" (Default) to "50 per page".
+    Next, all entries on a page were first selected using the "Select Page"
+    option and then added to "Marked List" using the "Add to Marked List"
+    button. This was repeated for all the 21 pages and thus all the 1,103
+    entries were added to the "Marked List". Since Web of Science allows export
+    of 500 records at time, we have first selected the first 500 records by
+    defining the record range "Records: 1 to 500" under the "Step 1: Select
+    records." option. Then we have selected all the fields using the "Select
+    All" option under "Step 2: Select content. Select from the fields below:"
+    option. Next, we have exported the records in BibTex format using the
+    "Export" option under the "Step 3: Select destination." And then choosing
+    the "BibTex" option under the "Other File Formats". The same process was
+    repeated for records 501 to 1,000 and 1,001 to 1,013.
+
+Thus, we identified 2,888 records out of which 33 were non-English.
+
+### Article screening
+
+We used the package `revtools` [@revtools2019] in R programming environment [@R-base]
+for article screening phase.
 
 #### De-duplication
 
@@ -329,7 +350,7 @@ sc_titles <- screen_titles(unique_refs)
 rm(list = ls()) 
 ```
 
-```{r tab1}
+```{r tab11}
 # summary of title screening
 read.csv("./data/siwalik-ecology/screened_titles.csv")$screened_titles %>% table() %>% 
 	t() %>% kable(caption = "Summary of title screening")
@@ -338,7 +359,7 @@ read.csv("./data/siwalik-ecology/screened_titles.csv")$screened_titles %>% table
 We excluded 1,796 articles based on title screen and remaining 375 articles were
 selected for abstract screening out of which 158 articles were assigned
 "selected" and 217 articles were assigned "unknown" during the title screening
-(Table \@ref(tab:tab1)). Next, we removed the "excluded" articles and screened
+(Table \@ref(tab:tab11)). Next, we removed the "excluded" articles and screened
 for abstracts.
 
 ```{r eval=FALSE}
@@ -399,7 +420,7 @@ to retrieve fulltext of following 11 articles.
 8.  Rajwar, G. S. (1993). *Garhwal Himalaya: Ecology and Environment*. Ashish
     Publishing House, New Delhi.
 9.  Ram, N., & Jana, M. M. (1997). Ecological impact of compaction under teak
-    plantation in the foothill of darjeeling himalaya. *Indian Forester, 123*,
+    plantation in the foothill of Darjeeling himalaya. *Indian Forester, 123*,
     623--630.
 10. Rout, S., & Gupta, S. (1989). Soil respiration in relation to abiotic
     factors, forest floor litter, root biomass and litter quality in forest
@@ -452,29 +473,29 @@ information (if available) for each article:
     areas often overlap. However, we followed the following broad classification
     system for the present study.
 
-+----------------------+------------------------------------------------------+
-| Ecology Domain       | Included sub-domains                                 |
-+:=====================+:=====================================================+
-| Organismal Ecology   | Population genetics, natural selection, behaviour    |
-+----------------------+------------------------------------------------------+
-| Physiological        | Adaptations to abiotic factors like temperature,     |
-| Ecology              | light                                                |
-+----------------------+------------------------------------------------------+
-| Population Ecology   | Population growth, demography, age structure         |
-+----------------------+------------------------------------------------------+
-| Species Interactions | Competition, facilitation, parasitism, symbiosis     |
-+----------------------+------------------------------------------------------+
-| Community Ecology    | Species diversity, succession, biogeography          |
-+----------------------+------------------------------------------------------+
-| Ecosystem Ecology    | Food web, biomass production, nutrient cycling, soil |
-+----------------------+------------------------------------------------------+
-| Palaeoecology        | Fossil records, palaeo-vegetation                    |
-+----------------------+------------------------------------------------------+
-| Landscape Ecology    | Land use and land cover, ecological modelling,       |
-|                      | spatial and global Ecology                           |
-+----------------------+------------------------------------------------------+
-| Applied Ecology      | Conservation, management and restoration ecology     |
-+----------------------+------------------------------------------------------+
++----------------------+-------------------------------------------------------+
+| Ecology Domain       | Included sub-domains                                  |
++:=====================+:======================================================+
+| Organismal Ecology   | Population genetics, natural selection, behaviour     |
++----------------------+-------------------------------------------------------+
+| Physiological        | Adaptations to abiotic factors like temperature,      |
+| Ecology              | light                                                 |
++----------------------+-------------------------------------------------------+
+| Population Ecology   | Population growth, demography, age structure          |
++----------------------+-------------------------------------------------------+
+| Species Interactions | Competition, facilitation, parasitism, symbiosis      |
++----------------------+-------------------------------------------------------+
+| Community Ecology    | Species diversity, succession, biogeography           |
++----------------------+-------------------------------------------------------+
+| Ecosystem Ecology    | Food web, biomass production, nutrient cycling, soil  |
++----------------------+-------------------------------------------------------+
+| Palaeoecology        | Fossil records, palaeo-vegetation                     |
++----------------------+-------------------------------------------------------+
+| Landscape Ecology    | Land use and land cover, ecological modelling,        |
+|                      | spatial and global Ecology                            |
++----------------------+-------------------------------------------------------+
+| Applied Ecology      | Conservation, management and restoration ecology      |
++----------------------+-------------------------------------------------------+
 
 : (\#tab:tab4) Classification scheme
 
