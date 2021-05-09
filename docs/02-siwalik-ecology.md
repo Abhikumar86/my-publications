@@ -113,14 +113,14 @@ phases: searching, screening, and inclusion (Figure \@ref(fig:fig21)).
 <div class="figure" style="text-align: center">
 
 ```{=html}
-<div id="htmlwidget-a814cd2959733f0ea72d" style="width:750px;height:800px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-a814cd2959733f0ea72d">{"x":{"diagram":"digraph G{\n\t\t\t\n\tgraph[ranksep=0.35, newrank=true, nodesep=0.25, splines=ortho]\n\t\t\t\n\tsubgraph cluster_searching{\n\tlabel=\"Searching\"; style=filled; color=mintcream; fontsize=18\n\tnode[label=\"Scopus\n(n = 1,876)\", shape=box, width=1.25, \n\tfillcolor=grey95]searching_A;\n\tnode[label=\"Web of Science\n(n = 1,013)\", shape=box, width=1.25]searching_B;\n\tnode[label=\"Total records\n(n = 2,888)\", shape=box, width=3]searching_C;\n\tsearching_A -> searching_C\n\tsearching_B -> searching_C\n\t{rank=same;searching_A;searching_B}\n\t}\n\t\n\tsubgraph cluster_screening{\n\tlabel=\"\"; style=filled; color=lightyellow; shape=box; fontsize=18\n\tnode[label=\"Records after duplicates removed \n (n = 2,171)\", shape=box, \n\twidth=3]screening_1\n\tnode[label=\"Records after title screening \n (n = 375)\", shape=box, \n\twidth=3]screening_2\n\tnode[label=\"Records after abstract screening \n (n = 111)\",shape=box, \n\twidth=3]screening_3\n\tnode[label=\"Articles retrieved at full text \n (n = 100)\",shape=box, \n\twidth=3]screening_4\n\tnode[label=\"Articles after full text screening \n (n = 40)\",shape=box, \n\twidth=3]screening_5\n\tsearching_C -> screening_1[minlen=2, label=\"    Screening\"]\n\tscreening_1 -> screening_2 -> screening_3 -> screening_4 -> screening_5\n\t}\n\t\n\tnode[label=\"Duplicates \n (n = 717)\", shape=box, width=2, style=filled,\n\tfillcolor=seashell]screening_a\n\tnode[label=\"Excluded titles \n (n = 1,796)\", shape=box, width=2, style=filled,\n\tfillcolor=seashell]screening_b\n\tnode[label=\"Excluded abstracts \n (n = 264)\", shape=box, width=2, style=filled,\n\tfillcolor=seashell]screening_c\n\tnode[label=\"Unretrievable full text \n (n = 11)\", shape=box, width=2, style=filled,\n\tfillcolor=seashell]screening_d\n\tnode[label=\"Excluded articles \n (n = 71)\", shape=box, width=2, style=filled,\n\tfillcolor=seashell]screening_e\n\t\n\tscreening_1 -> screening_a\n\tscreening_2 -> screening_b\n\tscreening_3 -> screening_c\n\tscreening_4 -> screening_d\n\tscreening_5 -> screening_e\n\t\n\t{rank=same;screening_1;screening_a;}\n\t{rank=same;screening_2;screening_b;}\n\t{rank=same;screening_3;screening_c;}\n\t{rank=same;screening_4;screening_d;}\n\t{rank=same;screening_5;screening_e;}\n\t\n\tsubgraph cluster_articles{\n\tlabel=\"\";style=filled;color=grey95;\n\tnode[label=\"Studies included in synthesis \n (n = 40)\", shape=box, width=3, \n\tstyle=filled, fillcolor=grey95]articles_A\n\tscreening_5 -> articles_A[minlen=2, label=\"    Synthesis\"]\n\t}\n\t\n\t}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-6d3e1150fc263f9b8f54" style="width:750px;height:800px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-6d3e1150fc263f9b8f54">{"x":{"diagram":"digraph G{\n\t\t\t\n\tgraph[ranksep=0.35, newrank=true, nodesep=0.25, splines=ortho]\n\t\t\t\n\tsubgraph cluster_searching{\n\tlabel=\"Searching\"; style=filled; color=mintcream; fontsize=18\n\tnode[label=\"Scopus\n(n = 1,876)\", shape=box, width=1.25, \n\tfillcolor=grey95]searching_A;\n\tnode[label=\"Web of Science\n(n = 1,013)\", shape=box, width=1.25]searching_B;\n\tnode[label=\"Total records\n(n = 2,888)\", shape=box, width=3]searching_C;\n\tsearching_A -> searching_C\n\tsearching_B -> searching_C\n\t{rank=same;searching_A;searching_B}\n\t}\n\t\n\tsubgraph cluster_screening{\n\tlabel=\"\"; style=filled; color=lightyellow; shape=box; fontsize=18\n\tnode[label=\"Records after duplicates removed \n (n = 2,171)\", shape=box, \n\twidth=3]screening_1\n\tnode[label=\"Records after title screening \n (n = 375)\", shape=box, \n\twidth=3]screening_2\n\tnode[label=\"Records after abstract screening \n (n = 111)\",shape=box, \n\twidth=3]screening_3\n\tnode[label=\"Articles retrieved at full text \n (n = 100)\",shape=box, \n\twidth=3]screening_4\n\tnode[label=\"Articles after full text screening \n (n = 40)\",shape=box, \n\twidth=3]screening_5\n\tsearching_C -> screening_1[minlen=2, label=\"    Screening\"]\n\tscreening_1 -> screening_2 -> screening_3 -> screening_4 -> screening_5\n\t}\n\t\n\tnode[label=\"Duplicates \n (n = 717)\", shape=box, width=2, style=filled,\n\tfillcolor=seashell]screening_a\n\tnode[label=\"Excluded titles \n (n = 1,796)\", shape=box, width=2, style=filled,\n\tfillcolor=seashell]screening_b\n\tnode[label=\"Excluded abstracts \n (n = 264)\", shape=box, width=2, style=filled,\n\tfillcolor=seashell]screening_c\n\tnode[label=\"Unretrievable full text \n (n = 11)\", shape=box, width=2, style=filled,\n\tfillcolor=seashell]screening_d\n\tnode[label=\"Excluded articles \n (n = 71)\", shape=box, width=2, style=filled,\n\tfillcolor=seashell]screening_e\n\t\n\tscreening_1 -> screening_a\n\tscreening_2 -> screening_b\n\tscreening_3 -> screening_c\n\tscreening_4 -> screening_d\n\tscreening_5 -> screening_e\n\t\n\t{rank=same;screening_1;screening_a;}\n\t{rank=same;screening_2;screening_b;}\n\t{rank=same;screening_3;screening_c;}\n\t{rank=same;screening_4;screening_d;}\n\t{rank=same;screening_5;screening_e;}\n\t\n\tsubgraph cluster_articles{\n\tlabel=\"\";style=filled;color=grey95;\n\tnode[label=\"Studies included in synthesis \n (n = 40)\", shape=box, width=3, \n\tstyle=filled, fillcolor=grey95]articles_A\n\tscreening_5 -> articles_A[minlen=2, label=\"    Synthesis\"]\n\t}\n\t\n\t}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 ```
 
-<p class="caption">(\#fig:fig21)ROSES flow diagram scheme for literature search, screening and inclusion process based on [@haddaway2018]</p>
+<p class="caption">(\#fig:fig21)Schematic flow diagram for literature search, screening and inclusion process based on [@haddaway2018]</p>
 </div>
 
-### Literature Database
+### Literature database
 
 Scopus (<https://scopus.com/>) and Web of Science
 (<https://webofknowledge.com/>) are the most reliable databases for retrieval of
@@ -153,17 +153,58 @@ literature search to two bibliographic databases of peer-reviewed literature
 ### Search strings
 
 We identified the terms that are frequently applied to the region using a
-preliminary literature search and discussion with review team members. Using
-combination of these terms, we developed a common search string for Web of
-Science and Scopus.
+preliminary literature search and discussion with review team members 
+(Table \@ref(tab:kw21)). 
 
-> (Siwalik OR Siwalik OR Shivalik OR Sivalik) OR (himalaya\* AND (foothill\* OR
+<table>
+<caption>(\#tab:kw21)List of keywords used for developing search string</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;color: #fff !important;background-color: #666 !important;"> group1 </th>
+   <th style="text-align:left;color: #fff !important;background-color: #666 !important;"> group2 </th>
+   <th style="text-align:left;color: #fff !important;background-color: #666 !important;"> group3 </th>
+   <th style="text-align:left;color: #fff !important;background-color: #666 !important;"> group4 </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> shivalik </td>
+   <td style="text-align:left;"> himalayan foothills </td>
+   <td style="text-align:left;"> jammu hills </td>
+   <td style="text-align:left;"> dudhwa range </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> sivalik </td>
+   <td style="text-align:left;"> outer himalayas </td>
+   <td style="text-align:left;"> kangra hills </td>
+   <td style="text-align:left;"> dundwa range </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> shiwalik </td>
+   <td style="text-align:left;"> sub himalayas </td>
+   <td style="text-align:left;"> morni hills </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> siwalik </td>
+   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> mohand hills </td>
+   <td style="text-align:left;">  </td>
+  </tr>
+</tbody>
+</table>
+
+Using a combination of these terms with boolean operators, 
+we developed the following common search string for 
+[Web of Science](https://webofknowledge.com/) and [Scopus](https://scopus.com/).
+
+> (shivalik OR sivalik OR shiwalik OR siwalik) OR (himalaya\* AND (foothill\* OR
 > outer OR sub)) OR (hill\* AND (jammu OR kangra OR morni OR mohand)) OR
 > (range\* AND (dudhwa OR dundwa))
 
-### Literature Search
+### Literature search
 
--   [Scopus](https://scopus.com/): We have queried the above defined search
+[Scopus](https://scopus.com/): We have queried the above defined search
     string to the "Article title, Abstract, Keywords" in "Documents" using the
     default options for "Limit" (Date range (inclusive): Published from "All
     years" to "Present"; Document type: "ALL"). This query returned a total of
@@ -175,7 +216,7 @@ Science and Scopus.
     "Bibliographical information", "Abstract & keywords", "Funding details" and
     "Other information" in the BibTex format.
 
--   [Web of Science Core Collection](https://webofknowledge.com/): The same
+[Web of Science Core Collection](https://webofknowledge.com/): The same
     keyword combination was queried in the "Topic" field of Web of Science by
     selecting the database "Web of Science Core Collection". Default settings
     (Web of Science Core Collection: Citation Indexes - Science Citation Index
@@ -202,16 +243,70 @@ Science and Scopus.
     the "BibTex" option under the "Other File Formats". The same process was
     repeated for records 501 to 1,000 and 1,001 to 1,013.
 
-Thus, we identified 2,888 records out of which 33 were non-English.
-
 ### Article screening
 
-We used the package `revtools` [@revtools2019] in R programming environment [@R-base]
-for article screening phase.
+We used the package *revtools* [@revtools2019] in R programming environment [@R-base]
+for article screening phase. This phase included de-duplication, title screening,
+abstract screening and full text screening. For article screening phase, we adhered 
+to the previously proposed eligibility criteria (Table \@ref(tab:ec22)).
 
-#### De-duplication
+<table>
+<caption>(\#tab:ec22)Eligibility criteria for inclusion or exclusion of studies</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;color: #fff !important;background-color: #666 !important;"> Criteria </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr grouplength="6"><td colspan="1" style="border-bottom: 1px solid;"><strong>Inclusion</strong></td></tr>
+<tr>
+   <td style="text-align:left;padding-left: 2em;" indentlevel="1"> articles falling in general scope of plant ecology </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;padding-left: 2em;" indentlevel="1"> study sites or their part situated within the 
+			  boundary of Siwaliks </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;padding-left: 2em;" indentlevel="1"> studies involving plants as one of the component </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;padding-left: 2em;" indentlevel="1"> studies related to plant distributions and their interactions 
+			  with environment </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;padding-left: 2em;" indentlevel="1"> studies involving ecosystem processes such as nutrient cycling,
+			 carbon sequestration, and biomass production </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;padding-left: 2em;" indentlevel="1"> studies referring to palaeoecological studies such as fossil 
+			  distribution and past vegetation </td>
+  </tr>
+  <tr grouplength="6"><td colspan="1" style="border-bottom: 1px solid;"><strong>Exclusion</strong></td></tr>
+<tr>
+   <td style="text-align:left;padding-left: 2em;" indentlevel="1"> studies concerning animals, fungi, microbes or any organism 
+			  other than plants </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;padding-left: 2em;" indentlevel="1"> studies focusing agroecosystems and agricultural practices </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;padding-left: 2em;" indentlevel="1"> studies related to ethnobotanical or traditional uses of plants </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;padding-left: 2em;" indentlevel="1"> studies evaluating phytochemicals or biological activities </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;padding-left: 2em;" indentlevel="1"> studies focusing cytology, genetics or molecular biology of plants </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;padding-left: 2em;" indentlevel="1"> studies reporting discovery of new species </td>
+  </tr>
+</tbody>
+</table>
 
-Database may have erroneous duplications or due to automated information
+
+
+**De-duplication**: Database may have erroneous duplications or due to automated information
 extraction systems. Thus, the documents can be largely duplicated within and
 across literature databases. These duplicates might waste the energy and time of
 the reviewers apart from erroneous results of reviews. Therefore, removal of
@@ -221,60 +316,29 @@ documents based on doi (digital object identifier) of each articles. Then, we
 have de-duplicated by matching title of each article. However, the upper- or
 lower case and punctuations can interfere with title matching. Therefore, we
 converted titles to lower case and removed punctuations before matching. Thus,
-after de-duplication we are left with 2,171 (unique doi = 2366, unique doi +
-unique title = 2171) articles out of total 2,888 articles. After this, we have
+after de-duplication we are left with 2,171 (unique doi = 2,366, unique doi +
+unique title = 2,171) articles out of total 2,888 articles. After this, we have
 performed manual screening of duplicates, if remained any.
 
 
 
-#### Title & Abstract screening
-
-After de-duplication of articles, we performed article screening based on their
-titles. We have hidden every other information during title screening to avoid
-any potential bias. We assigned three labels to each article (i) selected, (ii)
-excluded, or (iii) unknown. We proposed to include those titles which reflected
-studies related to plant distributions and their interactions with environment.
-Additionally, we included studies indicated ecosystem processes such as nutrient
-cycling, carbon sequestration, and biomass production. We also included titles
-referring to the palaeoecological studies such as fossil distribution and past
-vegetation evidences. However, we excluded those titles which are reflecting
-studies related to any group of animals, fungi or other invertebrates. The
-studies related to agriculture, ethnobotanical uses, phytochemical
-characterisation, traditional use, cytology, and genetics, which were not
-relevant to plant ecology were excluded.
-
-
-
-
-Table: (\#tab:tab11)Summary of title screening
-
-| excluded| selected| unknown|
-|--------:|--------:|-------:|
-|     1796|      158|     217|
-
-We excluded 1,796 articles based on title screen and remaining 375 articles were
+**Title screening**: After de-duplication of articles, we performed 
+article screening based on their titles. We have hidden every other information 
+during title screening to avoid any potential bias. We assigned one of three labels 
+to each article (i) *selected*, (ii) *excluded*, or (iii) *unknown*. We excluded 
+1,796 articles based on title screen and remaining 375 articles were
 selected for abstract screening out of which 158 articles were assigned
-"selected" and 217 articles were assigned "unknown" during the title screening
-(Table \@ref(tab:tab11)). Next, we removed the "excluded" articles and screened
-for abstracts.
+"selected" and 217 articles were assigned "unknown" during the title screening. 
+Next, we removed the articles assigned as "excluded" and screened for abstracts.
 
 
 
-
-Table: (\#tab:tab2)Summary of abstract screening
-
-| excluded| selected|
-|--------:|--------:|
-|      264|      111|
-
-After screening abstracts, we excluded 264 articles and left with only 111
-articles. Then we filtered these 111 articles and saved the included articles.
-
-
-
-Then we searched for full text for every article from publisher's website,
+**Abstract screening**: Our abstract screening resulted in exclusion of 264 articles and 
+we are left with only 111 articles. Then we filtered these 111 articles and saved as the 
+included articles. Then we searched for full text for every article from publisher's website,
 Google Scholar, Research Gate and institutional repositories. We were not able
-to retrieve fulltext of following 11 articles.
+to retrieve full text of following 11 articles. We excluded these 11 articles and 
+screened full text of articles.  
 
 1.  Devi, B., Bhardwaj, D. R., Panwar, P., Pal, S., Gupta, N. K., & Thakur, C.
     L. (2013). Long term effects of natural and plantation forests on carbon
@@ -310,27 +374,14 @@ to retrieve fulltext of following 11 articles.
     Mortality of Chir pine trees by insect borers in Morni Hills, Haryana - A
     case study. *Indian Forester, 127*, 1279--1286.
 
-We excluded these 11 articles and screened fulltext of articles.
-
-#### Full text screening
-
-For full text screening, we first selected three variables (`label`, `journal`
-and `year`) from the included abstracts. Then, we manually screened articles
-based on the fulltext of every article.
 
 
+**Full text screening**: For full text screening, we first selected three variables 
+(`label`, `journal` and `year`) from the included abstracts. Then, we manually 
+screened articles based on the full text of every article. This process excluded 
+71 more articles and we left with only 40 studies.
 
-
-Table: (\#tab:tab3)Summary of fulltext screening
-
-| excluded| selected|
-|--------:|--------:|
-|       71|       40|
-
-Full-text screening resulted in exclusion of 71 articles and we left with 40
-articles.
-
-### Data Extraction and classification
+### Data extraction
 
 Considering the questions initially posed, we looked for the following
 information (if available) for each article:
@@ -344,37 +395,60 @@ information (if available) for each article:
 -   Domain and subdomain of plant ecology for each the study. Adopting a single
     unique classification system for ecological studies is difficult as study
     areas often overlap. However, we followed the following broad classification
-    system for the present study.
+    system for the present study (Table \@ref(tab:clasf23)).
 
-+----------------------+-------------------------------------------------------+
-| Ecology Domain       | Included sub-domains                                  |
-+:=====================+:======================================================+
-| Organismal Ecology   | Population genetics, natural selection, behaviour     |
-+----------------------+-------------------------------------------------------+
-| Physiological        | Adaptations to abiotic factors like temperature,      |
-| Ecology              | light                                                 |
-+----------------------+-------------------------------------------------------+
-| Population Ecology   | Population growth, demography, age structure          |
-+----------------------+-------------------------------------------------------+
-| Species Interactions | Competition, facilitation, parasitism, symbiosis      |
-+----------------------+-------------------------------------------------------+
-| Community Ecology    | Species diversity, succession, biogeography           |
-+----------------------+-------------------------------------------------------+
-| Ecosystem Ecology    | Food web, biomass production, nutrient cycling, soil  |
-+----------------------+-------------------------------------------------------+
-| Palaeoecology        | Fossil records, palaeo-vegetation                     |
-+----------------------+-------------------------------------------------------+
-| Landscape Ecology    | Land use and land cover, ecological modelling,        |
-|                      | spatial and global Ecology                            |
-+----------------------+-------------------------------------------------------+
-| Applied Ecology      | Conservation, management and restoration ecology      |
-+----------------------+-------------------------------------------------------+
-
-: (\#tab:tab4) Classification scheme
-
+<table>
+<caption>(\#tab:clasf23)Classification scheme for included studies</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;color: #fff !important;background-color: #666 !important;"> Ecology domain </th>
+   <th style="text-align:left;color: #fff !important;background-color: #666 !important;"> Included topics </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Organismal ecology </td>
+   <td style="text-align:left;"> Population genetics, natural selection, behaviour </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Physiological ecology </td>
+   <td style="text-align:left;"> Adaptations to abiotic factors like temperature, light </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Population ecology </td>
+   <td style="text-align:left;"> Population growth, demography, age structure </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Species interactions </td>
+   <td style="text-align:left;"> Competition, facilitation, parasitism, symbiosis </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Community ecology </td>
+   <td style="text-align:left;"> Species diversity, succession, biogeography </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Ecosystem ecology </td>
+   <td style="text-align:left;"> Food web, biomass production, nutrient cycling, soil </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Palaeoecology </td>
+   <td style="text-align:left;"> Fossil records, palaeo-vegetation </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Landscape ecology </td>
+   <td style="text-align:left;"> Land use and land cover, ecological modelling, spatial and global ecology </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Applied ecology </td>
+   <td style="text-align:left;"> Conservation, management and restoration ecology </td>
+  </tr>
+</tbody>
+</table>
 Next, we manually extracted data from each of the 40 articles and assigned an
 ecological domain and subdomain according the above classification system (Table
-\@ref(tab:tab4)).
+\@ref(tab:clasf23)).
+
+
 
 
 
@@ -386,15 +460,15 @@ ecological domain and subdomain according the above classification system (Table
 
 <img src="./data/siwalik-ecology/map.png" width="80%" style="display: block; margin: auto;" />
 
-<img src="02-siwalik-ecology_files/figure-html/unnamed-chunk-9-1.svg" width="80%" style="display: block; margin: auto;" />
+<img src="02-siwalik-ecology_files/figure-html/unnamed-chunk-8-1.svg" width="80%" style="display: block; margin: auto;" />
 
 ### Temporal distribution of the evidence
 
-<img src="02-siwalik-ecology_files/figure-html/unnamed-chunk-10-1.svg" width="80%" style="display: block; margin: auto;" />
+<img src="02-siwalik-ecology_files/figure-html/unnamed-chunk-9-1.svg" width="80%" style="display: block; margin: auto;" />
 
 ### Domains of ecology
 
-<img src="02-siwalik-ecology_files/figure-html/unnamed-chunk-11-1.svg" width="80%" style="display: block; margin: auto;" />
+<img src="02-siwalik-ecology_files/figure-html/unnamed-chunk-10-1.svg" width="80%" style="display: block; margin: auto;" />
 
 ### Taxonomic groups of plants
 
@@ -402,19 +476,52 @@ Among the various taxonomic groups of plants Angiosperms
 
 ### Top journal sources
 
-
-Table: (\#tab:unnamed-chunk-12)Top journal sources
-
-|Sources                                           | Articles|
-|:-------------------------------------------------|--------:|
-|INTERNATIONAL JOURNAL OF REMOTE SENSING           |        4|
-|Forest Ecology and Management                     |        3|
-|Tropical Ecology                                  |        3|
-|Environmental Monitoring and Assessment           |        2|
-|FLORA                                             |        2|
-|Indian Journal of Ecology                         |        2|
-|JOURNAL OF THE INDIAN SOCIETY OF REMOTE SENSING   |        2|
-|Palaeogeography, Palaeoclimatology, Palaeoecology |        2|
-|Proceedings: Plant Sciences                       |        2|
+<table>
+<caption>(\#tab:unnamed-chunk-11)Top journal sources</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Sources </th>
+   <th style="text-align:right;"> Articles </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> INTERNATIONAL JOURNAL OF REMOTE SENSING </td>
+   <td style="text-align:right;"> 4 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Forest Ecology and Management </td>
+   <td style="text-align:right;"> 3 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Tropical Ecology </td>
+   <td style="text-align:right;"> 3 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Environmental Monitoring and Assessment </td>
+   <td style="text-align:right;"> 2 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> FLORA </td>
+   <td style="text-align:right;"> 2 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Indian Journal of Ecology </td>
+   <td style="text-align:right;"> 2 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> JOURNAL OF THE INDIAN SOCIETY OF REMOTE SENSING </td>
+   <td style="text-align:right;"> 2 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Palaeogeography, Palaeoclimatology, Palaeoecology </td>
+   <td style="text-align:right;"> 2 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Proceedings: Plant Sciences </td>
+   <td style="text-align:right;"> 2 </td>
+  </tr>
+</tbody>
+</table>
 
 ### Knowledge gaps

@@ -126,7 +126,7 @@ the protocol, search strategy, screening, data extraction, analyses and writing.
 The selection of appropriate studies for the present review involved of three
 phases: searching, screening, and inclusion (Figure \@ref(fig:fig21)).
 
-```{r fig21, fig.cap="ROSES flow diagram scheme for literature search, screening and inclusion process based on [@haddaway2018]"}
+```{r fig21, fig.cap="Schematic flow diagram for literature search, screening and inclusion process based on [@haddaway2018]"}
 library(DiagrammeR)
 grViz("digraph G{
 			
@@ -194,7 +194,7 @@ grViz("digraph G{
 
 ```
 
-### Literature Database
+### Literature database
 
 Scopus (<https://scopus.com/>) and Web of Science
 (<https://webofknowledge.com/>) are the most reliable databases for retrieval of
@@ -227,17 +227,30 @@ literature search to two bibliographic databases of peer-reviewed literature
 ### Search strings
 
 We identified the terms that are frequently applied to the region using a
-preliminary literature search and discussion with review team members. Using
-combination of these terms, we developed a common search string for Web of
-Science and Scopus.
+preliminary literature search and discussion with review team members 
+(Table \@ref(tab:kw21)). 
 
-> (Siwalik OR Siwalik OR Shivalik OR Sivalik) OR (himalaya\* AND (foothill\* OR
+```{r kw21}
+kw <- data.frame(group1 = c("shivalik", "sivalik", "shiwalik", "siwalik"), 
+	  group2 = c("himalayan foothills", "outer himalayas", "sub himalayas", ""), 
+	  group3 = c("jammu hills", "kangra hills", "morni hills", "mohand hills"), 
+	  group4 = c("dudhwa range", "dundwa range", "", ""))
+
+knitr::kable(kw, caption = "List of keywords used for developing search string") %>%
+	kableExtra::row_spec(0, background = "#666", color = "#fff")
+```
+
+Using a combination of these terms with boolean operators, 
+we developed the following common search string for 
+[Web of Science](https://webofknowledge.com/) and [Scopus](https://scopus.com/).
+
+> (shivalik OR sivalik OR shiwalik OR siwalik) OR (himalaya\* AND (foothill\* OR
 > outer OR sub)) OR (hill\* AND (jammu OR kangra OR morni OR mohand)) OR
 > (range\* AND (dudhwa OR dundwa))
 
-### Literature Search
+### Literature search
 
--   [Scopus](https://scopus.com/): We have queried the above defined search
+[Scopus](https://scopus.com/): We have queried the above defined search
     string to the "Article title, Abstract, Keywords" in "Documents" using the
     default options for "Limit" (Date range (inclusive): Published from "All
     years" to "Present"; Document type: "ALL"). This query returned a total of
@@ -249,7 +262,7 @@ Science and Scopus.
     "Bibliographical information", "Abstract & keywords", "Funding details" and
     "Other information" in the BibTex format.
 
--   [Web of Science Core Collection](https://webofknowledge.com/): The same
+[Web of Science Core Collection](https://webofknowledge.com/): The same
     keyword combination was queried in the "Topic" field of Web of Science by
     selecting the database "Web of Science Core Collection". Default settings
     (Web of Science Core Collection: Citation Indexes - Science Citation Index
@@ -276,28 +289,39 @@ Science and Scopus.
     the "BibTex" option under the "Other File Formats". The same process was
     repeated for records 501 to 1,000 and 1,001 to 1,013.
 
-Thus, we identified 2,888 records out of which 33 were non-English.
-
 ### Article screening
 
-We used the package `revtools` [@revtools2019] in R programming environment [@R-base]
-for article screening phase.
+We used the package *revtools* [@revtools2019] in R programming environment [@R-base]
+for article screening phase. This phase included de-duplication, title screening,
+abstract screening and full text screening. For article screening phase, we adhered 
+to the previously proposed eligibility criteria (Table \@ref(tab:ec22)).
 
-#### De-duplication
+```{r ec22}
+ec <- data.frame(c("articles falling in general scope of plant ecology",
+			  "study sites or their part situated within the 
+			  boundary of Siwaliks",
+			  "studies involving plants as one of the component",
+			  "studies related to plant distributions and their interactions 
+			  with environment", 
+			  "studies involving ecosystem processes such as nutrient cycling,
+			 carbon sequestration, and biomass production", 
+			  "studies referring to palaeoecological studies such as fossil 
+			  distribution and past vegetation",
+			  "studies concerning animals, fungi, microbes or any organism 
+			  other than plants", 
+			  "studies focusing agroecosystems and agricultural practices", 
+			  "studies related to ethnobotanical or traditional uses of plants", 
+			  "studies evaluating phytochemicals or biological activities",
+			  "studies focusing cytology, genetics or molecular biology of plants",
+			  "studies reporting discovery of new species")
+	)
 
-Database may have erroneous duplications or due to automated information
-extraction systems. Thus, the documents can be largely duplicated within and
-across literature databases. These duplicates might waste the energy and time of
-the reviewers apart from erroneous results of reviews. Therefore, removal of
-duplicates is necessary. Several procedures and software are available for
-automated de-duplication of literature. Here, we have first de-duplicated the
-documents based on doi (digital object identifier) of each articles. Then, we
-have de-duplicated by matching title of each article. However, the upper- or
-lower case and punctuations can interfere with title matching. Therefore, we
-converted titles to lower case and removed punctuations before matching. Thus,
-after de-duplication we are left with 2,171 (unique doi = 2366, unique doi +
-unique title = 2171) articles out of total 2,888 articles. After this, we have
-performed manual screening of duplicates, if remained any.
+knitr::kable(ec, col.names = "Criteria",
+		 caption = "Eligibility criteria for inclusion or exclusion of studies") %>%
+	kableExtra::row_spec(0, background = "#666", color = "#fff") %>%
+	kableExtra::pack_rows("Inclusion", 1, 6) %>%
+	kableExtra::pack_rows("Exclusion", 7, 12)
+```
 
 ```{r eval=FALSE}
 ## read all the bibliography
@@ -323,21 +347,19 @@ unique_title <- extract_unique_references(x = unique_doi, matches = match.title)
 rm(list = ls()) 
 ```
 
-#### Title & Abstract screening
-
-After de-duplication of articles, we performed article screening based on their
-titles. We have hidden every other information during title screening to avoid
-any potential bias. We assigned three labels to each article (i) selected, (ii)
-excluded, or (iii) unknown. We proposed to include those titles which reflected
-studies related to plant distributions and their interactions with environment.
-Additionally, we included studies indicated ecosystem processes such as nutrient
-cycling, carbon sequestration, and biomass production. We also included titles
-referring to the palaeoecological studies such as fossil distribution and past
-vegetation evidences. However, we excluded those titles which are reflecting
-studies related to any group of animals, fungi or other invertebrates. The
-studies related to agriculture, ethnobotanical uses, phytochemical
-characterisation, traditional use, cytology, and genetics, which were not
-relevant to plant ecology were excluded.
+**De-duplication**: Database may have erroneous duplications or due to automated information
+extraction systems. Thus, the documents can be largely duplicated within and
+across literature databases. These duplicates might waste the energy and time of
+the reviewers apart from erroneous results of reviews. Therefore, removal of
+duplicates is necessary. Several procedures and software are available for
+automated de-duplication of literature. Here, we have first de-duplicated the
+documents based on doi (digital object identifier) of each articles. Then, we
+have de-duplicated by matching title of each article. However, the upper- or
+lower case and punctuations can interfere with title matching. Therefore, we
+converted titles to lower case and removed punctuations before matching. Thus,
+after de-duplication we are left with 2,171 (unique doi = 2,366, unique doi +
+unique title = 2,171) articles out of total 2,888 articles. After this, we have
+performed manual screening of duplicates, if remained any.
 
 ```{r eval=FALSE}
 ## read the unique articles
@@ -348,19 +370,20 @@ sc_titles <- screen_titles(unique_refs)
 #write.csv(sc_titles, "./data/siwalik-ecology/screened_titles.csv")
 ## remove all variables from the environment
 rm(list = ls()) 
-```
 
-```{r tab11}
 # summary of title screening
 read.csv("./data/siwalik-ecology/screened_titles.csv")$screened_titles %>% table() %>% 
 	t() %>% kable(caption = "Summary of title screening")
 ```
 
-We excluded 1,796 articles based on title screen and remaining 375 articles were
+**Title screening**: After de-duplication of articles, we performed 
+article screening based on their titles. We have hidden every other information 
+during title screening to avoid any potential bias. We assigned one of three labels 
+to each article (i) *selected*, (ii) *excluded*, or (iii) *unknown*. We excluded 
+1,796 articles based on title screen and remaining 375 articles were
 selected for abstract screening out of which 158 articles were assigned
-"selected" and 217 articles were assigned "unknown" during the title screening
-(Table \@ref(tab:tab11)). Next, we removed the "excluded" articles and screened
-for abstracts.
+"selected" and 217 articles were assigned "unknown" during the title screening. 
+Next, we removed the articles assigned as "excluded" and screened for abstracts.
 
 ```{r eval=FALSE}
 ## read screened titles and filter the included titles
@@ -372,18 +395,11 @@ sc_abstracts <- screen_abstracts(included_title)
 #write.csv(sc_abstracts, "./data/siwalik-ecology/screened_abstracts.csv")
 ## remove variables from the environment
 rm(list = ls()) 
-```
 
-```{r tab2}
 ## summary of abstract screening
 read.csv("./data/siwalik-ecology/screened_abstracts.csv")$screened_abstracts %>% 
       table() %>% t() %>% kable(caption = "Summary of abstract screening")
-```
 
-After screening abstracts, we excluded 264 articles and left with only 111
-articles. Then we filtered these 111 articles and saved the included articles.
-
-```{r eval=FALSE}
 ## read screened abstracts and filter the included abstracts
 included_abstracts <- read.csv("./data/siwalik-ecology/screened_abstracts.csv") %>% 
       filter(screened_abstracts != "excluded")
@@ -392,9 +408,12 @@ included_abstracts <- read.csv("./data/siwalik-ecology/screened_abstracts.csv") 
 			 #file = "./data/siwalik-ecology/included_abstracts.csv")
 ```
 
-Then we searched for full text for every article from publisher's website,
+**Abstract screening**: Our abstract screening resulted in exclusion of 264 articles and 
+we are left with only 111 articles. Then we filtered these 111 articles and saved as the 
+included articles. Then we searched for full text for every article from publisher's website,
 Google Scholar, Research Gate and institutional repositories. We were not able
-to retrieve fulltext of following 11 articles.
+to retrieve full text of following 11 articles. We excluded these 11 articles and 
+screened full text of articles.  
 
 1.  Devi, B., Bhardwaj, D. R., Panwar, P., Pal, S., Gupta, N. K., & Thakur, C.
     L. (2013). Long term effects of natural and plantation forests on carbon
@@ -430,15 +449,7 @@ to retrieve fulltext of following 11 articles.
     Mortality of Chir pine trees by insect borers in Morni Hills, Haryana - A
     case study. *Indian Forester, 127*, 1279--1286.
 
-We excluded these 11 articles and screened fulltext of articles.
-
-#### Full text screening
-
-For full text screening, we first selected three variables (`label`, `journal`
-and `year`) from the included abstracts. Then, we manually screened articles
-based on the fulltext of every article.
-
-```{r}
+```{r eval=FALSE}
 ## read the included abstracts and select the label, journal and year columns
 included_abstracts <- read.csv("./data/siwalik-ecology/included_abstracts.csv") %>%
 	dplyr::select(label, journal, year)
@@ -446,18 +457,18 @@ included_abstracts <- read.csv("./data/siwalik-ecology/included_abstracts.csv") 
 #write.csv(x = included_abstracts, file = "./data/siwalik-ecology/screened_fulltext.csv")
 ## read the screened fulltext
 screened_fulltext <- read.csv("./data/siwalik-ecology/screened_fulltext.csv")
-```
-
-```{r tab3}
+ 
 ## summary of fulltext screening
 screened_fulltext$screened_fulltext %>% table() %>% t() %>% 
 	kable(caption = "Summary of fulltext screening")
 ```
 
-Full-text screening resulted in exclusion of 71 articles and we left with 40
-articles.
+**Full text screening**: For full text screening, we first selected three variables 
+(`label`, `journal` and `year`) from the included abstracts. Then, we manually 
+screened articles based on the full text of every article. This process excluded 
+71 more articles and we left with only 40 studies.
 
-### Data Extraction and classification
+### Data extraction
 
 Considering the questions initially posed, we looked for the following
 information (if available) for each article:
@@ -471,37 +482,32 @@ information (if available) for each article:
 -   Domain and subdomain of plant ecology for each the study. Adopting a single
     unique classification system for ecological studies is difficult as study
     areas often overlap. However, we followed the following broad classification
-    system for the present study.
+    system for the present study (Table \@ref(tab:clasf23)).
 
-+----------------------+-------------------------------------------------------+
-| Ecology Domain       | Included sub-domains                                  |
-+:=====================+:======================================================+
-| Organismal Ecology   | Population genetics, natural selection, behaviour     |
-+----------------------+-------------------------------------------------------+
-| Physiological        | Adaptations to abiotic factors like temperature,      |
-| Ecology              | light                                                 |
-+----------------------+-------------------------------------------------------+
-| Population Ecology   | Population growth, demography, age structure          |
-+----------------------+-------------------------------------------------------+
-| Species Interactions | Competition, facilitation, parasitism, symbiosis      |
-+----------------------+-------------------------------------------------------+
-| Community Ecology    | Species diversity, succession, biogeography           |
-+----------------------+-------------------------------------------------------+
-| Ecosystem Ecology    | Food web, biomass production, nutrient cycling, soil  |
-+----------------------+-------------------------------------------------------+
-| Palaeoecology        | Fossil records, palaeo-vegetation                     |
-+----------------------+-------------------------------------------------------+
-| Landscape Ecology    | Land use and land cover, ecological modelling,        |
-|                      | spatial and global Ecology                            |
-+----------------------+-------------------------------------------------------+
-| Applied Ecology      | Conservation, management and restoration ecology      |
-+----------------------+-------------------------------------------------------+
+```{r clasf23}
+clasf <- data.frame(
+	ed = c("Organismal ecology", "Physiological ecology", "Population ecology", 
+		 "Species interactions", "Community ecology", "Ecosystem ecology",
+		 "Palaeoecology", "Landscape ecology", "Applied ecology"),
+	
+	sd = c("Population genetics, natural selection, behaviour",
+		 "Adaptations to abiotic factors like temperature, light",
+		"Population growth, demography, age structure",
+		 "Competition, facilitation, parasitism, symbiosis",
+		 "Species diversity, succession, biogeography",
+		 "Food web, biomass production, nutrient cycling, soil",
+		 "Fossil records, palaeo-vegetation",
+		 "Land use and land cover, ecological modelling, spatial and global ecology",
+		 "Conservation, management and restoration ecology")
+	)
 
-: (\#tab:tab4) Classification scheme
-
+knitr::kable(clasf, col.names = c("Ecology domain", "Included topics"),
+		 caption = "Classification scheme for included studies") %>%
+	kableExtra::row_spec(0, background = "#666", color = "#fff")
+```
 Next, we manually extracted data from each of the 40 articles and assigned an
 ecological domain and subdomain according the above classification system (Table
-\@ref(tab:tab4)).
+\@ref(tab:clasf23)).
 
 ```{r}
 ## read the screened fulltext and filter the selected articles
@@ -513,6 +519,8 @@ included_articles <- read.csv("./data/siwalik-ecology/screened_fulltext.csv") %>
 ## read the extracted data
 extracted_data <- read.csv("./data/siwalik-ecology/extracted_data.csv")
 ```
+
+
 
 ## Results
 
@@ -529,7 +537,7 @@ indsub.bbox <- st_bbox(obj = c(xmin = 67, xmax = 98, ymin = 5, ymax = 38),
                     crs = st_crs(4326)) %>% st_as_sfc()
 ## clip the Indian subcontinent
 indsub.clipped <- st_intersection(asia, indsub.bbox)
-## bounding box for area of ineterest
+## bounding box for area of interest
 sw_box <- st_bbox(obj = c(xmin = 73.5, xmax = 80.4, ymin = 28.4, ymax = 34.2),
                     crs = st_crs(4326)) %>% st_as_sfc()
 ## prepare inset map
