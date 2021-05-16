@@ -24,7 +24,7 @@
 <meta name="author" content="Abhishek Kumar" />
 
 
-<meta name="date" content="2021-05-09" />
+<meta name="date" content="2021-05-17" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -59,6 +59,10 @@
 <script src="libs/viz-1.8.2/viz.js"></script>
 <link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
 <script src="libs/grViz-binding-1.0.6.1/grViz.js"></script>
+<link href="libs/wordcloud2-0.0.1/wordcloud.css" rel="stylesheet" />
+<script src="libs/wordcloud2-0.0.1/wordcloud2-all.js"></script>
+<script src="libs/wordcloud2-0.0.1/hover.js"></script>
+<script src="libs/wordcloud2-binding-0.2.1/wordcloud2.js"></script>
 
 
 
@@ -124,15 +128,17 @@ div.csl-indent {
 <li class="chapter" data-level="2.4.3" data-path="methodology.html"><a href="methodology.html#literature-search"><i class="fa fa-check"></i><b>2.4.3</b> Literature search</a></li>
 <li class="chapter" data-level="2.4.4" data-path="methodology.html"><a href="methodology.html#article-screening"><i class="fa fa-check"></i><b>2.4.4</b> Article screening</a></li>
 <li class="chapter" data-level="2.4.5" data-path="methodology.html"><a href="methodology.html#data-extraction"><i class="fa fa-check"></i><b>2.4.5</b> Data extraction</a></li>
+<li class="chapter" data-level="2.4.6" data-path="methodology.html"><a href="methodology.html#bibliometric-data"><i class="fa fa-check"></i><b>2.4.6</b> Bibliometric data</a></li>
 </ul></li>
 <li class="chapter" data-level="2.5" data-path="results.html"><a href="results.html"><i class="fa fa-check"></i><b>2.5</b> Results</a>
 <ul>
-<li class="chapter" data-level="2.5.1" data-path="results.html"><a href="results.html#geographical-distribution-of-the-studies"><i class="fa fa-check"></i><b>2.5.1</b> Geographical distribution of the studies</a></li>
-<li class="chapter" data-level="2.5.2" data-path="results.html"><a href="results.html#temporal-distribution-of-the-evidence"><i class="fa fa-check"></i><b>2.5.2</b> Temporal distribution of the evidence</a></li>
-<li class="chapter" data-level="2.5.3" data-path="results.html"><a href="results.html#domains-of-ecology"><i class="fa fa-check"></i><b>2.5.3</b> Domains of ecology</a></li>
-<li class="chapter" data-level="2.5.4" data-path="results.html"><a href="results.html#taxonomic-groups-of-plants"><i class="fa fa-check"></i><b>2.5.4</b> Taxonomic groups of plants</a></li>
-<li class="chapter" data-level="2.5.5" data-path="results.html"><a href="results.html#top-journal-sources"><i class="fa fa-check"></i><b>2.5.5</b> Top journal sources</a></li>
-<li class="chapter" data-level="2.5.6" data-path="results.html"><a href="results.html#knowledge-gaps"><i class="fa fa-check"></i><b>2.5.6</b> Knowledge gaps</a></li>
+<li class="chapter" data-level="2.5.1" data-path="results.html"><a href="results.html#top-journal-sources"><i class="fa fa-check"></i><b>2.5.1</b> Top journal sources</a></li>
+<li class="chapter" data-level="2.5.2" data-path="results.html"><a href="results.html#temporal-distribution-of-studies"><i class="fa fa-check"></i><b>2.5.2</b> Temporal distribution of studies</a></li>
+<li class="chapter" data-level="2.5.3" data-path="results.html"><a href="results.html#geographical-distribution-of-the-studies"><i class="fa fa-check"></i><b>2.5.3</b> Geographical distribution of the studies</a></li>
+<li class="chapter" data-level="2.5.4" data-path="results.html"><a href="results.html#domains-of-ecology"><i class="fa fa-check"></i><b>2.5.4</b> Domains of ecology</a></li>
+<li class="chapter" data-level="2.5.5" data-path="results.html"><a href="results.html#three-fields"><i class="fa fa-check"></i><b>2.5.5</b> Three Fields</a></li>
+<li class="chapter" data-level="2.5.6" data-path="results.html"><a href="results.html#taxonomic-groups-of-plants"><i class="fa fa-check"></i><b>2.5.6</b> Taxonomic groups of plants</a></li>
+<li class="chapter" data-level="2.5.7" data-path="results.html"><a href="results.html#knowledge-gaps"><i class="fa fa-check"></i><b>2.5.7</b> Knowledge gaps</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>3</b> Methods</a></li>
@@ -178,10 +184,10 @@ the protocol, search strategy, screening, data extraction, analyses and writing.
 The selection of appropriate studies for the present review involved of three
 phases: searching, screening, and inclusion (Figure <a href="methodology.html#fig:fig21">2.1</a>).</p>
 <div class="figure" style="text-align: center"><span id="fig:fig21"></span>
-<div id="htmlwidget-6d3e1150fc263f9b8f54" style="width:750px;height:800px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-6d3e1150fc263f9b8f54">{"x":{"diagram":"digraph G{\n\t\t\t\n\tgraph[ranksep=0.35, newrank=true, nodesep=0.25, splines=ortho]\n\t\t\t\n\tsubgraph cluster_searching{\n\tlabel=\"Searching\"; style=filled; color=mintcream; fontsize=18\n\tnode[label=\"Scopus\n(n = 1,876)\", shape=box, width=1.25, \n\tfillcolor=grey95]searching_A;\n\tnode[label=\"Web of Science\n(n = 1,013)\", shape=box, width=1.25]searching_B;\n\tnode[label=\"Total records\n(n = 2,888)\", shape=box, width=3]searching_C;\n\tsearching_A -> searching_C\n\tsearching_B -> searching_C\n\t{rank=same;searching_A;searching_B}\n\t}\n\t\n\tsubgraph cluster_screening{\n\tlabel=\"\"; style=filled; color=lightyellow; shape=box; fontsize=18\n\tnode[label=\"Records after duplicates removed \n (n = 2,171)\", shape=box, \n\twidth=3]screening_1\n\tnode[label=\"Records after title screening \n (n = 375)\", shape=box, \n\twidth=3]screening_2\n\tnode[label=\"Records after abstract screening \n (n = 111)\",shape=box, \n\twidth=3]screening_3\n\tnode[label=\"Articles retrieved at full text \n (n = 100)\",shape=box, \n\twidth=3]screening_4\n\tnode[label=\"Articles after full text screening \n (n = 40)\",shape=box, \n\twidth=3]screening_5\n\tsearching_C -> screening_1[minlen=2, label=\"    Screening\"]\n\tscreening_1 -> screening_2 -> screening_3 -> screening_4 -> screening_5\n\t}\n\t\n\tnode[label=\"Duplicates \n (n = 717)\", shape=box, width=2, style=filled,\n\tfillcolor=seashell]screening_a\n\tnode[label=\"Excluded titles \n (n = 1,796)\", shape=box, width=2, style=filled,\n\tfillcolor=seashell]screening_b\n\tnode[label=\"Excluded abstracts \n (n = 264)\", shape=box, width=2, style=filled,\n\tfillcolor=seashell]screening_c\n\tnode[label=\"Unretrievable full text \n (n = 11)\", shape=box, width=2, style=filled,\n\tfillcolor=seashell]screening_d\n\tnode[label=\"Excluded articles \n (n = 71)\", shape=box, width=2, style=filled,\n\tfillcolor=seashell]screening_e\n\t\n\tscreening_1 -> screening_a\n\tscreening_2 -> screening_b\n\tscreening_3 -> screening_c\n\tscreening_4 -> screening_d\n\tscreening_5 -> screening_e\n\t\n\t{rank=same;screening_1;screening_a;}\n\t{rank=same;screening_2;screening_b;}\n\t{rank=same;screening_3;screening_c;}\n\t{rank=same;screening_4;screening_d;}\n\t{rank=same;screening_5;screening_e;}\n\t\n\tsubgraph cluster_articles{\n\tlabel=\"\";style=filled;color=grey95;\n\tnode[label=\"Studies included in synthesis \n (n = 40)\", shape=box, width=3, \n\tstyle=filled, fillcolor=grey95]articles_A\n\tscreening_5 -> articles_A[minlen=2, label=\"    Synthesis\"]\n\t}\n\t\n\t}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-4022bf9cd0783e48aef4" style="width:750px;height:800px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-4022bf9cd0783e48aef4">{"x":{"diagram":"digraph G{\n\t\t\t\n\tgraph[ranksep=0.35, newrank=true, nodesep=0.25, splines=ortho]\n\t\t\t\n\tsubgraph cluster_searching{\n\tlabel=\"\"; style=filled; color=mintcream; fontsize=18\n\tnode[label=\"Scopus\n(n = 1,876)\", shape=box, width=1.25, \n\tfillcolor=grey95]searching_A;\n\tnode[label=\"Web of Science\n(n = 1,013)\", shape=box, width=1.25]searching_B;\n\tnode[label=\"Total records\n(n = 2,888)\", shape=box, width=3]searching_C;\n\tsearching_A -> searching_C\n\tsearching_B -> searching_C\n\t{rank=same;searching_A;searching_B}\n\t}\n\t\n\tsubgraph cluster_screening{\n\tlabel=\"\"; style=filled; color=lightyellow; shape=box; fontsize=18\n\tnode[label=\"Records after duplicates removed \n (n = 2,171)\", shape=box, \n\twidth=3]screening_1\n\tnode[label=\"Records after title screening \n (n = 375)\", shape=box, \n\twidth=3]screening_2\n\tnode[label=\"Records after abstract screening \n (n = 111)\",shape=box, \n\twidth=3]screening_3\n\tnode[label=\"Articles retrieved at full text \n (n = 100)\",shape=box, \n\twidth=3]screening_4\n\tnode[label=\"Articles after full text screening \n (n = 40)\",shape=box, \n\twidth=3]screening_5\n\tsearching_C -> screening_1[minlen=1, label=\"    Screening\"]\n\tscreening_1 -> screening_2 -> screening_3 -> screening_4 -> screening_5\n\t}\n\t\n\tnode[label=\"Duplicates \n (n = 717)\", shape=box, width=2, style=filled,\n\tfillcolor=seashell]screening_a\n\tnode[label=\"Excluded titles \n (n = 1,796)\", shape=box, width=2, style=filled,\n\tfillcolor=seashell]screening_b\n\tnode[label=\"Excluded abstracts \n (n = 264)\", shape=box, width=2, style=filled,\n\tfillcolor=seashell]screening_c\n\tnode[label=\"Unretrievable full text \n (n = 11)\", shape=box, width=2, style=filled,\n\tfillcolor=seashell]screening_d\n\tnode[label=\"Excluded articles \n (n = 71)\", shape=box, width=2, style=filled,\n\tfillcolor=seashell]screening_e\n\t\n\tscreening_1 -> screening_a\n\tscreening_2 -> screening_b\n\tscreening_3 -> screening_c\n\tscreening_4 -> screening_d\n\tscreening_5 -> screening_e\n\t\n\t{rank=same;screening_1;screening_a;}\n\t{rank=same;screening_2;screening_b;}\n\t{rank=same;screening_3;screening_c;}\n\t{rank=same;screening_4;screening_d;}\n\t{rank=same;screening_5;screening_e;}\n\t\n\tsubgraph cluster_articles{\n\tlabel=\"\"; style=filled; color=grey95;\n\tnode[label=\"Studies after full text screening \n (n = 40)\", shape=box, width=3, \n\tstyle=filled, fillcolor=grey95]articles_A\n\tnode[label=\"Studies included in synthesis \n (n = 39)\", shape=box, width=3, \n\tstyle=filled, fillcolor=grey40, color=grey20, fontcolor=white]articles_B\n\tscreening_5 -> articles_A[minlen=1, label=\"    Synthesis\"]\n\tarticles_A -> articles_B\n\t}\n\t\n\tnode[label=\"Excluded studies \n (n = 1)\", shape=box, width=2, style=filled,\n\tfillcolor=seashell]studies_e\n\tarticles_A -> studies_e\n\t{rank=same;articles_A;studies_e}\t\n\t\n\t}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 <p class="caption">
-Figure 2.1: Schematic flow diagram for literature search, screening and inclusion process based on <span class="citation">(<a href="#ref-haddaway2018" role="doc-biblioref">Haddaway, Macura, Whaley, &amp; Pullin, 2018</a>)</span>
+Figure 2.1: Schematic flow diagram for literature search, screening and inclusion process <span class="citation">(modified from <a href="#ref-haddaway2018" role="doc-biblioref">Haddaway, Macura, Whaley, &amp; Pullin, 2018</a>)</span>
 </p>
 </div>
 <div id="literature-database" class="section level3" number="2.4.1">
@@ -373,8 +379,7 @@ articles falling in general scope of plant ecology
 </tr>
 <tr>
 <td style="text-align:left;padding-left: 2em;" indentlevel="1">
-study sites or their part situated within the
-boundary of Siwaliks
+study sites or their part situated within the boundary of Siwaliks
 </td>
 </tr>
 <tr>
@@ -384,20 +389,20 @@ studies involving plants as one of the component
 </tr>
 <tr>
 <td style="text-align:left;padding-left: 2em;" indentlevel="1">
-studies related to plant distributions and their interactions
-with environment
+studies related to plant distributions and their interactions with
+environment
 </td>
 </tr>
 <tr>
 <td style="text-align:left;padding-left: 2em;" indentlevel="1">
-studies involving ecosystem processes such as nutrient cycling,
-carbon sequestration, and biomass production
+studies involving ecosystem processes such as nutrient cycling, carbon
+sequestration, and biomass production
 </td>
 </tr>
 <tr>
 <td style="text-align:left;padding-left: 2em;" indentlevel="1">
-studies referring to palaeoecological studies such as fossil
-distribution and past vegetation
+studies referring to palaeoecological studies such as fossil distribution
+and past vegetation
 </td>
 </tr>
 <tr grouplength="6">
@@ -407,8 +412,8 @@ distribution and past vegetation
 </tr>
 <tr>
 <td style="text-align:left;padding-left: 2em;" indentlevel="1">
-studies concerning animals, fungi, microbes or any organism
-other than plants
+studies concerning animals, fungi, microbes or any organism other than
+plants
 </td>
 </tr>
 <tr>
@@ -449,8 +454,8 @@ have de-duplicated by matching title of each article. However, the upper- or
 lower case and punctuations can interfere with title matching. Therefore, we
 converted titles to lower case and removed punctuations before matching. Thus,
 after de-duplication we are left with 2,171 (unique doi = 2,366, unique doi +
-unique title = 2,171) articles out of total 2,888 articles. After this, we have
-performed manual screening of duplicates, if remained any.</p>
+unique title = 2,171) articles out of total 2,888 articles (Figure <a href="methodology.html#fig:fig21">2.1</a>).
+After this, we have performed manual screening of duplicates, if remained any.</p>
 <p><strong>Title screening</strong>: After de-duplication of articles, we performed
 article screening based on their titles. We have hidden every other information
 during title screening to avoid any potential bias. We assigned one of three labels
@@ -461,7 +466,8 @@ selected for abstract screening out of which 158 articles were assigned
 Next, we removed the articles assigned as “excluded” and screened for abstracts.</p>
 <p><strong>Abstract screening</strong>: Our abstract screening resulted in exclusion of 264 articles and
 we are left with only 111 articles. Then we filtered these 111 articles and saved as the
-included articles. Then we searched for full text for every article from publisher’s website,
+included articles (Figure <a href="methodology.html#fig:fig21">2.1</a>). Then we searched for full text for
+every article from publisher’s website,
 Google Scholar, Research Gate and institutional repositories. We were not able
 to retrieve full text of following 11 articles. We excluded these 11 articles and
 screened full text of articles.</p>
@@ -500,25 +506,26 @@ Plantarum, 10</em>(3), 229–244.</li>
 Mortality of Chir pine trees by insect borers in Morni Hills, Haryana - A
 case study. <em>Indian Forester, 127</em>, 1279–1286.</li>
 </ol>
-<p><strong>Full text screening</strong>: For full text screening, we first selected three variables
-(<code>label</code>, <code>journal</code> and <code>year</code>) from the included abstracts. Then, we manually
-screened articles based on the full text of every article. This process excluded
-71 more articles and we left with only 40 studies.</p>
+<p><strong>Full text screening</strong>: For full text screening, we first selected five variables
+(<code>label</code>, <code>title</code>, <code>journal</code>, <code>year</code> and <code>doi</code>) from the included abstracts.
+Then, we manually screened articles based on the full text of every article.
+This process excluded 71 more articles and we left with only 40 studies
+(Figure <a href="methodology.html#fig:fig21">2.1</a>).</p>
 </div>
 <div id="data-extraction" class="section level3" number="2.4.5">
 <h3><span class="header-section-number">2.4.5</span> Data extraction</h3>
 <p>Considering the questions initially posed, we looked for the following
 information (if available) for each article:</p>
 <ul>
-<li>plant taxa studied (if available), to estimate taxonomic scope of studies</li>
+<li>taxonomic group of plants under study (if available), to estimate taxonomic scope of studies</li>
 <li>geographic location (latitude and longitude) to estimate geographical
 distribution of studies. If it is not available in study, we estimate the
 approx location using Google Maps and Google Earth. We also recorded the
 Indian state in which study was conducted.</li>
 <li>year of the study to estimate temporal distribution of studies</li>
-<li>Domain and subdomain of plant ecology for each the study. Adopting a single
+<li>Domain of plant ecology for each the study. Adopting a single
 unique classification system for ecological studies is difficult as study
-areas often overlap. However, we followed the following broad classification
+areas often overlap. However, we adhered to the following broad classification
 system for the present study (Table <a href="methodology.html#tab:clasf23">2.3</a>).</li>
 </ul>
 <table>
@@ -611,8 +618,18 @@ Conservation, management and restoration ecology
 </tbody>
 </table>
 <p>Next, we manually extracted data from each of the 40 articles and assigned an
-ecological domain and subdomain according the above classification system (Table
+ecological domain according the above classification system (Table
 <a href="methodology.html#tab:clasf23">2.3</a>).</p>
+</div>
+<div id="bibliometric-data" class="section level3" number="2.4.6">
+<h3><span class="header-section-number">2.4.6</span> Bibliometric data</h3>
+<p>We developed a search string based on the doi (digital object identifier) and
+title (if doi is not available) of included studies to extract bibliometric metadata from the
+Scopus database. We retrieved bibliometric information for 39 articles on 09 May 2021.
+However, we were not able to extract metadata for an article because it was not available
+in Scopus; therefore, we excluded it from the final systematic map and narrative
+synthesis (Figure <a href="methodology.html#fig:fig21">2.1</a>). This bibliometric data had several missing
+values (marked as <code>NA</code>), these values were manually added from the full text.</p>
 </div>
 </div>
 <h3>References</h3>
@@ -630,7 +647,7 @@ Haddaway, N., Macura, B., Whaley, P., &amp; Pullin, A. (2018). ROSES flow diagra
 R Core Team. (2020). <em>R: A language and environment for statistical computing</em>. Vienna, Austria: R Foundation for Statistical Computing. Retrieved from <a href="https://www.R-project.org/">https://www.R-project.org/</a>
 </div>
 <div id="ref-revtools2019" class="csl-entry">
-Westgate, M. J. (2019). Revtools: An r package to support article screening for evidence synthesis. <em>Research Synthesis Methods</em>. <a href="https://doi.org/10.1002/jrsm.1374">https://doi.org/10.1002/jrsm.1374</a>
+Westgate, M. J. (2019). <span class="nocase">r</span>evtools: An r package to support article screening for evidence synthesis. <em>Research Synthesis Methods</em>, <em>10</em>(4), 606–614. <a href="https://doi.org/10.1002/jrsm.1374">https://doi.org/10.1002/jrsm.1374</a>
 </div>
 </div>
             </section>

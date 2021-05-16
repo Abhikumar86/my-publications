@@ -113,11 +113,11 @@ phases: searching, screening, and inclusion (Figure \@ref(fig:fig21)).
 <div class="figure" style="text-align: center">
 
 ```{=html}
-<div id="htmlwidget-6d3e1150fc263f9b8f54" style="width:750px;height:800px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-6d3e1150fc263f9b8f54">{"x":{"diagram":"digraph G{\n\t\t\t\n\tgraph[ranksep=0.35, newrank=true, nodesep=0.25, splines=ortho]\n\t\t\t\n\tsubgraph cluster_searching{\n\tlabel=\"Searching\"; style=filled; color=mintcream; fontsize=18\n\tnode[label=\"Scopus\n(n = 1,876)\", shape=box, width=1.25, \n\tfillcolor=grey95]searching_A;\n\tnode[label=\"Web of Science\n(n = 1,013)\", shape=box, width=1.25]searching_B;\n\tnode[label=\"Total records\n(n = 2,888)\", shape=box, width=3]searching_C;\n\tsearching_A -> searching_C\n\tsearching_B -> searching_C\n\t{rank=same;searching_A;searching_B}\n\t}\n\t\n\tsubgraph cluster_screening{\n\tlabel=\"\"; style=filled; color=lightyellow; shape=box; fontsize=18\n\tnode[label=\"Records after duplicates removed \n (n = 2,171)\", shape=box, \n\twidth=3]screening_1\n\tnode[label=\"Records after title screening \n (n = 375)\", shape=box, \n\twidth=3]screening_2\n\tnode[label=\"Records after abstract screening \n (n = 111)\",shape=box, \n\twidth=3]screening_3\n\tnode[label=\"Articles retrieved at full text \n (n = 100)\",shape=box, \n\twidth=3]screening_4\n\tnode[label=\"Articles after full text screening \n (n = 40)\",shape=box, \n\twidth=3]screening_5\n\tsearching_C -> screening_1[minlen=2, label=\"    Screening\"]\n\tscreening_1 -> screening_2 -> screening_3 -> screening_4 -> screening_5\n\t}\n\t\n\tnode[label=\"Duplicates \n (n = 717)\", shape=box, width=2, style=filled,\n\tfillcolor=seashell]screening_a\n\tnode[label=\"Excluded titles \n (n = 1,796)\", shape=box, width=2, style=filled,\n\tfillcolor=seashell]screening_b\n\tnode[label=\"Excluded abstracts \n (n = 264)\", shape=box, width=2, style=filled,\n\tfillcolor=seashell]screening_c\n\tnode[label=\"Unretrievable full text \n (n = 11)\", shape=box, width=2, style=filled,\n\tfillcolor=seashell]screening_d\n\tnode[label=\"Excluded articles \n (n = 71)\", shape=box, width=2, style=filled,\n\tfillcolor=seashell]screening_e\n\t\n\tscreening_1 -> screening_a\n\tscreening_2 -> screening_b\n\tscreening_3 -> screening_c\n\tscreening_4 -> screening_d\n\tscreening_5 -> screening_e\n\t\n\t{rank=same;screening_1;screening_a;}\n\t{rank=same;screening_2;screening_b;}\n\t{rank=same;screening_3;screening_c;}\n\t{rank=same;screening_4;screening_d;}\n\t{rank=same;screening_5;screening_e;}\n\t\n\tsubgraph cluster_articles{\n\tlabel=\"\";style=filled;color=grey95;\n\tnode[label=\"Studies included in synthesis \n (n = 40)\", shape=box, width=3, \n\tstyle=filled, fillcolor=grey95]articles_A\n\tscreening_5 -> articles_A[minlen=2, label=\"    Synthesis\"]\n\t}\n\t\n\t}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-4022bf9cd0783e48aef4" style="width:750px;height:800px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-4022bf9cd0783e48aef4">{"x":{"diagram":"digraph G{\n\t\t\t\n\tgraph[ranksep=0.35, newrank=true, nodesep=0.25, splines=ortho]\n\t\t\t\n\tsubgraph cluster_searching{\n\tlabel=\"\"; style=filled; color=mintcream; fontsize=18\n\tnode[label=\"Scopus\n(n = 1,876)\", shape=box, width=1.25, \n\tfillcolor=grey95]searching_A;\n\tnode[label=\"Web of Science\n(n = 1,013)\", shape=box, width=1.25]searching_B;\n\tnode[label=\"Total records\n(n = 2,888)\", shape=box, width=3]searching_C;\n\tsearching_A -> searching_C\n\tsearching_B -> searching_C\n\t{rank=same;searching_A;searching_B}\n\t}\n\t\n\tsubgraph cluster_screening{\n\tlabel=\"\"; style=filled; color=lightyellow; shape=box; fontsize=18\n\tnode[label=\"Records after duplicates removed \n (n = 2,171)\", shape=box, \n\twidth=3]screening_1\n\tnode[label=\"Records after title screening \n (n = 375)\", shape=box, \n\twidth=3]screening_2\n\tnode[label=\"Records after abstract screening \n (n = 111)\",shape=box, \n\twidth=3]screening_3\n\tnode[label=\"Articles retrieved at full text \n (n = 100)\",shape=box, \n\twidth=3]screening_4\n\tnode[label=\"Articles after full text screening \n (n = 40)\",shape=box, \n\twidth=3]screening_5\n\tsearching_C -> screening_1[minlen=1, label=\"    Screening\"]\n\tscreening_1 -> screening_2 -> screening_3 -> screening_4 -> screening_5\n\t}\n\t\n\tnode[label=\"Duplicates \n (n = 717)\", shape=box, width=2, style=filled,\n\tfillcolor=seashell]screening_a\n\tnode[label=\"Excluded titles \n (n = 1,796)\", shape=box, width=2, style=filled,\n\tfillcolor=seashell]screening_b\n\tnode[label=\"Excluded abstracts \n (n = 264)\", shape=box, width=2, style=filled,\n\tfillcolor=seashell]screening_c\n\tnode[label=\"Unretrievable full text \n (n = 11)\", shape=box, width=2, style=filled,\n\tfillcolor=seashell]screening_d\n\tnode[label=\"Excluded articles \n (n = 71)\", shape=box, width=2, style=filled,\n\tfillcolor=seashell]screening_e\n\t\n\tscreening_1 -> screening_a\n\tscreening_2 -> screening_b\n\tscreening_3 -> screening_c\n\tscreening_4 -> screening_d\n\tscreening_5 -> screening_e\n\t\n\t{rank=same;screening_1;screening_a;}\n\t{rank=same;screening_2;screening_b;}\n\t{rank=same;screening_3;screening_c;}\n\t{rank=same;screening_4;screening_d;}\n\t{rank=same;screening_5;screening_e;}\n\t\n\tsubgraph cluster_articles{\n\tlabel=\"\"; style=filled; color=grey95;\n\tnode[label=\"Studies after full text screening \n (n = 40)\", shape=box, width=3, \n\tstyle=filled, fillcolor=grey95]articles_A\n\tnode[label=\"Studies included in synthesis \n (n = 39)\", shape=box, width=3, \n\tstyle=filled, fillcolor=grey40, color=grey20, fontcolor=white]articles_B\n\tscreening_5 -> articles_A[minlen=1, label=\"    Synthesis\"]\n\tarticles_A -> articles_B\n\t}\n\t\n\tnode[label=\"Excluded studies \n (n = 1)\", shape=box, width=2, style=filled,\n\tfillcolor=seashell]studies_e\n\tarticles_A -> studies_e\n\t{rank=same;articles_A;studies_e}\t\n\t\n\t}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 ```
 
-<p class="caption">(\#fig:fig21)Schematic flow diagram for literature search, screening and inclusion process based on [@haddaway2018]</p>
+<p class="caption">(\#fig:fig21)Schematic flow diagram for literature search, screening and inclusion process [modified from @haddaway2018]</p>
 </div>
 
 ### Literature database
@@ -263,28 +263,27 @@ to the previously proposed eligibility criteria (Table \@ref(tab:ec22)).
    <td style="text-align:left;padding-left: 2em;" indentlevel="1"> articles falling in general scope of plant ecology </td>
   </tr>
   <tr>
-   <td style="text-align:left;padding-left: 2em;" indentlevel="1"> study sites or their part situated within the 
-			  boundary of Siwaliks </td>
+   <td style="text-align:left;padding-left: 2em;" indentlevel="1"> study sites or their part situated within the boundary of Siwaliks </td>
   </tr>
   <tr>
    <td style="text-align:left;padding-left: 2em;" indentlevel="1"> studies involving plants as one of the component </td>
   </tr>
   <tr>
-   <td style="text-align:left;padding-left: 2em;" indentlevel="1"> studies related to plant distributions and their interactions 
-			  with environment </td>
+   <td style="text-align:left;padding-left: 2em;" indentlevel="1"> studies related to plant distributions and their interactions with 
+	  environment </td>
   </tr>
   <tr>
-   <td style="text-align:left;padding-left: 2em;" indentlevel="1"> studies involving ecosystem processes such as nutrient cycling,
-			 carbon sequestration, and biomass production </td>
+   <td style="text-align:left;padding-left: 2em;" indentlevel="1"> studies involving ecosystem processes such as nutrient cycling, carbon 
+	  sequestration, and biomass production </td>
   </tr>
   <tr>
-   <td style="text-align:left;padding-left: 2em;" indentlevel="1"> studies referring to palaeoecological studies such as fossil 
-			  distribution and past vegetation </td>
+   <td style="text-align:left;padding-left: 2em;" indentlevel="1"> studies referring to palaeoecological studies such as fossil distribution 
+	  and past vegetation </td>
   </tr>
   <tr grouplength="6"><td colspan="1" style="border-bottom: 1px solid;"><strong>Exclusion</strong></td></tr>
 <tr>
-   <td style="text-align:left;padding-left: 2em;" indentlevel="1"> studies concerning animals, fungi, microbes or any organism 
-			  other than plants </td>
+   <td style="text-align:left;padding-left: 2em;" indentlevel="1"> studies concerning animals, fungi, microbes or any organism other than 
+	  plants </td>
   </tr>
   <tr>
    <td style="text-align:left;padding-left: 2em;" indentlevel="1"> studies focusing agroecosystems and agricultural practices </td>
@@ -306,6 +305,8 @@ to the previously proposed eligibility criteria (Table \@ref(tab:ec22)).
 
 
 
+
+
 **De-duplication**: Database may have erroneous duplications or due to automated information
 extraction systems. Thus, the documents can be largely duplicated within and
 across literature databases. These duplicates might waste the energy and time of
@@ -317,8 +318,8 @@ have de-duplicated by matching title of each article. However, the upper- or
 lower case and punctuations can interfere with title matching. Therefore, we
 converted titles to lower case and removed punctuations before matching. Thus,
 after de-duplication we are left with 2,171 (unique doi = 2,366, unique doi +
-unique title = 2,171) articles out of total 2,888 articles. After this, we have
-performed manual screening of duplicates, if remained any.
+unique title = 2,171) articles out of total 2,888 articles (Figure \@ref(fig:fig21)). 
+After this, we have performed manual screening of duplicates, if remained any.
 
 
 
@@ -335,7 +336,8 @@ Next, we removed the articles assigned as "excluded" and screened for abstracts.
 
 **Abstract screening**: Our abstract screening resulted in exclusion of 264 articles and 
 we are left with only 111 articles. Then we filtered these 111 articles and saved as the 
-included articles. Then we searched for full text for every article from publisher's website,
+included articles (Figure \@ref(fig:fig21)). Then we searched for full text for 
+every article from publisher's website,
 Google Scholar, Research Gate and institutional repositories. We were not able
 to retrieve full text of following 11 articles. We excluded these 11 articles and 
 screened full text of articles.  
@@ -376,25 +378,26 @@ screened full text of articles.
 
 
 
-**Full text screening**: For full text screening, we first selected three variables 
-(`label`, `journal` and `year`) from the included abstracts. Then, we manually 
-screened articles based on the full text of every article. This process excluded 
-71 more articles and we left with only 40 studies.
+**Full text screening**: For full text screening, we first selected five variables 
+(`label`, `title`, `journal`, `year`  and `doi`) from the included abstracts. 
+Then, we manually  screened articles based on the full text of every article. 
+This process excluded 71 more articles and we left with only 40 studies 
+(Figure \@ref(fig:fig21)).
 
 ### Data extraction
 
 Considering the questions initially posed, we looked for the following
 information (if available) for each article:
 
--   plant taxa studied (if available), to estimate taxonomic scope of studies
+-   taxonomic group of plants under study (if available), to estimate taxonomic scope of studies
 -   geographic location (latitude and longitude) to estimate geographical
     distribution of studies. If it is not available in study, we estimate the
     approx location using Google Maps and Google Earth. We also recorded the
     Indian state in which study was conducted.
 -   year of the study to estimate temporal distribution of studies
--   Domain and subdomain of plant ecology for each the study. Adopting a single
+-   Domain of plant ecology for each the study. Adopting a single
     unique classification system for ecological studies is difficult as study
-    areas often overlap. However, we followed the following broad classification
+    areas often overlap. However, we adhered to the following broad classification
     system for the present study (Table \@ref(tab:clasf23)).
 
 <table>
@@ -445,83 +448,190 @@ information (if available) for each article:
 </tbody>
 </table>
 Next, we manually extracted data from each of the 40 articles and assigned an
-ecological domain and subdomain according the above classification system (Table
+ecological domain according the above classification system (Table
 \@ref(tab:clasf23)).
 
 
 
+### Bibliometric data
 
+We developed a search string based on the doi (digital object identifier) and 
+title (if doi is not available) of included studies to  extract bibliometric metadata from the 
+Scopus database. We retrieved bibliometric information for 39 articles on 09 May 2021.
+However, we were not able to extract metadata for an article because it was not available 
+in Scopus; therefore, we excluded it from the final systematic map and narrative 
+synthesis (Figure \@ref(fig:fig21)). This bibliometric data had several missing 
+values (marked as `NA`), these values were manually added from the full text.
 
 ## Results
+
+Our systematic literature search yielded total 2,888 documents from both Scopus 
+and Web of Science Core Collection. After de-duplication and article screening, 
+these records were reduced to 40 studies (Figure \@ref(fig:fig21)). However, only 
+39 studies were included in the final synthesis as bibliographic metadata was not 
+available for a study (Figure \@ref(fig:fig21)). Thus, this synthesis is based on 
+total 39 studies published in 26 sources (journals) during 1988 to 2021. The results
+of descriptive analysis of bibliometric indicators for selected studies is represented
+in Table \@ref(tab:gendesc24).
+
+
+
+<table>
+<caption>(\#tab:gendesc24)General description of extracted bibliometric indicators from Scopus</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;color: #fff !important;background-color: #666 !important;"> Description </th>
+   <th style="text-align:left;color: #fff !important;background-color: #666 !important;"> Results </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr grouplength="7"><td colspan="2" style="border-bottom: 1px solid;"><strong>Main information about data</strong></td></tr>
+<tr>
+   <td style="text-align:left;padding-left: 2em;" indentlevel="1"> Timespan </td>
+   <td style="text-align:left;"> 1988:2021 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;padding-left: 2em;" indentlevel="1"> Sources (Journals, Books, etc) </td>
+   <td style="text-align:left;"> 26 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;padding-left: 2em;" indentlevel="1"> Documents </td>
+   <td style="text-align:left;"> 39 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;padding-left: 2em;" indentlevel="1"> Average years from publication </td>
+   <td style="text-align:left;"> 10.2 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;padding-left: 2em;" indentlevel="1"> Average citations per documents </td>
+   <td style="text-align:left;"> 19.67 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;padding-left: 2em;" indentlevel="1"> Average citations per year per doc </td>
+   <td style="text-align:left;"> 2.208 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;padding-left: 2em;" indentlevel="1"> References </td>
+   <td style="text-align:left;"> 1763 </td>
+  </tr>
+  <tr grouplength="1"><td colspan="2" style="border-bottom: 1px solid;"><strong>Document types</strong></td></tr>
+<tr>
+   <td style="text-align:left;padding-left: 2em;" indentlevel="1"> article </td>
+   <td style="text-align:left;"> 39 </td>
+  </tr>
+  <tr grouplength="2"><td colspan="2" style="border-bottom: 1px solid;"><strong>Document contents</strong></td></tr>
+<tr>
+   <td style="text-align:left;padding-left: 2em;" indentlevel="1"> Keywords Plus (ID) </td>
+   <td style="text-align:left;"> 368 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;padding-left: 2em;" indentlevel="1"> Author's Keywords (DE) </td>
+   <td style="text-align:left;"> 160 </td>
+  </tr>
+  <tr grouplength="4"><td colspan="2" style="border-bottom: 1px solid;"><strong>Authors</strong></td></tr>
+<tr>
+   <td style="text-align:left;padding-left: 2em;" indentlevel="1"> Authors </td>
+   <td style="text-align:left;"> 111 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;padding-left: 2em;" indentlevel="1"> Author Appearances </td>
+   <td style="text-align:left;"> 155 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;padding-left: 2em;" indentlevel="1"> Authors of single-authored documents </td>
+   <td style="text-align:left;"> 0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;padding-left: 2em;" indentlevel="1"> Authors of multi-authored documents </td>
+   <td style="text-align:left;"> 111 </td>
+  </tr>
+  <tr grouplength="5"><td colspan="2" style="border-bottom: 1px solid;"><strong>Authors collaboration</strong></td></tr>
+<tr>
+   <td style="text-align:left;padding-left: 2em;" indentlevel="1"> Single-authored documents </td>
+   <td style="text-align:left;"> 0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;padding-left: 2em;" indentlevel="1"> Documents per Author </td>
+   <td style="text-align:left;"> 0.351 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;padding-left: 2em;" indentlevel="1"> Authors per Document </td>
+   <td style="text-align:left;"> 2.85 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;padding-left: 2em;" indentlevel="1"> Co-Authors per Documents </td>
+   <td style="text-align:left;"> 3.97 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;padding-left: 2em;" indentlevel="1"> Collaboration Index </td>
+   <td style="text-align:left;"> 2.85 </td>
+  </tr>
+</tbody>
+</table>
+
+### Top journal sources
+
+
+```{=html}
+<div id="htmlwidget-e811693b029ca913c6d4" style="width:80%;height:480px;" class="wordcloud2 html-widget"></div>
+<script type="application/json" data-for="htmlwidget-e811693b029ca913c6d4">{"x":{"word":["International Journal of Remote Sensing","Forest Ecology and Management","Tropical Ecology","Environmental Monitoring and Assessment","Flora","Indian Journal of Ecology","Journal of the Indian Society of Remote Sensing","Palaeogeography, Palaeoclimatology, Palaeoecology","Proceedings: Plant Sciences"],"freq":[4,3,3,2,2,2,2,2,2],"fontFamily":"Segoe UI","fontWeight":"bold","color":["#00A600","#2DB600","#63C600","#A0D600","#E6E600","#E8C32E","#EBB25E","#EDB48E","#F0C9C0","#F2F2F2"],"minSize":0,"weightFactor":9,"backgroundColor":"white","gridSize":0,"minRotation":0,"maxRotation":0,"shuffle":true,"rotateRatio":1,"shape":"circle","ellipticity":0.65,"figBase64":null,"hover":null},"evals":[],"jsHooks":{"render":[{"code":"function(el,x){\n                        console.log(123);\n                        if(!iii){\n                          window.location.reload();\n                          iii = False;\n\n                        }\n  }","data":null}]}}</script>
+```
+
+Among these selected 39 studies, experimental studies were under-represented, 
+accounting for just about 5% of total studies. On the other hand, observational 
+and modelling studies were heavily dominated constituting about 95% of all the 
+studies (Figure \@ref(fig:stype22)).
+
+<div class="figure" style="text-align: center">
+<img src="02-siwalik-ecology_files/figure-html/stype22-1.svg" alt="Types of plant ecological studies conducted in the Siwalik region" width="80%" />
+<p class="caption">(\#fig:stype22)Types of plant ecological studies conducted in the Siwalik region</p>
+</div>
+
+### Temporal distribution of studies
+
+The number of publications has shown an increasing trend and exhibited an annual 
+growth rate of about 4.3%. From 2010 to 2020, annual production of scientific 
+publications has sharply risen and the year 2020 recorded highest number of 
+publications (n = 6) within a single year (Figure \@ref(fig:temp23)).
+
+<div class="figure" style="text-align: center">
+<img src="02-siwalik-ecology_files/figure-html/temp23-1.svg" alt="Annual frequency of scientific publications" width="80%" />
+<p class="caption">(\#fig:temp23)Annual frequency of scientific publications</p>
+</div>
 
 ### Geographical distribution of the studies
 
 
 
-<img src="./data/siwalik-ecology/map.png" width="80%" style="display: block; margin: auto;" />
+<div class="figure" style="text-align: center">
+<img src="./data/siwalik-ecology/map.png" alt="Spation distribution of the study sites (reported or estimated from publications)" width="80%" />
+<p class="caption">(\#fig:map21)Spation distribution of the study sites (reported or estimated from publications)</p>
+</div>
 
-<img src="02-siwalik-ecology_files/figure-html/unnamed-chunk-8-1.svg" width="80%" style="display: block; margin: auto;" />
 
-### Temporal distribution of the evidence
 
-<img src="02-siwalik-ecology_files/figure-html/unnamed-chunk-9-1.svg" width="80%" style="display: block; margin: auto;" />
+<img src="02-siwalik-ecology_files/figure-html/unnamed-chunk-10-1.svg" width="80%" style="display: block; margin: auto;" />
+
+
 
 ### Domains of ecology
 
-<img src="02-siwalik-ecology_files/figure-html/unnamed-chunk-10-1.svg" width="80%" style="display: block; margin: auto;" />
+<img src="02-siwalik-ecology_files/figure-html/unnamed-chunk-11-1.svg" width="80%" style="display: block; margin: auto;" />
+
+### Three Fields
+
+<div class="figure" style="text-align: center">
+<img src="02-siwalik-ecology_files/figure-html/unnamed-chunk-12-1.svg" alt="Breakdown of selected studies by study type, location and domain of ecology" width="100%" />
+<p class="caption">(\#fig:unnamed-chunk-12)Breakdown of selected studies by study type, location and domain of ecology</p>
+</div>
+
 
 ### Taxonomic groups of plants
 
 Among the various taxonomic groups of plants Angiosperms
 
-### Top journal sources
 
-<table>
-<caption>(\#tab:unnamed-chunk-11)Top journal sources</caption>
- <thead>
-  <tr>
-   <th style="text-align:left;"> Sources </th>
-   <th style="text-align:right;"> Articles </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:left;"> INTERNATIONAL JOURNAL OF REMOTE SENSING </td>
-   <td style="text-align:right;"> 4 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Forest Ecology and Management </td>
-   <td style="text-align:right;"> 3 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Tropical Ecology </td>
-   <td style="text-align:right;"> 3 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Environmental Monitoring and Assessment </td>
-   <td style="text-align:right;"> 2 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> FLORA </td>
-   <td style="text-align:right;"> 2 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Indian Journal of Ecology </td>
-   <td style="text-align:right;"> 2 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> JOURNAL OF THE INDIAN SOCIETY OF REMOTE SENSING </td>
-   <td style="text-align:right;"> 2 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Palaeogeography, Palaeoclimatology, Palaeoecology </td>
-   <td style="text-align:right;"> 2 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Proceedings: Plant Sciences </td>
-   <td style="text-align:right;"> 2 </td>
-  </tr>
-</tbody>
-</table>
+
+
 
 ### Knowledge gaps

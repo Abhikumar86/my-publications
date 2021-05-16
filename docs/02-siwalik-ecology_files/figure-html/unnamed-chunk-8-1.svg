@@ -42,12 +42,12 @@
 <polyline points='439.11,322.51 439.11,5.48 ' style='stroke-width: 1.07; stroke: #EBEBEB; stroke-linecap: butt;' />
 <rect x='152.78' y='22.25' width='14.32' height='39.63' style='stroke-width: 1.07; stroke: none; stroke-linecap: square; stroke-linejoin: miter; fill: #4682B4;' />
 <rect x='152.78' y='205.15' width='85.90' height='39.63' style='stroke-width: 1.07; stroke: none; stroke-linecap: square; stroke-linejoin: miter; fill: #4682B4;' />
-<rect x='152.78' y='144.18' width='42.95' height='39.63' style='stroke-width: 1.07; stroke: none; stroke-linecap: square; stroke-linejoin: miter; fill: #4682B4;' />
+<rect x='152.78' y='144.18' width='28.63' height='39.63' style='stroke-width: 1.07; stroke: none; stroke-linecap: square; stroke-linejoin: miter; fill: #4682B4;' />
 <rect x='152.78' y='83.21' width='28.63' height='39.63' style='stroke-width: 1.07; stroke: none; stroke-linecap: square; stroke-linejoin: miter; fill: #4682B4;' />
 <rect x='152.78' y='266.12' width='329.27' height='39.63' style='stroke-width: 1.07; stroke: none; stroke-linecap: square; stroke-linejoin: miter; fill: #4682B4;' />
 <text x='163.15' y='47.15' text-anchor='end' style='font-size: 14.23px; fill: #FFFFFF; font-family: Arial;' textLength='7.91px' lengthAdjust='spacingAndGlyphs'>1</text>
 <text x='234.73' y='230.05' text-anchor='end' style='font-size: 14.23px; fill: #FFFFFF; font-family: Arial;' textLength='7.91px' lengthAdjust='spacingAndGlyphs'>6</text>
-<text x='191.78' y='169.09' text-anchor='end' style='font-size: 14.23px; fill: #FFFFFF; font-family: Arial;' textLength='7.91px' lengthAdjust='spacingAndGlyphs'>3</text>
+<text x='177.46' y='169.09' text-anchor='end' style='font-size: 14.23px; fill: #FFFFFF; font-family: Arial;' textLength='7.91px' lengthAdjust='spacingAndGlyphs'>2</text>
 <text x='177.46' y='108.12' text-anchor='end' style='font-size: 14.23px; fill: #FFFFFF; font-family: Arial;' textLength='7.91px' lengthAdjust='spacingAndGlyphs'>2</text>
 <text x='474.15' y='291.02' text-anchor='end' style='font-size: 14.23px; fill: #FFFFFF; font-family: Arial;' textLength='15.81px' lengthAdjust='spacingAndGlyphs'>23</text>
 </g>
