@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' class='svglite' width='504.00pt' height='360.00pt' viewBox='0 0 504.00 360.00'>
+<defs>
+  <style type='text/css'><![CDATA[
+    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
+      fill: none;
+      stroke: #000000;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-miterlimit: 10.00;
+    }
+  ]]></style>
+</defs>
+<rect width='100%' height='100%' style='stroke: none; fill: #FFFFFF;'/>
+<defs>
+  <clipPath id='cpMC4wMHw1MDQuMDB8MC4wMHwzNjAuMDA='>
+    <rect x='0.00' y='0.00' width='504.00' height='360.00' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpMC4wMHw1MDQuMDB8MC4wMHwzNjAuMDA=)'>
+<text x='252.00' y='186.48' text-anchor='middle' style='font-size: 18.11px; fill: #ABDDA4; font-family: Arial;' textLength='370.13px' lengthAdjust='spacingAndGlyphs'>Environmental Monitoring and Assessment (2)</text>
+<text x='261.16' y='166.44' text-anchor='middle' style='font-size: 18.11px; fill: #ABDDA4; font-family: Arial;' textLength='68.37px' lengthAdjust='spacingAndGlyphs'>Flora (2)</text>
+<text x='233.25' y='210.59' text-anchor='middle' style='font-size: 22.18px; fill: #66C2A5; font-family: Arial;' textLength='359.76px' lengthAdjust='spacingAndGlyphs'>Forest Ecology and Management (3)</text>
+<text x='272.57' y='150.21' text-anchor='middle' style='font-size: 18.11px; fill: #ABDDA4; font-family: Arial;' textLength='230.36px' lengthAdjust='spacingAndGlyphs'>Indian Journal of Ecology (2)</text>
+<text x='250.00' y='234.50' text-anchor='middle' style='font-size: 25.61px; fill: #3288BD; font-family: Arial;' textLength='495.15px' lengthAdjust='spacingAndGlyphs'>International Journal of Remote Sensing (4)</text>
+<text x='270.27' y='129.75' text-anchor='middle' style='font-size: 18.11px; fill: #ABDDA4; font-family: Arial;' textLength='414.42px' lengthAdjust='spacingAndGlyphs'>Journal of the Indian Society of Remote Sensing (2)</text>
+<text x='236.45' y='260.81' text-anchor='middle' style='font-size: 18.11px; fill: #ABDDA4; font-family: Arial;' textLength='452.02px' lengthAdjust='spacingAndGlyphs'>Palaeogeography, Palaeoclimatology, Palaeoecology (2)</text>
+<text x='299.86' y='109.41' text-anchor='middle' style='font-size: 18.11px; fill: #ABDDA4; font-family: Arial;' textLength='257.50px' lengthAdjust='spacingAndGlyphs'>Proceedings: Plant Sciences (2)</text>
+<text x='249.12' y='88.36' text-anchor='middle' style='font-size: 22.18px; fill: #66C2A5; font-family: Arial;' textLength='196.29px' lengthAdjust='spacingAndGlyphs'>Tropical Ecology (3)</text>
+</g>
+</svg>

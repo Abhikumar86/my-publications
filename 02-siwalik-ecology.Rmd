@@ -561,6 +561,7 @@ library(bibliometrix)
 M <- convert2df(file = "./data/siwalik-ecology/scopus_trimmed.bib", 
 		    dbsource = "scopus", format = "bibtex")
 results <- biblioAnalysis(M, sep = ";")
+summary(results)
 ```
 
 ```{r gendesc24}
@@ -577,66 +578,143 @@ knitr::kable(mi_trimmed,
 	kableExtra::pack_rows("Authors collaboration", 15, 19)
 ```
 
-### Top journal sources
+The studies identified for the present review were published in 26 different 
+journals. Further, only nine journals had represented more than one study 
+identified in this article (Figure \@ref(fig:2-journals)). These nine journals
+(about 34.6%) represented about 56.4% of the total studies (n = 22) included.
 
-```{r}
-ex_data <- read.csv("./data/siwalik-ecology/extracted_data.csv")
-ex_data$journal %>% table() %>% as.data.frame() %>% 
-	filter(Freq > 1) %>% arrange(desc(Freq)) %>%
-	wordcloud2::wordcloud2(size = 0.2, minRotation = 0, maxRotation = 0, 
-				     rotateRatio = 1, color = terrain.colors(10))
+```{r 2-journals, fig.cap="Publication sources (journals) representing at least two studies identified in the present article. The number of publications in a particular journal is represented in parenthesis"}
+set.seed(254)
+library(ggwordcloud)
+ex_data <- read.csv("./data/siwalik-ecology/extracted_data.csv") %>% 
+	dplyr::select(journal) %>% 
+	table() %>% 
+	as.data.frame() %>% 
+	filter(Freq > 1) %>%
+	mutate(journal = paste0(., " (", Freq, ")"))
+
+ggplot(ex_data, aes(label = journal, size = Freq, color = as.factor(Freq))) +
+	geom_text_wordcloud() +
+	#scale_size_area(max_size = 9) +
+	scale_radius(range = c(2, 9), limits = c(0, NA)) +
+	scale_color_manual(values = c("#abdda4", "#66c2a5", "#3288bd")) +
+	theme_void()
 ```
 
-Among these selected 39 studies, experimental studies were under-represented, 
+Among the selected 39 studies, experimental studies were under-represented, 
 accounting for just about 5% of total studies. On the other hand, observational 
 and modelling studies were heavily dominated constituting about 95% of all the 
-studies (Figure \@ref(fig:stype22)).
+studies (Figure \@ref(fig:2-stype)).
 
-```{r stype22, fig.cap="Types of plant ecological studies conducted in the Siwalik region"}
+```{r 2-stype, fig.cap="Breakdown of selected studies by study type (EXP = experimental, MOD = modelling, OBS = observation), region (CH = Chandigarh, HR = Haryana, HP = Himachal Pradesh, JK = Jammu and Kashmir, UK = Uttarakhand, WR = whole region) and domains of ecology (AE = applied ecology, CE = community ecology, EE = ecosystem ecology, LE = landscape ecology, PL = palaeoecology, PE = physiological ecology, SI = species interactions). The number in parenthesis represents the number of studies out of the total 39 studies", out.width="100%"}
+library(ggforce)
+library(dplyr)
+library(ggplot2)
+
 ex_data <- read.csv("./data/siwalik-ecology/extracted_data.csv")
-s_type <- table(ex_data$study_type) %>% as.data.frame()
-## Compute percentages
-s_type$fraction <- s_type$Freq / sum(s_type$Freq)
-## Compute the cumulative percentages (top of each rectangle)
-s_type$ymax <- cumsum(s_type$fraction)
-## Compute the bottom of each rectangle
-s_type$ymin <- c(0, head(s_type$ymax, n = -1))
-## Compute label position
-s_type$labelPosition <- (s_type$ymax + s_type$ymin) / 2
-## Compute a good label
-s_type$label <- paste0(s_type$Var1, "\n (n = ", s_type$Freq, ")")
-## Make the plot
-ggplot(data = s_type, 
-	 aes(ymax = ymax, ymin = ymin, xmax = 4, xmin = 3, fill = Var1)) +
-	geom_rect(color = "white", lwd = 1) +
-	geom_text(x = 2.15, aes(y = labelPosition, label = label, color = Var1), 
-		    size=4.5) +
-	scale_fill_brewer(palette = "Dark2") +
-	scale_color_brewer(palette = "Dark2") +	
-	coord_polar(theta="y") +
-	xlim(c(1, 4)) +
-	theme_void() +
-	theme(legend.position = "none")
+
+## code the labels
+study_lab <- table(ex_data$study_type) %>% as.data.frame() 
+ex_data$study_type1 <- factor(ex_data$study_type, 
+			     labels = c("experimental" = paste0("EXP", " (", study_lab[1,2], ")"), 
+			     	     "modelling" = paste0("MOD", " (", study_lab[2,2], ")"),
+			     	     "observational" = paste0("OBS", " (", study_lab[3,2], ")")))
+
+loc_lab <- table(ex_data$location) %>% as.data.frame()
+ex_data$location1 <- factor(ex_data$location, 
+			     labels = c("Chandiagrh" = paste0("CH", " (", loc_lab[1,2], ")"), 
+			     	     "Haryana" = paste0("HR", " (", loc_lab[2,2], ")"),
+			     	     "Himachal Pradesh" = paste0("HP", " (", loc_lab[3,2], ")"),
+			     	     "Jammu and Kashmir" = paste0("JK", " (", loc_lab[4,2], ")"),
+			     	     "Uttarakhand" = paste0("UK", " (", loc_lab[5,2], ")"),
+			     	     "Whole Region" = paste0("WR", " (", loc_lab[6,2], ")")
+			     	     ))
+
+dom_lab <- table(ex_data$domain) %>% as.data.frame()
+ex_data$domain1 <- factor(ex_data$domain, 
+			     labels = c("Applied Ecology" = paste0("AE", " (", dom_lab[1,2], ")"), 
+			     	     "Community Ecology" = paste0("CE", " (", dom_lab[2,2], ")"),
+			     	     "Ecosystem Ecology" = paste0("EE", " (", dom_lab[3,2], ")"),
+			     	     "Landscape Ecology" = paste0("LE", " (", dom_lab[4,2], ")"), 
+			     	     "Palaeoecology" = paste0("PL", " (", dom_lab[5,2], ")"),
+			     	     "Physiological Ecology" = paste0("PE", " (", dom_lab[6,2], ")"),
+			     	     "Species Interactions" = paste0("SI", " (", dom_lab[7,2], ")")
+			     	     ))
+
+
+
+ext_dat <- ex_data %>% dplyr::select(study_type1, location1, domain1) %>%
+	ggforce::gather_set_data(1:3)
+
+
+
+ext_dat$x <- factor(ext_dat$x, 
+			  labels = c("study_type1" = "Study type", "location1" = "Region", "domain1" = "Domain"),
+			  levels=c("study_type1", "location1", "domain1"))
+
+ggplot(ext_dat, aes(x, id = id, split = y, value = 1))  +
+	geom_parallel_sets(aes(fill = study_type1), alpha = 0.3, axis.width = 0.18, show.legend = FALSE) +
+	geom_parallel_sets_axes(axis.width = 0.15, fill = "grey90") +
+	geom_parallel_sets_labels(color = "black", angle = 0, size = 4.5) +
+	scale_x_discrete(expand = c(0.06, 0)) +
+	theme_classic() +
+	theme(axis.title = element_blank(),
+		axis.text.y = element_blank(),
+		axis.ticks = element_blank(),
+		axis.line = element_blank(),
+		axis.text.x = element_text(size = 14))
 ```
 
 ### Temporal distribution of studies
 
-The number of publications has shown an increasing trend and exhibited an annual 
-growth rate of about 4.3%. From 2010 to 2020, annual production of scientific 
-publications has sharply risen and the year 2020 recorded highest number of 
-publications (n = 6) within a single year (Figure \@ref(fig:temp23)).
+The number of publications has shown an overall increasing trend and exhibited 
+an annual growth rate of about 4.3% (Figure \@ref(fig:temp23)). During 2010s 
+annual production of scientific publications observed a steep rise and the year 
+2020 recorded highest number of publications (n = 6) within a single year 
+(Figure \@ref(fig:temp23)). Further, the decadal frequency of publications also 
+displayed an increasing trend. The decadal frequency of publications rose to six 
+during 2000s, which was stagnating to only four during 1980s and 1990s. However, 
+this frequency increased by more than 350% (n = 22) during 2010s 
+(Figure \@ref(fig:temp23)). 
 
-```{r temp23, fig.cap="Annual frequency of scientific publications"}
+```{r temp23, fig.cap="Annual frequency of scientific publications. The trend line is fitted using 80% LOESS (y ~ x) smoothening. Inset shows the decadal frequency of publications"}
+library(dplyr)
+library(ggplot2)
+
 ex_data <- read.csv("./data/siwalik-ecology/extracted_data.csv")
 temp_dat <- table(ex_data$year) %>% as.data.frame()
 temp_dat$year <- temp_dat$Var1 %>% as.character() %>% as.numeric()
+
+df <- temp_dat %>% mutate(decade = 
+			  	ifelse(year<=1990, "1980s", 
+			  		 ifelse(year>=1991 & year<=2000, "1990s", 
+			  		 	 ifelse(year>=2001 & year<=2010, "2000s", 
+			  		 	 	 ifelse(year>=2011 & year<=2020, "2010s", "2021")
+			  		 	 	 )
+			  		 	 )
+			  		 )
+				  )
+
+df$decade <- factor(df$decade,
+			  levels = c("1980s",  "1990s", "2000s", "2010s", "2021"))
+df <- df %>% group_by(decade) %>% 
+	summarise(total_articles = sum(Freq))
+
+p1 <- ggplot(data = df, aes(x = total_articles, y = decade)) + 
+	geom_bar(stat = "identity", width = 0.65, fill = "#69b3a2") +
+	geom_text(aes(label = paste("n=", total_articles)), color = "#69b3a2", size = 4, 
+		    vjust = 0.5, hjust = -0.25) +
+	geom_text(aes(label = decade, x = 0.5), color = "white", size = 4, hjust = 0.1) +
+	xlim(0, 25) +
+	theme_void() +
+	theme(plot.background = element_rect(color = "#69b3a210"))
 
 ggplot(data = temp_dat, aes(x = year, y = Freq)) + 
 	#geom_area(fill = "grey95", alpha = 0.5) +
 	geom_area(fill = "#69b3a2", alpha = 0.1) +
 	geom_line(color = "#69b3a2", lwd = 1) +
 	geom_point(size = 4, col = "#69b3a2") +
-	geom_smooth(color = "red", se = FALSE, span = 1, lwd = 1.2) +
+	geom_smooth(color = "red", se = FALSE, span = 0.8, lwd = 1.2) +
 	labs(x = "Year of Publication", y = "Number of Publications") +
 	theme_classic() +
 	theme(axis.title = element_text(size = 14), 
@@ -644,7 +722,9 @@ ggplot(data = temp_dat, aes(x = year, y = Freq)) +
 		axis.line = element_line(size = unit(1, "cm")),
 		axis.ticks.length = unit(1.5, "mm"),
 		panel.grid.major.y = element_line(color = "grey80")
-		)
+		) +
+	annotation_custom(ggplotGrob(p1), xmin = 1988, xmax = 2005, 
+                       ymin = 2.5, ymax = 6)
 ```
 
 ### Geographical distribution of the studies
@@ -729,26 +809,10 @@ tmap_save(main_map, filename = "./data/siwalik-ecology/map.png", insets_tm = ins
 rm(list = ls())
 ```
 
-```{r map21, fig.cap="Spation distribution of the study sites (reported or estimated from publications)"}
+```{r map21, fig.cap="Geographic distribution of the study sites (reported or estimated from publications)"}
 ## include in the document
 knitr::include_graphics("./data/siwalik-ecology/map.png")
 ```
-
-
-
-```{r}
-ex_data <- read.csv("./data/siwalik-ecology/extracted_data.csv")
-geo_dat <- table(ex_data$location) %>% as.data.frame()
-
-ggplot(data = geo_dat, aes(x = Freq, y = reorder(Var1, -Freq))) + 
-	geom_bar(stat = "identity", width = 0.65, fill = "steelblue ") +
-	geom_text(aes(label = Freq), hjust = 1.5, color = "white", size = 5) +
-	labs(x = "Total Articles", y = "") +
-	theme_minimal() +
-	theme(axis.title = element_text(size = 14), axis.text = element_text(size = 12))
-```
-
-
 
 ### Domains of ecology
 
@@ -763,28 +827,6 @@ ggplot(data = temp_dat, aes(x = Freq, y = reorder(Var1, -Freq))) +
 	labs(x = "Total Articles", y = "") +
 	theme_minimal() +
 	theme(axis.title = element_text(size = 14), axis.text = element_text(size = 12))
-```
-
-### Three Fields
-
-```{r fig.cap="Breakdown of selected studies by study type, location and domain of ecology", out.width="100%"}
-ext_dat <- read.csv("./data/siwalik-ecology/extracted_data.csv") %>%
-	dplyr::select(study_type, location, domain) %>%
-	gather_set_data(1:3)
-ext_dat$x <- factor(ext_dat$x, 
-			  labels = c("study_type" = "Study type", "location" = "Location", "domain" = "Domain"),
-			  levels=c("study_type", "location", "domain"))
-
-ggplot(ext_dat, aes(x, id = id, split = y, value = 1))  +
-	geom_parallel_sets(aes(fill = study_type), alpha = 0.3, axis.width = 0.12, show.legend = FALSE) +
-	geom_parallel_sets_axes(axis.width = 0.1, fill = "grey80") +
-	geom_parallel_sets_labels(color = "black", angle = 0) +
-	theme_classic() +
-	theme(axis.title = element_blank(),
-		axis.text.y = element_blank(),
-		axis.ticks = element_blank(),
-		axis.line = element_blank(),
-		axis.text.x = element_text(size = 14))
 ```
 
 
