@@ -10,7 +10,7 @@ bookdown::gitbook:
       link: https://github.com/abhikumar86/my-publications/edit/master/%s
       text: "suggest an edit"
     toc:
-      collapse: chapter
+      collapse: section
       before: |
         <li><a href="./">My Publications</a></li>
       after: |
