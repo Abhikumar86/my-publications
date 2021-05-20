@@ -9,10 +9,10 @@ tab:kw21
 tab:ec22
 tab:clasf23
 tab:gendesc24
-fig:stype22
+fig:2-journals
+fig:2-stype
 fig:temp23
 fig:map21
-fig:unnamed-chunk-12
 siwalik-terms
 abstract
 introduction
@@ -32,11 +32,9 @@ article-screening
 data-extraction
 bibliometric-data
 results
-top-journal-sources
 temporal-distribution-of-studies
 geographical-distribution-of-the-studies
 domains-of-ecology
-three-fields
 taxonomic-groups-of-plants
 knowledge-gaps
 methods
@@ -44,7 +42,3 @@ applications
 example-one
 example-two
 final-words
-fig:unnamed-chunk-13
-fig:unnamed-chunk-11
-fig:2-journals
-fig:2-stype

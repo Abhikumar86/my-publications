@@ -606,7 +606,7 @@ accounting for just about 5% of total studies. On the other hand, observational
 and modelling studies were heavily dominated constituting about 95% of all the 
 studies (Figure \@ref(fig:2-stype)).
 
-```{r 2-stype, fig.cap="Breakdown of selected studies by study type (EXP = experimental, MOD = modelling, OBS = observation), region (CH = Chandigarh, HR = Haryana, HP = Himachal Pradesh, JK = Jammu and Kashmir, UK = Uttarakhand, WR = whole region) and domains of ecology (AE = applied ecology, CE = community ecology, EE = ecosystem ecology, LE = landscape ecology, PL = palaeoecology, PE = physiological ecology, SI = species interactions). The number in parenthesis represents the number of studies out of the total 39 studies", out.width="100%"}
+```{r 2-stype, fig.cap="Breakdown of selected studies by study type (EXP = experimental, MOD = modelling, OBS = observational), region (CH = Chandigarh, HR = Haryana, HP = Himachal Pradesh, JK = Jammu and Kashmir, UK = Uttarakhand, WR = whole region) and domains of ecology (AE = applied ecology, CE = community ecology, EE = ecosystem ecology, LE = landscape ecology, PL = palaeoecology, PE = physiological ecology, SI = species interactions). The number of publications within each category is indicated in parenthesis", out.width="100%"}
 library(ggforce)
 library(dplyr)
 library(ggplot2)
@@ -655,7 +655,7 @@ ext_dat$x <- factor(ext_dat$x,
 ggplot(ext_dat, aes(x, id = id, split = y, value = 1))  +
 	geom_parallel_sets(aes(fill = study_type1), alpha = 0.3, axis.width = 0.18, show.legend = FALSE) +
 	geom_parallel_sets_axes(axis.width = 0.15, fill = "grey90") +
-	geom_parallel_sets_labels(color = "black", angle = 0, size = 4.5) +
+	geom_parallel_sets_labels(color = "black", angle = 0, size = 4) +
 	scale_x_discrete(expand = c(0.06, 0)) +
 	theme_classic() +
 	theme(axis.title = element_blank(),
@@ -677,7 +677,7 @@ during 2000s, which was stagnating to only four during 1980s and 1990s. However,
 this frequency increased by more than 350% (n = 22) during 2010s 
 (Figure \@ref(fig:temp23)). 
 
-```{r temp23, fig.cap="Annual frequency of scientific publications. The trend line is fitted using 80% LOESS (y ~ x) smoothening. Inset shows the decadal frequency of publications"}
+```{r temp23, fig.cap="Annual frequency of scientific publications included in this synthesis. The trend line is fitted using 80% LOESS (y ~ x) smoothening. Inset shows the decadal frequency of publications"}
 library(dplyr)
 library(ggplot2)
 
@@ -686,23 +686,23 @@ temp_dat <- table(ex_data$year) %>% as.data.frame()
 temp_dat$year <- temp_dat$Var1 %>% as.character() %>% as.numeric()
 
 df <- temp_dat %>% mutate(decade = 
-			  	ifelse(year<=1990, "1980s", 
-			  		 ifelse(year>=1991 & year<=2000, "1990s", 
-			  		 	 ifelse(year>=2001 & year<=2010, "2000s", 
-			  		 	 	 ifelse(year>=2011 & year<=2020, "2010s", "2021")
+			  	ifelse(year<=1989, "'80s", 
+			  		 ifelse(year>=1990 & year<=1999, "'90s", 
+			  		 	 ifelse(year>=2000 & year<=2009, "'00s", 
+			  		 	 	 ifelse(year>=2010 & year<=2019, "'10s", "'21")
 			  		 	 	 )
 			  		 	 )
 			  		 )
 				  )
 
 df$decade <- factor(df$decade,
-			  levels = c("1980s",  "1990s", "2000s", "2010s", "2021"))
+			  levels = c("'80s",  "'90s", "'00s", "'10s", "'21"))
 df <- df %>% group_by(decade) %>% 
 	summarise(total_articles = sum(Freq))
 
 p1 <- ggplot(data = df, aes(x = total_articles, y = decade)) + 
 	geom_bar(stat = "identity", width = 0.65, fill = "#69b3a2") +
-	geom_text(aes(label = paste("n=", total_articles)), color = "#69b3a2", size = 4, 
+	geom_text(aes(label = paste0("n=", total_articles)), color = "#69b3a2", size = 4, 
 		    vjust = 0.5, hjust = -0.25) +
 	geom_text(aes(label = decade, x = 0.5), color = "white", size = 4, hjust = 0.1) +
 	xlim(0, 25) +
@@ -723,7 +723,7 @@ ggplot(data = temp_dat, aes(x = year, y = Freq)) +
 		axis.ticks.length = unit(1.5, "mm"),
 		panel.grid.major.y = element_line(color = "grey80")
 		) +
-	annotation_custom(ggplotGrob(p1), xmin = 1988, xmax = 2005, 
+	annotation_custom(ggplotGrob(p1), xmin = 1988, xmax = 2007, 
                        ymin = 2.5, ymax = 6)
 ```
 
@@ -832,10 +832,6 @@ ggplot(data = temp_dat, aes(x = Freq, y = reorder(Var1, -Freq))) +
 
 ### Taxonomic groups of plants
 
-Among the various taxonomic groups of plants Angiosperms
-
-
-
-
+Among the various taxonomic groups of plants Angiosperms.
 
 ### Knowledge gaps
