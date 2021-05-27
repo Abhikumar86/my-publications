@@ -9,7 +9,7 @@ editor_options:
 ```{r message=FALSE, warning=FALSE, echo=FALSE}
 ## set global options for markdown
 knitr::opts_chunk$set(comment = "#>", collapse = TRUE, fig.align = 'center',
-			    fig.width = 7, fig.height = 5, out.width = '80%', 
+			    fig.width = 7, fig.height = 5, out.width = '90%', 
 			    echo=FALSE, message=FALSE, warning=FALSE)
 ## load the required packages
 library(bibliometrix) # for bibliometric analysis
@@ -113,7 +113,6 @@ and gaps in the current knowledge, which will guide the future investigations.
     -   What is the geographical distribution of the evidence?
     -   What is the temporal distribution of the evidence?
     -   Which domains of ecology are frequently studied?
-    -   What taxonomic groups of plants have been studied?\
     -   What are the knowledge gaps that need to be addressed?
 
 ## Methodology
@@ -535,7 +534,7 @@ included_articles <- read.csv("./data/siwalik-ecology/screened_fulltext.csv") %>
 extracted_data <- read.csv("./data/siwalik-ecology/extracted_data.csv")
 ```
 
-### Bibliometric data
+### Bibliometric data analysis
 
 We developed a search string based on the doi (digital object identifier) and 
 title (if doi is not available) of included studies to  extract bibliometric metadata from the 
@@ -543,7 +542,22 @@ Scopus database. We retrieved bibliometric information for 39 articles on 09 May
 However, we were not able to extract metadata for an article because it was not available 
 in Scopus; therefore, we excluded it from the final systematic map and narrative 
 synthesis (Figure \@ref(fig:fig21)). This bibliometric data had several missing 
-values (marked as `NA`), these values were manually added from the full text.
+values (marked as `NA`), these values were manually added from the full text, if 
+available. Further, we cited references were not in uniform format due to different
+reference styles of journals; therefore, we manually formatted them.
+
+The bibliometric data analysis was conducted using the R package *bibliometrix*
+[@bibliometrix2017] in R programming environment [@R-base]. The bibliometric data 
+was converted to a dataframe using the function `convert2df()` and saved for 
+further analysis.
+
+```{r, include=FALSE}
+library(bibliometrix)
+M <- convert2df(file = "./data/siwalik-ecology/scopus_trimmed.bib", 
+		    dbsource = "scopus", format = "bibtex")
+#write.csv(M, "./data/siwalik-ecology/bibdata.csv")
+```
+
 
 ## Results
 
@@ -555,14 +569,6 @@ available for a study (Figure \@ref(fig:fig21)). Thus, this synthesis is based o
 total 39 studies published in 26 sources (journals) during 1988 to 2021. The results
 of descriptive analysis of bibliometric indicators for selected studies is represented
 in Table \@ref(tab:gendesc24).
-
-```{r results=FALSE, include=FALSE}
-library(bibliometrix)
-M <- convert2df(file = "./data/siwalik-ecology/scopus_trimmed.bib", 
-		    dbsource = "scopus", format = "bibtex")
-results <- biblioAnalysis(M, sep = ";")
-summary(results)
-```
 
 ```{r gendesc24}
 main_info <- read.csv("./data/siwalik-ecology/Main_Information.csv")
@@ -599,14 +605,264 @@ ggplot(ex_data, aes(label = journal, size = Freq, color = as.factor(Freq))) +
 	scale_radius(range = c(2, 9), limits = c(0, NA)) +
 	scale_color_manual(values = c("#abdda4", "#66c2a5", "#3288bd")) +
 	theme_void()
+rm(list = ls())
 ```
 
-Among the selected 39 studies, experimental studies were under-represented, 
-accounting for just about 5% of total studies. On the other hand, observational 
-and modelling studies were heavily dominated constituting about 95% of all the 
-studies (Figure \@ref(fig:2-stype)).
 
-```{r 2-stype, fig.cap="Breakdown of selected studies by study type (EXP = experimental, MOD = modelling, OBS = observational), region (CH = Chandigarh, HR = Haryana, HP = Himachal Pradesh, JK = Jammu and Kashmir, UK = Uttarakhand, WR = whole region) and domains of ecology (AE = applied ecology, CE = community ecology, EE = ecosystem ecology, LE = landscape ecology, PL = palaeoecology, PE = physiological ecology, SI = species interactions). The number of publications within each category is indicated in parenthesis", out.width="100%"}
+
+```{r 2-authcol, fig.height=8, fig.width=8, fig.cap="Collaboration network of first 25 authors from the selected studies. The size of each vertex is proportional to its degree (i.e. the frequency of authors appearance)"}
+M <- read.csv("./data/siwalik-ecology/bibdata.csv")
+NetMatrix <- biblioNetwork(M, analysis = "collaboration", network = "authors", 
+				   sep = ";")
+net <- networkPlot(NetMatrix,  normalize = NULL, n = 25, weighted = NULL, 
+			 Title = NA, type = "circle",
+			 # labels
+			 label = TRUE, labelsize = 1, label.cex = F, label.color = TRUE,
+			 # clustering
+			 halo = F, cluster = "optimal",
+			 # vertices
+			 size = T, size.cex = T, remove.isolates = T, alpha = 0.5,
+			 # edges
+			 curved = F, noloops = T, remove.multiple = F,
+			 edgesize = 5, edges.min = 0)
+```
+
+
+
+
+```{r 2-keyocc, fig.height=8, fig.width=8, fig.cap="Co-occurrence network of keywords (n = 25). The size of each vertex is proportional to its degree (i.e. the frequency of keywords)"}
+# keywords
+NetMatrix <- biblioNetwork(M, analysis = "co-occurrences", network = "keywords", sep = ";")
+
+# Plot the network
+#set.seed(1235)
+set.seed(1237)
+net <- networkPlot(NetMatrix, normalize="association", weighted=T, 
+			 n = 30, Title = NA, type = "fruchterman", 
+			 # labels
+			 label = TRUE, labelsize = 1.2, label.cex = F, label.color = F,
+			 # clustering
+			 halo = F, cluster = "optimal",
+			 # vertices
+			 size = T, size.cex = T, remove.isolates = T,
+			 # edges
+			 curved = F, noloops = T, remove.multiple = F,
+			 edgesize = 5, edges.min = 1)
+```
+
+
+```{r 2-frecit}
+M <- convert2df(file = "./data/siwalik-ecology/scopus_trimmed.bib", 
+		    dbsource = "scopus", format = "bibtex")
+results <- biblioAnalysis(M, sep = ";")
+knitr::kable(results$MostCitedPapers[1:10,], digits = 2)
+```
+
+
+
+### Geographical distribution of the studies
+
+The distribution of estimated study sites is depicted in Figure \@ref(fig:2-map).
+The spatial distribution of studies suggest a high density around Uttarakhand state
+followed by Haryana (Figure \@ref(fig:2-map)).
+Our selected studies represented three states (Himachal Pradesh, Haryana, and 
+Uttarakhand) and two union territories (Jammu and Kashmir and Chandigarh) of India 
+(excluding studies conducted in multiple regions or whole region) and only five studies
+covered the whole region. Among the geographical regions, about 59% of total studies 
+were featured from the Uttarakhand (n = 23) only (Figure \@ref(fig:2-map)). On the
+other hand, not a single study was identified from the Siwalik region of Punjab 
+and Uttar Pradesh.
+
+```{r eval=FALSE}
+## bounding box for area of interest
+sw_box <- st_bbox(obj = c(xmin = 73.5, xmax = 80.4, ymin = 28.4, ymax = 34.2),
+                    crs = st_crs(4326)) %>% st_as_sfc()
+
+## clipped Indian states
+#ind1 <- st_read("D:/spatial-data/admin/ind_adm1.gpkg")
+#ind1.clipped <- st_intersection(ind1, sw_box)
+#st_write(ind1.clipped, "./data/siwalik-ecology/ind1_clipped.gpkg")
+ind1.clipped <- st_read("./data/siwalik-ecology/ind1_clipped.gpkg")
+
+ex_data <- read.csv("./data/siwalik-ecology/extracted_data.csv")
+loc_lab <- ex_data$location %>% table() %>% as.data.frame()
+rownames(loc_lab) <- loc_lab$.
+ind1.clipped$label <- factor(ind1.clipped$stname, 
+				     labels = c(
+				     	"CHANDIGARH" = paste0("CH", " (", loc_lab["Chandigarh", 2], ")"),
+				     	"DELHI" = NA,
+				     	"HARYANA" = paste0("HR", " (", loc_lab["Haryana", 2], ")"),
+				     	"HIMACHAL PRADESH" = paste0("HP", " (", loc_lab["Himachal Pradesh", 2], ")"),
+				     	"JAMMU & KASHMIR" =  paste0("JK", " (", loc_lab["Jammu and Kashmir", 2], ")"),
+				     	"LADAKH" = NA, "PUNJAB" = NA, "RAJASTHAN" = NA,
+				     	"UTTAR PRADESH" = NA,
+				     	"UTTARAKHAND" = paste0("UK", " (", loc_lab["Uttarakhand", 2], ")"))
+				     )
+
+## read the boundary for India
+ind0 <- st_read("./data/siwalik-ecology/ind_adm0.gpkg")
+
+## extract countries for Asia
+asia <- rnaturalearth::ne_countries(scale = "medium", type = "countries",
+						 continent = "Asia", returnclass = "sf")
+indsub.bbox <- st_bbox(obj = c(xmin = 67, xmax = 98, ymin = 5, ymax = 38),
+                    crs = st_crs(4326)) %>% st_as_sfc()
+indsub.clipped <- st_intersection(asia, indsub.bbox)
+
+## shaded relief for the area
+#indsr <- raster("D:/spatial-data/Themes/SR_LR/SR_LR/SR_LR.tif") %>% 
+	#crop(extent(73.5, 80.4, 28.4, 34.2))
+#writeRaster(indsr, "./data/siwalik-ecology/shaded-relief.tif")
+indsr <- raster("./data/siwalik-ecology/shaded-relief.tif")
+
+## elevation data for area
+#indem <- raster("D:/spatial-data/dem/india-dem/gt30e060n40.tif") %>%
+	#crop(extent(73.5, 80.4, 28.4, 34.2))
+#writeRaster(indem, "./data/siwalik-ecology/dem.tif")
+indem <- raster("./data/siwalik-ecology/dem.tif")
+
+## India mask to highlight the region
+ind_mask <- st_difference(sw_box, ind0)
+
+## study points
+study_points <- ex_data %>% filter(!is.na(lat)) %>% 
+	st_as_sf(coords = c("lon", "lat"), crs = 4326)
+
+## read the boundary for siwalik 
+sw <- st_read("./data/siwalik-ecology/siwalik.shp")
+
+## prepare the map
+
+inset_map <- tm_shape(indsub.clipped, bbox = ind0) + tm_fill(col = "grey95") + 
+	tm_borders(col = "grey85") +
+      tm_shape(ind0) + tm_fill(col = "grey92") + 
+	tm_borders(col = "grey80") +
+      tm_shape(sw_box) + tm_borders(col = "red", lwd = 1) +
+      tm_layout(bg.color = "#9bbff4", frame = "grey85")
+
+main_map <- tm_shape(indsr, bbox = sw_box) + tm_raster(palette = "-Greys", 
+									 legend.show = F) +
+	tm_graticules(col = "grey80") + # graticule
+	tm_shape(indem) + tm_raster(alpha = 0.6, palette = "Greys", style = "cont", 
+					    title = "Elevation (m)") + 
+	tm_shape(ind0) + tm_borders(lwd = 2.5, col = "white") +
+	tm_shape(ind_mask) + tm_fill(col = "white", alpha = 0.3) +
+	
+	tm_shape(ind1.clipped) + tm_borders(col = "white") + 
+	tm_text("label", col = "black", bg.color = "white", xmod = -0.5, ymod = -1) +
+	
+	tm_shape(sw) + tm_fill(col = "yellow", alpha = 0.3) + tm_borders() +
+	tm_shape(study_points) + tm_symbols(col = "red", border.col = "white", 
+							alpha = 0.6) +
+	tm_compass(position = c(0.35, 0.015)) + # North Arrow
+      tm_scale_bar(position = c(0.5, 0.015), text.size = 0.75) + # scale
+      tm_add_legend(type = "fill", labels = "Siwaliks", col = "yellow", 
+      		  alpha = 0.3) + 
+      tm_add_legend(type = "line", labels = "International Boundary", 
+      		  col = "white", lwd = 2.5) + # road legend
+      tm_add_legend(type = "symbol", labels = "Study Sites", col = "red", 
+      		  border.col = "white",
+      		  alpha = 0.6) +
+      tm_layout(legend.position = c(0.0035, 0.01),
+                legend.bg.color = "grey90", legend.bg.alpha = 0.5,
+                legend.text.size = 0.75, legend.frame = "grey85")
+## arrange map
+# aspect ratios for inset map
+in_bb <- st_bbox(ind0)
+aspin <- (in_bb$ymax - in_bb$ymin)/(in_bb$xmax - in_bb$xmin)
+# aspect ratios for main map
+mn_bb <- st_bbox(indsr)
+aspmain <- (mn_bb$ymax - mn_bb$ymin)/(mn_bb$xmax - mn_bb$xmin)
+# create a viewport for inset map
+vp <- grid::viewport(x = 0.925, y = 0.98, width = grid::unit(2.5, "inches"), 
+               height = grid::unit(2.5*aspin, "inches"), 
+		   just = c("right", "top"))
+
+## save the map
+tmap_save(main_map, filename = "./data/siwalik-ecology/map.png", insets_tm = inset_map, 
+          insets_vp = vp, height = aspmain*7, width = 7, units = "in", dpi = 600)
+rm(list = ls())
+```
+
+```{r 2-map, out.width="100%", fig.cap="Geographic distribution of the study sites (reported or estimated from publications) across the study region (JK = Jammu and Kashmir, HP = Himachal Pradesh, CH = Chandigarh, HR = Haryana, UK = Uttarakhand). The number of studies per region is indicated in parenthesis"}
+## include in the document
+knitr::include_graphics("./data/siwalik-ecology/map.png")
+```
+
+### Temporal distribution of studies
+
+The number of publications has shown an overall increasing trend and exhibited 
+an annual growth rate of about 4.3% (Figure \@ref(fig:temp23)). During 2010s 
+annual production of scientific publications observed a steep rise and the year 
+2020 recorded highest number of publications (n = 6) within a single year 
+(Figure \@ref(fig:temp23)). Further, the decadal frequency of publications was six
+during 1990s, which dipped to only two publication per decade during 2000s. However,
+it so steeply increased during 2010s that it became double of all studies published 
+from 1980s to 2000s (Figure \@ref(fig:temp23)). 
+
+```{r temp23, fig.cap="Annual frequency of scientific publications included in this synthesis. The trend line is fitted using 80% LOESS (y ~ x) smoothening. Inset shows the decadal frequency of publications"}
+library(dplyr)
+library(ggplot2)
+
+ex_data <- read.csv("./data/siwalik-ecology/extracted_data.csv")
+temp_dat <- table(ex_data$year) %>% as.data.frame()
+temp_dat$year <- temp_dat$Var1 %>% as.character() %>% as.numeric()
+
+df <- temp_dat %>% mutate(decade = 
+			  	ifelse(year<=1989, "'80s", 
+			  		 ifelse(year>=1990 & year<=1999, "'90s", 
+			  		 	 ifelse(year>=2000 & year<=2009, "'00s", 
+			  		 	 	 ifelse(year>=2010 & year<=2019, "'10s", "'20s")
+			  		 	 	 )
+			  		 	 )
+			  		 )
+				  )
+
+df$decade <- factor(df$decade,
+			  levels = c("'80s",  "'90s", "'00s", "'10s", "'20s"))
+df <- df %>% group_by(decade) %>% 
+	summarise(total_articles = sum(Freq))
+
+p1 <- ggplot(data = df, aes(x = total_articles, y = decade)) + 
+	geom_bar(stat = "identity", width = 0.65, fill = "#69b3a2") +
+	geom_text(aes(label = paste0("n=", total_articles)), color = "#69b3a2", 
+		    size = 4, vjust = 0.5, hjust = -0.25) +
+	geom_text(aes(label = decade, x = 0.5), color = "white", size = 4, hjust = 0.1) +
+	xlim(0, 25) +
+	theme_void() +
+	theme(plot.background = element_rect(color = "#69b3a210"))
+
+ggplot(data = temp_dat, aes(x = year, y = Freq)) + 
+	#geom_area(fill = "grey95", alpha = 0.5) +
+	geom_area(fill = "#69b3a2", alpha = 0.1) +
+	geom_line(color = "#69b3a2", lwd = 1) +
+	geom_point(size = 4, col = "#69b3a2") +
+	geom_smooth(color = "red", se = FALSE, span = 0.8, lwd = 1.2) +
+	labs(x = "Year of Publication", y = "Number of Publications") +
+	theme_classic() +
+	theme(axis.title = element_text(size = 14), 
+		axis.text = element_text(size = 12),
+		axis.line = element_line(size = unit(1, "cm")),
+		axis.ticks.length = unit(1.5, "mm"),
+		panel.grid.major.y = element_line(color = "grey80")
+		) +
+	annotation_custom(ggplotGrob(p1), xmin = 1988, xmax = 2006, 
+                       ymin = 2.25, ymax = 6)
+rm(list = ls())
+```
+
+
+
+### Domains of ecology
+
+We found three distinct study types, six distinct study region and seven distinct 
+domains of plant ecology (Figure \@ref(fig:2-stype)). Among the selected 39 studies, 
+experimental studies were under-represented, accounting for just about 5% of total 
+studies. On the other hand, observational and modelling studies were heavily dominated 
+constituting about 95% of all the studies (Figure \@ref(fig:2-stype)).
+
+
+```{r 2-stype, fig.cap="Breakdown of selected studies by study type (EX = experimental, MO = modelling, OB = observational), region (CH = Chandigarh, HR = Haryana, HP = Himachal Pradesh, JK = Jammu and Kashmir, UK = Uttarakhand, WR = whole region) and domains of ecology (AE = applied ecology, CE = community ecology, EE = ecosystem ecology, LE = landscape ecology, PL = palaeoecology, PE = physiological ecology, SI = species interactions). The number of publications within each category is indicated in parenthesis", out.width="100%"}
 library(ggforce)
 library(dplyr)
 library(ggplot2)
@@ -616,9 +872,9 @@ ex_data <- read.csv("./data/siwalik-ecology/extracted_data.csv")
 ## code the labels
 study_lab <- table(ex_data$study_type) %>% as.data.frame() 
 ex_data$study_type1 <- factor(ex_data$study_type, 
-			     labels = c("experimental" = paste0("EXP", " (", study_lab[1,2], ")"), 
-			     	     "modelling" = paste0("MOD", " (", study_lab[2,2], ")"),
-			     	     "observational" = paste0("OBS", " (", study_lab[3,2], ")")))
+			     labels = c("experimental" = paste0("EX", " (", study_lab[1,2], ")"), 
+			     	     "modelling" = paste0("MO", " (", study_lab[2,2], ")"),
+			     	     "observational" = paste0("OB", " (", study_lab[3,2], ")")))
 
 loc_lab <- table(ex_data$location) %>% as.data.frame()
 ex_data$location1 <- factor(ex_data$location, 
@@ -663,175 +919,15 @@ ggplot(ext_dat, aes(x, id = id, split = y, value = 1))  +
 		axis.ticks = element_blank(),
 		axis.line = element_blank(),
 		axis.text.x = element_text(size = 14))
-```
-
-### Temporal distribution of studies
-
-The number of publications has shown an overall increasing trend and exhibited 
-an annual growth rate of about 4.3% (Figure \@ref(fig:temp23)). During 2010s 
-annual production of scientific publications observed a steep rise and the year 
-2020 recorded highest number of publications (n = 6) within a single year 
-(Figure \@ref(fig:temp23)). Further, the decadal frequency of publications also 
-displayed an increasing trend. The decadal frequency of publications rose to six 
-during 2000s, which was stagnating to only four during 1980s and 1990s. However, 
-this frequency increased by more than 350% (n = 22) during 2010s 
-(Figure \@ref(fig:temp23)). 
-
-```{r temp23, fig.cap="Annual frequency of scientific publications included in this synthesis. The trend line is fitted using 80% LOESS (y ~ x) smoothening. Inset shows the decadal frequency of publications"}
-library(dplyr)
-library(ggplot2)
-
-ex_data <- read.csv("./data/siwalik-ecology/extracted_data.csv")
-temp_dat <- table(ex_data$year) %>% as.data.frame()
-temp_dat$year <- temp_dat$Var1 %>% as.character() %>% as.numeric()
-
-df <- temp_dat %>% mutate(decade = 
-			  	ifelse(year<=1989, "'80s", 
-			  		 ifelse(year>=1990 & year<=1999, "'90s", 
-			  		 	 ifelse(year>=2000 & year<=2009, "'00s", 
-			  		 	 	 ifelse(year>=2010 & year<=2019, "'10s", "'21")
-			  		 	 	 )
-			  		 	 )
-			  		 )
-				  )
-
-df$decade <- factor(df$decade,
-			  levels = c("'80s",  "'90s", "'00s", "'10s", "'21"))
-df <- df %>% group_by(decade) %>% 
-	summarise(total_articles = sum(Freq))
-
-p1 <- ggplot(data = df, aes(x = total_articles, y = decade)) + 
-	geom_bar(stat = "identity", width = 0.65, fill = "#69b3a2") +
-	geom_text(aes(label = paste0("n=", total_articles)), color = "#69b3a2", size = 4, 
-		    vjust = 0.5, hjust = -0.25) +
-	geom_text(aes(label = decade, x = 0.5), color = "white", size = 4, hjust = 0.1) +
-	xlim(0, 25) +
-	theme_void() +
-	theme(plot.background = element_rect(color = "#69b3a210"))
-
-ggplot(data = temp_dat, aes(x = year, y = Freq)) + 
-	#geom_area(fill = "grey95", alpha = 0.5) +
-	geom_area(fill = "#69b3a2", alpha = 0.1) +
-	geom_line(color = "#69b3a2", lwd = 1) +
-	geom_point(size = 4, col = "#69b3a2") +
-	geom_smooth(color = "red", se = FALSE, span = 0.8, lwd = 1.2) +
-	labs(x = "Year of Publication", y = "Number of Publications") +
-	theme_classic() +
-	theme(axis.title = element_text(size = 14), 
-		axis.text = element_text(size = 12),
-		axis.line = element_line(size = unit(1, "cm")),
-		axis.ticks.length = unit(1.5, "mm"),
-		panel.grid.major.y = element_line(color = "grey80")
-		) +
-	annotation_custom(ggplotGrob(p1), xmin = 1988, xmax = 2007, 
-                       ymin = 2.5, ymax = 6)
-```
-
-### Geographical distribution of the studies
-
-```{r eval=FALSE}
-## read the boundary of India
-ind0 <- st_read("./data/siwalik-ecology/ind_adm0.gpkg")
-## extract countries for Asia
-asia <- rnaturalearth::ne_countries(scale = "medium", type = "countries",
-						 continent = "Asia", returnclass = "sf")
-## A bounding box for Indian subcontinent
-indsub.bbox <- st_bbox(obj = c(xmin = 67, xmax = 98, ymin = 5, ymax = 38),
-                    crs = st_crs(4326)) %>% st_as_sfc()
-## clip the Indian subcontinent
-indsub.clipped <- st_intersection(asia, indsub.bbox)
-## bounding box for area of interest
-sw_box <- st_bbox(obj = c(xmin = 73.5, xmax = 80.4, ymin = 28.4, ymax = 34.2),
-                    crs = st_crs(4326)) %>% st_as_sfc()
-## prepare inset map
-inset_map <- tm_shape(indsub.clipped, bbox = ind0) + tm_fill(col = "grey95") + 
-	tm_borders(col = "grey85") +
-      tm_shape(ind0) + tm_fill(col = "grey92") + 
-	tm_borders(col = "grey80") +
-      tm_shape(sw_box) + tm_borders(col = "red", lwd = 1) +
-      tm_layout(bg.color = "#9bbff4", frame = "grey85")
-
-## read the required data for the main map
-# shaded relief for the area
-#indsr <- raster("D:/spatial-data/Themes/SR_LR/SR_LR/SR_LR.tif") %>% 
-	#crop(extent(73.5, 80.4, 28.4, 34.2))
-#writeRaster(indsr, "./data/siwalik-ecology/shaded-relief.tif")
-indsr <- raster("./data/siwalik-ecology/shaded-relief.tif")
-# elevation data for area
-#indem <- raster("D:/spatial-data/dem/india-dem/gt30e060n40.tif") %>%
-	#crop(extent(73.5, 80.4, 28.4, 34.2))
-#writeRaster(indem, "./data/siwalik-ecology/dem.tif")
-indem <- raster("./data/siwalik-ecology/dem.tif")
-# India mask to highlight the region
-ind_mask <- st_difference(sw_box, ind0)
-# boundary of siwalik region
-sw <- st_read("./data/siwalik-ecology/siwalik.shp")
-# study points
-ex_data <- read.csv("./data/siwalik-ecology/extracted_data.csv")
-study_points <- ex_data %>% filter(!is.na(lat)) %>% 
-	st_as_sf(coords = c("lon", "lat"), crs = 4326)
-## prepare main map
-main_map <- tm_shape(indsr, bbox = sw_box) + tm_raster(palette = "-Greys", 
-									 legend.show = F) +
-	tm_graticules(col = "grey80") + # graticule
-	tm_shape(indem) + tm_raster(alpha = 0.6, palette = "Greys", style = "cont", 
-					    title = "Elevation (m)") + 
-	tm_shape(ind0) + tm_borders(lwd = 2.5, col = "white") +
-	tm_shape(ind_mask) + tm_fill(col = "white", alpha = 0.3) +
-	tm_shape(sw) + tm_fill(col = "yellow", alpha = 0.3) + tm_borders() +
-	tm_shape(study_points) + tm_symbols(col = "red", border.col = "white", 
-							alpha = 0.6) +
-	tm_compass(position = c(0.35, 0.015)) + # North Arrow
-      tm_scale_bar(position = c(0.5, 0.015), text.size = 0.75) + # scale
-      tm_add_legend(type = "fill", labels = "Siwaliks", col = "yellow", 
-      		  alpha = 0.3) + 
-      tm_add_legend(type = "line", labels = "International Boundary", 
-      		  col = "white", lwd = 2.5) + # road legend
-      tm_add_legend(type = "symbol", labels = "Study Sites", col = "red", 
-      		  border.col = "white",
-      		  alpha = 0.6) +
-      tm_layout(legend.position = c(0.0035, 0.01),
-                legend.bg.color = "grey90", legend.bg.alpha = 0.5,
-                legend.text.size = 0.75, legend.frame = "grey85")
-## aspect ratios for inset map
-in_bb <- st_bbox(ind0)
-aspin <- (in_bb$ymax - in_bb$ymin)/(in_bb$xmax - in_bb$xmin)
-## aspect ratios for main map
-mn_bb <- st_bbox(indsr)
-aspmain <- (mn_bb$ymax - mn_bb$ymin)/(mn_bb$xmax - mn_bb$xmin)
-## create a viewport for inset map
-vp <- grid::viewport(x = 0.92, y = 0.98, width = grid::unit(2.5, "inches"), 
-               height = grid::unit(2.5*aspin, "inches"), 
-		   just = c("right", "top"))
-## save the map
-tmap_save(main_map, filename = "./data/siwalik-ecology/map.png", insets_tm = inset_map, 
-          insets_vp = vp, height = aspmain*7, width = 7, units = "in", dpi = 600)
 rm(list = ls())
 ```
 
-```{r map21, fig.cap="Geographic distribution of the study sites (reported or estimated from publications)"}
-## include in the document
-knitr::include_graphics("./data/siwalik-ecology/map.png")
-```
+We identified seven distinct (not mutually exclusive) domains under plant ecology 
+(Figure \@ref(fig:2-stype)). Among these assigned domains, about 38.5% studies 
+belonged to landscape ecology and 30.77% studies belonged to ecosystem ecology; 
+thus, together constituting about 70% of total studies (Figure \@ref(fig:2-stype)).
 
-### Domains of ecology
+## Discussion
 
-```{r}
-ex_data <- read.csv("./data/siwalik-ecology/extracted_data.csv")
-temp_dat <- table(ex_data$domain) %>% as.data.frame()
-#temp_dat$year <- temp_dat$Var1 %>% as.character() %>% as.numeric()
-
-ggplot(data = temp_dat, aes(x = Freq, y = reorder(Var1, -Freq))) + 
-	geom_bar(stat = "identity", fill = "steelblue", width = 0.8) +
-	geom_text(aes(label = Freq), hjust = 1.5, color = "white", size = 5) +
-	labs(x = "Total Articles", y = "") +
-	theme_minimal() +
-	theme(axis.title = element_text(size = 14), axis.text = element_text(size = 12))
-```
-
-
-### Taxonomic groups of plants
-
-Among the various taxonomic groups of plants Angiosperms.
 
 ### Knowledge gaps

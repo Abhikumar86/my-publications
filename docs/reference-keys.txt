@@ -42,3 +42,10 @@ applications
 example-one
 example-two
 final-words
+fig:2-map
+discussions
+discussion
+data-analysis
+bibliometric-data-analysis
+fig:2-authcol
+fig:2-keyocc

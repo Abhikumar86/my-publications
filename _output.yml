@@ -16,16 +16,8 @@ bookdown::gitbook:
         <li><a href="https://akumar.netlify.app/">Abhishek Kumar</a></li>
         <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
       collapse: section
-    download: ["pdf"]
+    download: null
     sharing:
       github: yes
       twitter: yes
       all: no
-    
-
-bookdown::pdf_book:
-  includes:
-    in_header: preamble.tex
-  latex_engine: xelatex
-  citation_package: natbib
-  keep_tex: yes

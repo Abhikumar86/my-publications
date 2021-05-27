@@ -92,7 +92,6 @@ and gaps in the current knowledge, which will guide the future investigations.
     -   What is the geographical distribution of the evidence?
     -   What is the temporal distribution of the evidence?
     -   Which domains of ecology are frequently studied?
-    -   What taxonomic groups of plants have been studied?\
     -   What are the knowledge gaps that need to be addressed?
 
 ## Methodology
@@ -113,8 +112,8 @@ phases: searching, screening, and inclusion (Figure \@ref(fig:fig21)).
 <div class="figure" style="text-align: center">
 
 ```{=html}
-<div id="htmlwidget-6fbabce3eea55cd7d1d0" style="width:750px;height:800px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-6fbabce3eea55cd7d1d0">{"x":{"diagram":"digraph G{\n\t\t\t\n\tgraph[ranksep=0.35, newrank=true, nodesep=0.25, splines=ortho]\n\t\t\t\n\tsubgraph cluster_searching{\n\tlabel=\"\"; style=filled; color=mintcream; fontsize=18\n\tnode[label=\"Scopus\n(n = 1,876)\", shape=box, width=1.25, \n\tfillcolor=grey95]searching_A;\n\tnode[label=\"Web of Science\n(n = 1,013)\", shape=box, width=1.25]searching_B;\n\tnode[label=\"Total records\n(n = 2,888)\", shape=box, width=3]searching_C;\n\tsearching_A -> searching_C\n\tsearching_B -> searching_C\n\t{rank=same;searching_A;searching_B}\n\t}\n\t\n\tsubgraph cluster_screening{\n\tlabel=\"\"; style=filled; color=lightyellow; shape=box; fontsize=18\n\tnode[label=\"Records after duplicates removed \n (n = 2,171)\", shape=box, \n\twidth=3]screening_1\n\tnode[label=\"Records after title screening \n (n = 375)\", shape=box, \n\twidth=3]screening_2\n\tnode[label=\"Records after abstract screening \n (n = 111)\",shape=box, \n\twidth=3]screening_3\n\tnode[label=\"Articles retrieved at full text \n (n = 100)\",shape=box, \n\twidth=3]screening_4\n\tnode[label=\"Articles after full text screening \n (n = 40)\",shape=box, \n\twidth=3]screening_5\n\tsearching_C -> screening_1[minlen=1, label=\"    Screening\"]\n\tscreening_1 -> screening_2 -> screening_3 -> screening_4 -> screening_5\n\t}\n\t\n\tnode[label=\"Duplicates \n (n = 717)\", shape=box, width=2, style=filled,\n\tfillcolor=seashell]screening_a\n\tnode[label=\"Excluded titles \n (n = 1,796)\", shape=box, width=2, style=filled,\n\tfillcolor=seashell]screening_b\n\tnode[label=\"Excluded abstracts \n (n = 264)\", shape=box, width=2, style=filled,\n\tfillcolor=seashell]screening_c\n\tnode[label=\"Unretrievable full text \n (n = 11)\", shape=box, width=2, style=filled,\n\tfillcolor=seashell]screening_d\n\tnode[label=\"Excluded articles \n (n = 71)\", shape=box, width=2, style=filled,\n\tfillcolor=seashell]screening_e\n\t\n\tscreening_1 -> screening_a\n\tscreening_2 -> screening_b\n\tscreening_3 -> screening_c\n\tscreening_4 -> screening_d\n\tscreening_5 -> screening_e\n\t\n\t{rank=same;screening_1;screening_a;}\n\t{rank=same;screening_2;screening_b;}\n\t{rank=same;screening_3;screening_c;}\n\t{rank=same;screening_4;screening_d;}\n\t{rank=same;screening_5;screening_e;}\n\t\n\tsubgraph cluster_articles{\n\tlabel=\"\"; style=filled; color=grey95;\n\tnode[label=\"Studies after full text screening \n (n = 40)\", shape=box, width=3, \n\tstyle=filled, fillcolor=grey95]articles_A\n\tnode[label=\"Studies included in synthesis \n (n = 39)\", shape=box, width=3, \n\tstyle=filled, fillcolor=grey40, color=grey20, fontcolor=white]articles_B\n\tscreening_5 -> articles_A[minlen=1, label=\"    Synthesis\"]\n\tarticles_A -> articles_B\n\t}\n\t\n\tnode[label=\"Excluded studies \n (n = 1)\", shape=box, width=2, style=filled,\n\tfillcolor=seashell]studies_e\n\tarticles_A -> studies_e\n\t{rank=same;articles_A;studies_e}\t\n\t\n\t}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-a8079a08581809798222" style="width:750px;height:800px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-a8079a08581809798222">{"x":{"diagram":"digraph G{\n\t\t\t\n\tgraph[ranksep=0.35, newrank=true, nodesep=0.25, splines=ortho]\n\t\t\t\n\tsubgraph cluster_searching{\n\tlabel=\"\"; style=filled; color=mintcream; fontsize=18\n\tnode[label=\"Scopus\n(n = 1,876)\", shape=box, width=1.25, \n\tfillcolor=grey95]searching_A;\n\tnode[label=\"Web of Science\n(n = 1,013)\", shape=box, width=1.25]searching_B;\n\tnode[label=\"Total records\n(n = 2,888)\", shape=box, width=3]searching_C;\n\tsearching_A -> searching_C\n\tsearching_B -> searching_C\n\t{rank=same;searching_A;searching_B}\n\t}\n\t\n\tsubgraph cluster_screening{\n\tlabel=\"\"; style=filled; color=lightyellow; shape=box; fontsize=18\n\tnode[label=\"Records after duplicates removed \n (n = 2,171)\", shape=box, \n\twidth=3]screening_1\n\tnode[label=\"Records after title screening \n (n = 375)\", shape=box, \n\twidth=3]screening_2\n\tnode[label=\"Records after abstract screening \n (n = 111)\",shape=box, \n\twidth=3]screening_3\n\tnode[label=\"Articles retrieved at full text \n (n = 100)\",shape=box, \n\twidth=3]screening_4\n\tnode[label=\"Articles after full text screening \n (n = 40)\",shape=box, \n\twidth=3]screening_5\n\tsearching_C -> screening_1[minlen=1, label=\"    Screening\"]\n\tscreening_1 -> screening_2 -> screening_3 -> screening_4 -> screening_5\n\t}\n\t\n\tnode[label=\"Duplicates \n (n = 717)\", shape=box, width=2, style=filled,\n\tfillcolor=seashell]screening_a\n\tnode[label=\"Excluded titles \n (n = 1,796)\", shape=box, width=2, style=filled,\n\tfillcolor=seashell]screening_b\n\tnode[label=\"Excluded abstracts \n (n = 264)\", shape=box, width=2, style=filled,\n\tfillcolor=seashell]screening_c\n\tnode[label=\"Unretrievable full text \n (n = 11)\", shape=box, width=2, style=filled,\n\tfillcolor=seashell]screening_d\n\tnode[label=\"Excluded articles \n (n = 71)\", shape=box, width=2, style=filled,\n\tfillcolor=seashell]screening_e\n\t\n\tscreening_1 -> screening_a\n\tscreening_2 -> screening_b\n\tscreening_3 -> screening_c\n\tscreening_4 -> screening_d\n\tscreening_5 -> screening_e\n\t\n\t{rank=same;screening_1;screening_a;}\n\t{rank=same;screening_2;screening_b;}\n\t{rank=same;screening_3;screening_c;}\n\t{rank=same;screening_4;screening_d;}\n\t{rank=same;screening_5;screening_e;}\n\t\n\tsubgraph cluster_articles{\n\tlabel=\"\"; style=filled; color=grey95;\n\tnode[label=\"Studies after full text screening \n (n = 40)\", shape=box, width=3, \n\tstyle=filled, fillcolor=grey95]articles_A\n\tnode[label=\"Studies included in synthesis \n (n = 39)\", shape=box, width=3, \n\tstyle=filled, fillcolor=grey40, color=grey20, fontcolor=white]articles_B\n\tscreening_5 -> articles_A[minlen=1, label=\"    Synthesis\"]\n\tarticles_A -> articles_B\n\t}\n\t\n\tnode[label=\"Excluded studies \n (n = 1)\", shape=box, width=2, style=filled,\n\tfillcolor=seashell]studies_e\n\tarticles_A -> studies_e\n\t{rank=same;articles_A;studies_e}\t\n\t\n\t}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 ```
 
 <p class="caption">(\#fig:fig21)Schematic flow diagram for literature search, screening and inclusion process [modified from @haddaway2018]</p>
@@ -453,7 +452,7 @@ ecological domain according the above classification system (Table
 
 
 
-### Bibliometric data
+### Bibliometric data analysis
 
 We developed a search string based on the doi (digital object identifier) and 
 title (if doi is not available) of included studies to  extract bibliometric metadata from the 
@@ -461,7 +460,17 @@ Scopus database. We retrieved bibliometric information for 39 articles on 09 May
 However, we were not able to extract metadata for an article because it was not available 
 in Scopus; therefore, we excluded it from the final systematic map and narrative 
 synthesis (Figure \@ref(fig:fig21)). This bibliometric data had several missing 
-values (marked as `NA`), these values were manually added from the full text.
+values (marked as `NA`), these values were manually added from the full text, if 
+available. Further, we cited references were not in uniform format due to different
+reference styles of journals; therefore, we manually formatted them.
+
+The bibliometric data analysis was conducted using the R package *bibliometrix*
+[@bibliometrix2017] in R programming environment [@R-base]. The bibliometric data 
+was converted to a dataframe using the function `convert2df()` and saved for 
+further analysis.
+
+
+
 
 ## Results
 
@@ -473,8 +482,6 @@ available for a study (Figure \@ref(fig:fig21)). Thus, this synthesis is based o
 total 39 studies published in 26 sources (journals) during 1988 to 2021. The results
 of descriptive analysis of bibliometric indicators for selected studies is represented
 in Table \@ref(tab:gendesc24).
-
-
 
 <table>
 <caption>(\#tab:gendesc24)General description of extracted bibliometric indicators from Scopus</caption>
@@ -512,7 +519,7 @@ in Table \@ref(tab:gendesc24).
   </tr>
   <tr>
    <td style="text-align:left;padding-left: 2em;" indentlevel="1"> References </td>
-   <td style="text-align:left;"> 1763 </td>
+   <td style="text-align:left;"> 1842 </td>
   </tr>
   <tr grouplength="1"><td colspan="2" style="border-bottom: 1px solid;"><strong>Document types</strong></td></tr>
 <tr>
@@ -575,18 +582,130 @@ identified in this article (Figure \@ref(fig:2-journals)). These nine journals
 (about 34.6%) represented about 56.4% of the total studies (n = 22) included.
 
 <div class="figure" style="text-align: center">
-<img src="02-siwalik-ecology_files/figure-html/2-journals-1.svg" alt="Publication sources (journals) representing at least two studies identified in the present article. The number of publications in a particular journal is represented in parenthesis" width="80%" />
+<img src="02-siwalik-ecology_files/figure-html/2-journals-1.svg" alt="Publication sources (journals) representing at least two studies identified in the present article. The number of publications in a particular journal is represented in parenthesis" width="90%" />
 <p class="caption">(\#fig:2-journals)Publication sources (journals) representing at least two studies identified in the present article. The number of publications in a particular journal is represented in parenthesis</p>
 </div>
 
-Among the selected 39 studies, experimental studies were under-represented, 
-accounting for just about 5% of total studies. On the other hand, observational 
-and modelling studies were heavily dominated constituting about 95% of all the 
-studies (Figure \@ref(fig:2-stype)).
+
 
 <div class="figure" style="text-align: center">
-<img src="02-siwalik-ecology_files/figure-html/2-stype-1.svg" alt="Breakdown of selected studies by study type (EXP = experimental, MOD = modelling, OBS = observational), region (CH = Chandigarh, HR = Haryana, HP = Himachal Pradesh, JK = Jammu and Kashmir, UK = Uttarakhand, WR = whole region) and domains of ecology (AE = applied ecology, CE = community ecology, EE = ecosystem ecology, LE = landscape ecology, PL = palaeoecology, PE = physiological ecology, SI = species interactions). The number of publications within each category is indicated in parenthesis" width="100%" />
-<p class="caption">(\#fig:2-stype)Breakdown of selected studies by study type (EXP = experimental, MOD = modelling, OBS = observational), region (CH = Chandigarh, HR = Haryana, HP = Himachal Pradesh, JK = Jammu and Kashmir, UK = Uttarakhand, WR = whole region) and domains of ecology (AE = applied ecology, CE = community ecology, EE = ecosystem ecology, LE = landscape ecology, PL = palaeoecology, PE = physiological ecology, SI = species interactions). The number of publications within each category is indicated in parenthesis</p>
+<img src="02-siwalik-ecology_files/figure-html/2-authcol-1.svg" alt="Collaboration network of first 25 authors from the selected studies. The size of each vertex is proportional to its degree (i.e. the frequency of authors appearance)" width="90%" />
+<p class="caption">(\#fig:2-authcol)Collaboration network of first 25 authors from the selected studies. The size of each vertex is proportional to its degree (i.e. the frequency of authors appearance)</p>
+</div>
+
+
+
+
+<div class="figure" style="text-align: center">
+<img src="02-siwalik-ecology_files/figure-html/2-keyocc-1.svg" alt="Co-occurrence network of keywords (n = 25). The size of each vertex is proportional to its degree (i.e. the frequency of keywords)" width="90%" />
+<p class="caption">(\#fig:2-keyocc)Co-occurrence network of keywords (n = 25). The size of each vertex is proportional to its degree (i.e. the frequency of keywords)</p>
+</div>
+
+
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Paper          </th>
+   <th style="text-align:left;"> DOI </th>
+   <th style="text-align:right;"> TC </th>
+   <th style="text-align:right;"> TCperYear </th>
+   <th style="text-align:right;"> NTC </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> YANG XQ, 2013, ECOL ENG </td>
+   <td style="text-align:left;"> 10.1016/j.ecoleng.2012.12.004 </td>
+   <td style="text-align:right;"> 236 </td>
+   <td style="text-align:right;"> 26.22 </td>
+   <td style="text-align:right;"> 1.91 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> SHARMA CM, 2010, FOR ECOL MANAGE </td>
+   <td style="text-align:left;"> 10.1016/j.foreco.2010.09.014 </td>
+   <td style="text-align:right;"> 103 </td>
+   <td style="text-align:right;"> 8.58 </td>
+   <td style="text-align:right;"> 2.53 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> LAMSAL P, 2018, AMBIO </td>
+   <td style="text-align:left;"> 10.1007/s13280-018-1017-z </td>
+   <td style="text-align:right;"> 51 </td>
+   <td style="text-align:right;"> 12.75 </td>
+   <td style="text-align:right;"> 2.43 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> LODHIYAL N, 2003, FOR ECOL MANAGE </td>
+   <td style="text-align:left;"> 10.1016/S0378-1127(02)00267-0 </td>
+   <td style="text-align:right;"> 42 </td>
+   <td style="text-align:right;"> 2.21 </td>
+   <td style="text-align:right;"> 1.00 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> MISHRA NB, 2015, APPL GEOGR </td>
+   <td style="text-align:left;"> 10.1016/j.apgeog.2014.10.007 </td>
+   <td style="text-align:right;"> 36 </td>
+   <td style="text-align:right;"> 5.14 </td>
+   <td style="text-align:right;"> 1.60 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> SANYAL P, 2005, PALAEOGEOGR PALAEOCLIMATOL PALAEOECOL </td>
+   <td style="text-align:left;"> 10.1016/j.palaeo.2005.06.007 </td>
+   <td style="text-align:right;"> 35 </td>
+   <td style="text-align:right;"> 2.06 </td>
+   <td style="text-align:right;"> 1.00 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> BARGALI SS, 1993, J VEG SCI </td>
+   <td style="text-align:left;"> 10.2307/3235730 </td>
+   <td style="text-align:right;"> 31 </td>
+   <td style="text-align:right;"> 1.07 </td>
+   <td style="text-align:right;"> 1.77 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> SINGH A, 1995, VEGETATIO </td>
+   <td style="text-align:left;"> 10.1007/BF00033459 </td>
+   <td style="text-align:right;"> 27 </td>
+   <td style="text-align:right;"> 1.00 </td>
+   <td style="text-align:right;"> 1.00 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> KIMOTHI MM, 2010, INT J REMOTE SENS </td>
+   <td style="text-align:left;"> 10.1080/01431160903121126 </td>
+   <td style="text-align:right;"> 25 </td>
+   <td style="text-align:right;"> 2.08 </td>
+   <td style="text-align:right;"> 0.61 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> GUPTA RD, 2010, TROP ECOL </td>
+   <td style="text-align:left;"> NA </td>
+   <td style="text-align:right;"> 24 </td>
+   <td style="text-align:right;"> 2.00 </td>
+   <td style="text-align:right;"> 0.59 </td>
+  </tr>
+</tbody>
+</table>
+
+
+
+### Geographical distribution of the studies
+
+The distribution of estimated study sites is depicted in Figure \@ref(fig:2-map).
+The spatial distribution of studies suggest a high density around Uttarakhand state
+followed by Haryana (Figure \@ref(fig:2-map)).
+Our selected studies represented three states (Himachal Pradesh, Haryana, and 
+Uttarakhand) and two union territories (Jammu and Kashmir and Chandigarh) of India 
+(excluding studies conducted in multiple regions or whole region) and only five studies
+covered the whole region. Among the geographical regions, about 59% of total studies 
+were featured from the Uttarakhand (n = 23) only (Figure \@ref(fig:2-map)). On the
+other hand, not a single study was identified from the Siwalik region of Punjab 
+and Uttar Pradesh.
+
+
+
+<div class="figure" style="text-align: center">
+<img src="./data/siwalik-ecology/map.png" alt="Geographic distribution of the study sites (reported or estimated from publications) across the study region (JK = Jammu and Kashmir, HP = Himachal Pradesh, CH = Chandigarh, HR = Haryana, UK = Uttarakhand). The number of studies per region is indicated in parenthesis" width="100%" />
+<p class="caption">(\#fig:2-map)Geographic distribution of the study sites (reported or estimated from publications) across the study region (JK = Jammu and Kashmir, HP = Himachal Pradesh, CH = Chandigarh, HR = Haryana, UK = Uttarakhand). The number of studies per region is indicated in parenthesis</p>
 </div>
 
 ### Temporal distribution of studies
@@ -595,33 +714,38 @@ The number of publications has shown an overall increasing trend and exhibited
 an annual growth rate of about 4.3% (Figure \@ref(fig:temp23)). During 2010s 
 annual production of scientific publications observed a steep rise and the year 
 2020 recorded highest number of publications (n = 6) within a single year 
-(Figure \@ref(fig:temp23)). Further, the decadal frequency of publications also 
-displayed an increasing trend. The decadal frequency of publications rose to six 
-during 2000s, which was stagnating to only four during 1980s and 1990s. However, 
-this frequency increased by more than 350% (n = 22) during 2010s 
-(Figure \@ref(fig:temp23)). 
+(Figure \@ref(fig:temp23)). Further, the decadal frequency of publications was six
+during 1990s, which dipped to only two publication per decade during 2000s. However,
+it so steeply increased during 2010s that it became double of all studies published 
+from 1980s to 2000s (Figure \@ref(fig:temp23)). 
 
 <div class="figure" style="text-align: center">
-<img src="02-siwalik-ecology_files/figure-html/temp23-1.svg" alt="Annual frequency of scientific publications included in this synthesis. The trend line is fitted using 80% LOESS (y ~ x) smoothening. Inset shows the decadal frequency of publications" width="80%" />
+<img src="02-siwalik-ecology_files/figure-html/temp23-1.svg" alt="Annual frequency of scientific publications included in this synthesis. The trend line is fitted using 80% LOESS (y ~ x) smoothening. Inset shows the decadal frequency of publications" width="90%" />
 <p class="caption">(\#fig:temp23)Annual frequency of scientific publications included in this synthesis. The trend line is fitted using 80% LOESS (y ~ x) smoothening. Inset shows the decadal frequency of publications</p>
 </div>
 
-### Geographical distribution of the studies
 
-
-
-<div class="figure" style="text-align: center">
-<img src="./data/siwalik-ecology/map.png" alt="Geographic distribution of the study sites (reported or estimated from publications)" width="80%" />
-<p class="caption">(\#fig:map21)Geographic distribution of the study sites (reported or estimated from publications)</p>
-</div>
 
 ### Domains of ecology
 
-<img src="02-siwalik-ecology_files/figure-html/unnamed-chunk-9-1.svg" width="80%" style="display: block; margin: auto;" />
+We found three distinct study types, six distinct study region and seven distinct 
+domains of plant ecology (Figure \@ref(fig:2-stype)). Among the selected 39 studies, 
+experimental studies were under-represented, accounting for just about 5% of total 
+studies. On the other hand, observational and modelling studies were heavily dominated 
+constituting about 95% of all the studies (Figure \@ref(fig:2-stype)).
 
 
-### Taxonomic groups of plants
+<div class="figure" style="text-align: center">
+<img src="02-siwalik-ecology_files/figure-html/2-stype-1.svg" alt="Breakdown of selected studies by study type (EX = experimental, MO = modelling, OB = observational), region (CH = Chandigarh, HR = Haryana, HP = Himachal Pradesh, JK = Jammu and Kashmir, UK = Uttarakhand, WR = whole region) and domains of ecology (AE = applied ecology, CE = community ecology, EE = ecosystem ecology, LE = landscape ecology, PL = palaeoecology, PE = physiological ecology, SI = species interactions). The number of publications within each category is indicated in parenthesis" width="100%" />
+<p class="caption">(\#fig:2-stype)Breakdown of selected studies by study type (EX = experimental, MO = modelling, OB = observational), region (CH = Chandigarh, HR = Haryana, HP = Himachal Pradesh, JK = Jammu and Kashmir, UK = Uttarakhand, WR = whole region) and domains of ecology (AE = applied ecology, CE = community ecology, EE = ecosystem ecology, LE = landscape ecology, PL = palaeoecology, PE = physiological ecology, SI = species interactions). The number of publications within each category is indicated in parenthesis</p>
+</div>
 
-Among the various taxonomic groups of plants Angiosperms.
+We identified seven distinct (not mutually exclusive) domains under plant ecology 
+(Figure \@ref(fig:2-stype)). Among these assigned domains, about 38.5% studies 
+belonged to landscape ecology and 30.77% studies belonged to ecosystem ecology; 
+thus, together constituting about 70% of total studies (Figure \@ref(fig:2-stype)).
+
+## Discussion
+
 
 ### Knowledge gaps
