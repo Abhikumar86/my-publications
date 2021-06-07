@@ -24,7 +24,7 @@
 <meta name="author" content="Abhishek Kumar" />
 
 
-<meta name="date" content="2021-05-21" />
+<meta name="date" content="2021-06-03" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +33,7 @@
   
 <link rel="prev" href="objectives.html"/>
 <link rel="next" href="results.html"/>
-<script src="libs/header-attrs-2.7/header-attrs.js"></script>
+<script src="libs/header-attrs-2.8/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -123,7 +123,7 @@ div.csl-indent {
 <li class="chapter" data-level="2.4.3" data-path="methodology.html"><a href="methodology.html#literature-search"><i class="fa fa-check"></i><b>2.4.3</b> Literature search</a></li>
 <li class="chapter" data-level="2.4.4" data-path="methodology.html"><a href="methodology.html#article-screening"><i class="fa fa-check"></i><b>2.4.4</b> Article screening</a></li>
 <li class="chapter" data-level="2.4.5" data-path="methodology.html"><a href="methodology.html#data-extraction"><i class="fa fa-check"></i><b>2.4.5</b> Data extraction</a></li>
-<li class="chapter" data-level="2.4.6" data-path="methodology.html"><a href="methodology.html#bibliometric-data-analysis"><i class="fa fa-check"></i><b>2.4.6</b> Bibliometric data analysis</a></li>
+<li class="chapter" data-level="2.4.6" data-path="methodology.html"><a href="methodology.html#data-analysis"><i class="fa fa-check"></i><b>2.4.6</b> Data analysis</a></li>
 </ul></li>
 <li class="chapter" data-level="2.5" data-path="results.html"><a href="results.html"><i class="fa fa-check"></i><b>2.5</b> Results</a>
 <ul>
@@ -180,8 +180,8 @@ the protocol, search strategy, screening, data extraction, analyses and writing.
 The selection of appropriate studies for the present review involved of three
 phases: searching, screening, and inclusion (Figure <a href="methodology.html#fig:fig21">2.1</a>).</p>
 <div class="figure" style="text-align: center"><span id="fig:fig21"></span>
-<div id="htmlwidget-a8079a08581809798222" style="width:750px;height:800px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-a8079a08581809798222">{"x":{"diagram":"digraph G{\n\t\t\t\n\tgraph[ranksep=0.35, newrank=true, nodesep=0.25, splines=ortho]\n\t\t\t\n\tsubgraph cluster_searching{\n\tlabel=\"\"; style=filled; color=mintcream; fontsize=18\n\tnode[label=\"Scopus\n(n = 1,876)\", shape=box, width=1.25, \n\tfillcolor=grey95]searching_A;\n\tnode[label=\"Web of Science\n(n = 1,013)\", shape=box, width=1.25]searching_B;\n\tnode[label=\"Total records\n(n = 2,888)\", shape=box, width=3]searching_C;\n\tsearching_A -> searching_C\n\tsearching_B -> searching_C\n\t{rank=same;searching_A;searching_B}\n\t}\n\t\n\tsubgraph cluster_screening{\n\tlabel=\"\"; style=filled; color=lightyellow; shape=box; fontsize=18\n\tnode[label=\"Records after duplicates removed \n (n = 2,171)\", shape=box, \n\twidth=3]screening_1\n\tnode[label=\"Records after title screening \n (n = 375)\", shape=box, \n\twidth=3]screening_2\n\tnode[label=\"Records after abstract screening \n (n = 111)\",shape=box, \n\twidth=3]screening_3\n\tnode[label=\"Articles retrieved at full text \n (n = 100)\",shape=box, \n\twidth=3]screening_4\n\tnode[label=\"Articles after full text screening \n (n = 40)\",shape=box, \n\twidth=3]screening_5\n\tsearching_C -> screening_1[minlen=1, label=\"    Screening\"]\n\tscreening_1 -> screening_2 -> screening_3 -> screening_4 -> screening_5\n\t}\n\t\n\tnode[label=\"Duplicates \n (n = 717)\", shape=box, width=2, style=filled,\n\tfillcolor=seashell]screening_a\n\tnode[label=\"Excluded titles \n (n = 1,796)\", shape=box, width=2, style=filled,\n\tfillcolor=seashell]screening_b\n\tnode[label=\"Excluded abstracts \n (n = 264)\", shape=box, width=2, style=filled,\n\tfillcolor=seashell]screening_c\n\tnode[label=\"Unretrievable full text \n (n = 11)\", shape=box, width=2, style=filled,\n\tfillcolor=seashell]screening_d\n\tnode[label=\"Excluded articles \n (n = 71)\", shape=box, width=2, style=filled,\n\tfillcolor=seashell]screening_e\n\t\n\tscreening_1 -> screening_a\n\tscreening_2 -> screening_b\n\tscreening_3 -> screening_c\n\tscreening_4 -> screening_d\n\tscreening_5 -> screening_e\n\t\n\t{rank=same;screening_1;screening_a;}\n\t{rank=same;screening_2;screening_b;}\n\t{rank=same;screening_3;screening_c;}\n\t{rank=same;screening_4;screening_d;}\n\t{rank=same;screening_5;screening_e;}\n\t\n\tsubgraph cluster_articles{\n\tlabel=\"\"; style=filled; color=grey95;\n\tnode[label=\"Studies after full text screening \n (n = 40)\", shape=box, width=3, \n\tstyle=filled, fillcolor=grey95]articles_A\n\tnode[label=\"Studies included in synthesis \n (n = 39)\", shape=box, width=3, \n\tstyle=filled, fillcolor=grey40, color=grey20, fontcolor=white]articles_B\n\tscreening_5 -> articles_A[minlen=1, label=\"    Synthesis\"]\n\tarticles_A -> articles_B\n\t}\n\t\n\tnode[label=\"Excluded studies \n (n = 1)\", shape=box, width=2, style=filled,\n\tfillcolor=seashell]studies_e\n\tarticles_A -> studies_e\n\t{rank=same;articles_A;studies_e}\t\n\t\n\t}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-3374d38700530262af17" style="width:750px;height:800px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-3374d38700530262af17">{"x":{"diagram":"digraph G{\n\t\t\t\n\tgraph[ranksep=0.35, newrank=true, nodesep=0.25, splines=ortho]\n\t\t\t\n\tsubgraph cluster_searching{\n\tlabel=\"\"; style=filled; color=mintcream; fontsize=18\n\tnode[label=\"Scopus\n(n = 1,876)\", shape=box, width=1.25, \n\tfillcolor=grey95]searching_A;\n\tnode[label=\"Web of Science\n(n = 1,013)\", shape=box, width=1.25]searching_B;\n\tnode[label=\"Total records\n(n = 2,888)\", shape=box, width=3]searching_C;\n\tsearching_A -> searching_C\n\tsearching_B -> searching_C\n\t{rank=same;searching_A;searching_B}\n\t}\n\t\n\tsubgraph cluster_screening{\n\tlabel=\"\"; style=filled; color=lightyellow; shape=box; fontsize=18\n\tnode[label=\"Records after duplicates removed \n (n = 2,171)\", shape=box, \n\twidth=3]screening_1\n\tnode[label=\"Records after title screening \n (n = 375)\", shape=box, \n\twidth=3]screening_2\n\tnode[label=\"Records after abstract screening \n (n = 111)\",shape=box, \n\twidth=3]screening_3\n\tnode[label=\"Articles retrieved at full text \n (n = 100)\",shape=box, \n\twidth=3]screening_4\n\tnode[label=\"Articles after full text screening \n (n = 40)\",shape=box, \n\twidth=3]screening_5\n\tsearching_C -> screening_1[minlen=1, label=\"    Screening\"]\n\tscreening_1 -> screening_2 -> screening_3 -> screening_4 -> screening_5\n\t}\n\t\n\tnode[label=\"Duplicates \n (n = 717)\", shape=box, width=2, style=filled,\n\tfillcolor=seashell]screening_a\n\tnode[label=\"Excluded titles \n (n = 1,796)\", shape=box, width=2, style=filled,\n\tfillcolor=seashell]screening_b\n\tnode[label=\"Excluded abstracts \n (n = 264)\", shape=box, width=2, style=filled,\n\tfillcolor=seashell]screening_c\n\tnode[label=\"Unretrievable full text \n (n = 11)\", shape=box, width=2, style=filled,\n\tfillcolor=seashell]screening_d\n\tnode[label=\"Excluded articles \n (n = 71)\", shape=box, width=2, style=filled,\n\tfillcolor=seashell]screening_e\n\t\n\tscreening_1 -> screening_a\n\tscreening_2 -> screening_b\n\tscreening_3 -> screening_c\n\tscreening_4 -> screening_d\n\tscreening_5 -> screening_e\n\t\n\t{rank=same;screening_1;screening_a;}\n\t{rank=same;screening_2;screening_b;}\n\t{rank=same;screening_3;screening_c;}\n\t{rank=same;screening_4;screening_d;}\n\t{rank=same;screening_5;screening_e;}\n\t\n\tsubgraph cluster_articles{\n\tlabel=\"\"; style=filled; color=grey95;\n\tnode[label=\"Studies after full text screening \n (n = 40)\", shape=box, width=3, \n\tstyle=filled, fillcolor=grey95]articles_A\n\tnode[label=\"Studies included in synthesis \n (n = 39)\", shape=box, width=3, \n\tstyle=filled, fillcolor=grey40, color=grey20, fontcolor=white]articles_B\n\tscreening_5 -> articles_A[minlen=1, label=\"    Synthesis\"]\n\tarticles_A -> articles_B\n\t}\n\t\n\tnode[label=\"Excluded studies \n (n = 1)\", shape=box, width=2, style=filled,\n\tfillcolor=seashell]studies_e\n\tarticles_A -> studies_e\n\t{rank=same;articles_A;studies_e}\t\n\t\n\t}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 <p class="caption">
 Figure 2.1: Schematic flow diagram for literature search, screening and inclusion process <span class="citation">(modified from <a href="#ref-haddaway2018" role="doc-biblioref">Haddaway, Macura, Whaley, &amp; Pullin, 2018</a>)</span>
 </p>
@@ -347,7 +347,7 @@ repeated for records 501 to 1,000 and 1,001 to 1,013.</p>
 </div>
 <div id="article-screening" class="section level3" number="2.4.4">
 <h3><span class="header-section-number">2.4.4</span> Article screening</h3>
-<p>We used the package <em>revtools</em> <span class="citation">(<a href="#ref-revtools2019" role="doc-biblioref">Westgate, 2019</a>)</span> in R programming environment <span class="citation">(<a href="#ref-R-base" role="doc-biblioref">R Core Team, 2020</a>)</span>
+<p>We used the package <em>revtools</em> <span class="citation">(<a href="#ref-westgate2019" role="doc-biblioref">Westgate, 2019</a>)</span> in R programming environment <span class="citation">(<a href="#ref-R-base" role="doc-biblioref">R Core Team, 2021</a>)</span>
 for article screening phase. This phase included de-duplication, title screening,
 abstract screening and full text screening. For article screening phase, we adhered
 to the previously proposed eligibility criteria (Table <a href="methodology.html#tab:ec22">2.2</a>).</p>
@@ -617,8 +617,8 @@ Conservation, management and restoration ecology
 ecological domain according the above classification system (Table
 <a href="methodology.html#tab:clasf23">2.3</a>).</p>
 </div>
-<div id="bibliometric-data-analysis" class="section level3" number="2.4.6">
-<h3><span class="header-section-number">2.4.6</span> Bibliometric data analysis</h3>
+<div id="data-analysis" class="section level3" number="2.4.6">
+<h3><span class="header-section-number">2.4.6</span> Data analysis</h3>
 <p>We developed a search string based on the doi (digital object identifier) and
 title (if doi is not available) of included studies to extract bibliometric metadata from the
 Scopus database. We retrieved bibliometric information for 39 articles on 09 May 2021.
@@ -626,21 +626,51 @@ However, we were not able to extract metadata for an article because it was not 
 in Scopus; therefore, we excluded it from the final systematic map and narrative
 synthesis (Figure <a href="methodology.html#fig:fig21">2.1</a>). This bibliometric data had several missing
 values (marked as <code>NA</code>), these values were manually added from the full text, if
-available. Further, we cited references were not in uniform format due to different
-reference styles of journals; therefore, we manually formatted them.</p>
-<p>The bibliometric data analysis was conducted using the R package <em>bibliometrix</em>
-<span class="citation">(<a href="#ref-bibliometrix2017" role="doc-biblioref">Aria &amp; Cuccurullo, 2017</a>)</span> in R programming environment <span class="citation">(<a href="#ref-R-base" role="doc-biblioref">R Core Team, 2020</a>)</span>. The bibliometric data
+available.</p>
+<p>The bibliometric data analysis was conducted using the package <em>bibliometrix</em>
+<span class="citation">(<a href="#ref-bibliometrix2017" role="doc-biblioref">Aria &amp; Cuccurullo, 2017</a>)</span> in R programming environment <span class="citation">(<a href="#ref-R-base" role="doc-biblioref">R Core Team, 2021</a>)</span>. The bibliometric data
 was converted to a dataframe using the function <code>convert2df()</code> and saved for
-further analysis.</p>
+further analysis. The attributes of manuscript (e.g. title, authors, citations,
+keywords) are connected with manuscript itself, such connections can be
+represented as rectangular matrices (Manuscripts <span class="math inline">\(\times\)</span> Attributes). For example,
+consider a rectangular binary matrix <span class="math inline">\(A\)</span>, where rows represent the manuscripts
+and columns represent the authors. The generic element <span class="math inline">\(A_{ij}\)</span> is 1 if the
+manuscript <span class="math inline">\(i\)</span> has author <span class="math inline">\(j\)</span> and 0 otherwise. The <span class="math inline">\(j^{th}\)</span> column sum <span class="math inline">\(A_j\)</span> is
+the number of manuscripts authored by author <span class="math inline">\(j\)</span>. This rectangular matrix
+represents as a bipartite network of Manuscripts <span class="math inline">\(\times\)</span> Authors
+<span class="citation">(<a href="#ref-bibliometrix2017" role="doc-biblioref">Aria &amp; Cuccurullo, 2017</a>; <a href="#ref-glanzel2005" role="doc-biblioref">Glänzel &amp; Schubert, 2005</a>)</span>. The authors’ collaboration network was calculated
+by multiplying the bipartite matrix by its transpose (the same matrix flipped
+along its diagonal).</p>
+<p><span class="math display">\[AC = A^T \times A\]</span></p>
+<p>where <span class="math inline">\(A\)</span> is a bipartite network of Manuscripts <span class="math inline">\(\times\)</span> Authors and <span class="math inline">\(A^T\)</span> is
+transpose of <span class="math inline">\(A\)</span>. The diagonal element <span class="math inline">\(AC_i\)</span> is the number of manuscripts
+authored or co-authored by researcher <span class="math inline">\(i\)</span>.</p>
+<p>Authors’ collaboration network is useful for identifying the groups of researchers
+or teams as some authors are highly connected to each other. This is why scientific
+collaboration is frequently represented as the author collaboration networks
+<span class="citation">(<a href="#ref-glanzel2005" role="doc-biblioref">Glänzel &amp; Schubert, 2005</a>)</span>. In a collaboration network of authors, each node (or vertex)
+represents an author and the edges between the nodes reflect the collaboration
+relationships among the authors. The weight of edge reflects the number of
+manuscripts in which the connected authors have appeared (i.e., the number of
+manuscripts authored by both researchers).</p>
+<p>Similarly, the keyword co-occurrence network was estimated from the bipartite
+network of Manuscripts <span class="math inline">\(\times\)</span> Keywords <span class="citation">(<a href="#ref-bibliometrix2017" role="doc-biblioref">Aria &amp; Cuccurullo, 2017</a>)</span>. These keywords can
+be either provided by authors (Author Keywords) or chosen by database third parties
+(Indexed Keywords in Scopus and Keywords Plus in case of Web of Science). We considered
+‘Indexed Keywords’ for keyword co-occurrence because these are standardized by
+taking additional considerations such as synonyms, spelling variants and plurals.</p>
 </div>
 </div>
 <h3>References</h3>
 <div id="refs" class="references csl-bib-body hanging-indent" line-spacing="2">
 <div id="ref-bibliometrix2017" class="csl-entry">
-Aria, M., &amp; Cuccurullo, C. (2017). Bibliometrix: An r-tool for comprehensive science mapping analysis. <em>Journal of Informetrics</em>, <em>11</em>(4), 959–975. Retrieved from <a href="https://doi.org/10.1016/j.joi.2017.08.007">https://doi.org/10.1016/j.joi.2017.08.007</a>
+Aria, M., &amp; Cuccurullo, C. (2017). <span class="nocase">b</span>ibliometrix: An r-tool for comprehensive science mapping analysis. <em>Journal of Informetrics</em>, <em>11</em>(4), 959–975. Retrieved from <a href="https://doi.org/10.1016/j.joi.2017.08.007">https://doi.org/10.1016/j.joi.2017.08.007</a>
 </div>
 <div id="ref-CEE2018" class="csl-entry">
 Collaboration for Environmental Evidence. (2018). <em><span class="nocase">Guidelines and standards for evidence synthesis in environmental management. Version 5.0</span></em>. (A. S. Pullin, G. K. Frampton, B. Livoreil, &amp; G. Petrokofsky, Eds.). Retrieved from <a href="https://environmentalevidence.org/information-for-authors/">https://environmentalevidence.org/information-for-authors/</a>
+</div>
+<div id="ref-glanzel2005" class="csl-entry">
+Glänzel, W., &amp; Schubert, A. (2005). Analysing scientific networks through co-authorship. In H. F. Moed, W. Glänzel, &amp; U. Schmoch (Eds.), <em>Handbook of quantitative science and technology research: The use of publication and patent statistics in studies of <span>S</span><span>&amp;</span><span>T</span> systems</em> (pp. 257–276). Dordrecht: Springer Netherlands. <a href="https://doi.org/10.1007/1-4020-2755-9_12">https://doi.org/10.1007/1-4020-2755-9_12</a>
 </div>
 <div id="ref-grames2020" class="csl-entry">
 Grames, E. M., &amp; Elphick, C. S. (2020). Use of study design principles would increase the reproducibility of reviews in conservation biology. <em>Biological Conservation</em>, <em>241</em>, 108385. <a href="https://doi.org/10.1016/j.biocon.2019.108385">https://doi.org/10.1016/j.biocon.2019.108385</a>
@@ -649,9 +679,9 @@ Grames, E. M., &amp; Elphick, C. S. (2020). Use of study design principles would
 Haddaway, N., Macura, B., Whaley, P., &amp; Pullin, A. (2018). ROSES flow diagram for systematic maps. Version 1.0. <a href="https://doi.org/10.6084/m9.figshare.6085940">https://doi.org/10.6084/m9.figshare.6085940</a>
 </div>
 <div id="ref-R-base" class="csl-entry">
-R Core Team. (2020). <em>R: A language and environment for statistical computing</em>. Vienna, Austria: R Foundation for Statistical Computing. Retrieved from <a href="https://www.R-project.org/">https://www.R-project.org/</a>
+R Core Team. (2021). <em>R: A language and environment for statistical computing</em>. Vienna, Austria: R Foundation for Statistical Computing. Retrieved from <a href="https://www.R-project.org/">https://www.R-project.org/</a>
 </div>
-<div id="ref-revtools2019" class="csl-entry">
+<div id="ref-westgate2019" class="csl-entry">
 Westgate, M. J. (2019). <span class="nocase">r</span>evtools: An r package to support article screening for evidence synthesis. <em>Research Synthesis Methods</em>, <em>10</em>(4), 606–614. <a href="https://doi.org/10.1002/jrsm.1374">https://doi.org/10.1002/jrsm.1374</a>
 </div>
 </div>
@@ -712,6 +742,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>

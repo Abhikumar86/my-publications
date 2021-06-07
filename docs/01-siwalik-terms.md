@@ -21,7 +21,7 @@ However, available evidence indicate that the Siwaliks were formed during the up
 
 ## Data and Methods
 
-We have explored the literature using all the variant terms as keywords (Shivalik\*, Shiwalik\*, Sivalik\* and Siwalik\*) from available databases: Google Scholar, Web of Science [v5.30] (WoS) and Scopus. Since we had access to Scopus (1878-2019) and Web of Science (1989-2019) databases, a bibliometric analysis of both the databases was performed using the package bibliometrix [@aria2017] in R programming language [@R-base]. The data were acquired from both the databases on 16 July 2019. Specifically, the distribution of these terms has been analysed across different databases, year (yearly production of publications and documents), countries (country of the corresponding author from publications) and sources like journals, books, proceedings, etc.
+We have explored the literature using all the variant terms as keywords (Shivalik\*, Shiwalik\*, Sivalik\* and Siwalik\*) from available databases: Google Scholar, Web of Science [v5.30] (WoS) and Scopus. Since we had access to Scopus (1878-2019) and Web of Science (1989-2019) databases, a bibliometric analysis of both the databases was performed using the package bibliometrix [@bibliometrix2017] in R programming language [@R-base]. The data were acquired from both the databases on 16 July 2019. Specifically, the distribution of these terms has been analysed across different databases, year (yearly production of publications and documents), countries (country of the corresponding author from publications) and sources like journals, books, proceedings, etc.
 
 ## Results and Discussion
 

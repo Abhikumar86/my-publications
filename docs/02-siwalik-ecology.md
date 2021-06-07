@@ -1,6 +1,6 @@
 ---
-editor_options: 
-  markdown: 
+editor_options:
+  markdown:
     wrap: 80
 ---
 
@@ -112,8 +112,8 @@ phases: searching, screening, and inclusion (Figure \@ref(fig:fig21)).
 <div class="figure" style="text-align: center">
 
 ```{=html}
-<div id="htmlwidget-a8079a08581809798222" style="width:750px;height:800px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-a8079a08581809798222">{"x":{"diagram":"digraph G{\n\t\t\t\n\tgraph[ranksep=0.35, newrank=true, nodesep=0.25, splines=ortho]\n\t\t\t\n\tsubgraph cluster_searching{\n\tlabel=\"\"; style=filled; color=mintcream; fontsize=18\n\tnode[label=\"Scopus\n(n = 1,876)\", shape=box, width=1.25, \n\tfillcolor=grey95]searching_A;\n\tnode[label=\"Web of Science\n(n = 1,013)\", shape=box, width=1.25]searching_B;\n\tnode[label=\"Total records\n(n = 2,888)\", shape=box, width=3]searching_C;\n\tsearching_A -> searching_C\n\tsearching_B -> searching_C\n\t{rank=same;searching_A;searching_B}\n\t}\n\t\n\tsubgraph cluster_screening{\n\tlabel=\"\"; style=filled; color=lightyellow; shape=box; fontsize=18\n\tnode[label=\"Records after duplicates removed \n (n = 2,171)\", shape=box, \n\twidth=3]screening_1\n\tnode[label=\"Records after title screening \n (n = 375)\", shape=box, \n\twidth=3]screening_2\n\tnode[label=\"Records after abstract screening \n (n = 111)\",shape=box, \n\twidth=3]screening_3\n\tnode[label=\"Articles retrieved at full text \n (n = 100)\",shape=box, \n\twidth=3]screening_4\n\tnode[label=\"Articles after full text screening \n (n = 40)\",shape=box, \n\twidth=3]screening_5\n\tsearching_C -> screening_1[minlen=1, label=\"    Screening\"]\n\tscreening_1 -> screening_2 -> screening_3 -> screening_4 -> screening_5\n\t}\n\t\n\tnode[label=\"Duplicates \n (n = 717)\", shape=box, width=2, style=filled,\n\tfillcolor=seashell]screening_a\n\tnode[label=\"Excluded titles \n (n = 1,796)\", shape=box, width=2, style=filled,\n\tfillcolor=seashell]screening_b\n\tnode[label=\"Excluded abstracts \n (n = 264)\", shape=box, width=2, style=filled,\n\tfillcolor=seashell]screening_c\n\tnode[label=\"Unretrievable full text \n (n = 11)\", shape=box, width=2, style=filled,\n\tfillcolor=seashell]screening_d\n\tnode[label=\"Excluded articles \n (n = 71)\", shape=box, width=2, style=filled,\n\tfillcolor=seashell]screening_e\n\t\n\tscreening_1 -> screening_a\n\tscreening_2 -> screening_b\n\tscreening_3 -> screening_c\n\tscreening_4 -> screening_d\n\tscreening_5 -> screening_e\n\t\n\t{rank=same;screening_1;screening_a;}\n\t{rank=same;screening_2;screening_b;}\n\t{rank=same;screening_3;screening_c;}\n\t{rank=same;screening_4;screening_d;}\n\t{rank=same;screening_5;screening_e;}\n\t\n\tsubgraph cluster_articles{\n\tlabel=\"\"; style=filled; color=grey95;\n\tnode[label=\"Studies after full text screening \n (n = 40)\", shape=box, width=3, \n\tstyle=filled, fillcolor=grey95]articles_A\n\tnode[label=\"Studies included in synthesis \n (n = 39)\", shape=box, width=3, \n\tstyle=filled, fillcolor=grey40, color=grey20, fontcolor=white]articles_B\n\tscreening_5 -> articles_A[minlen=1, label=\"    Synthesis\"]\n\tarticles_A -> articles_B\n\t}\n\t\n\tnode[label=\"Excluded studies \n (n = 1)\", shape=box, width=2, style=filled,\n\tfillcolor=seashell]studies_e\n\tarticles_A -> studies_e\n\t{rank=same;articles_A;studies_e}\t\n\t\n\t}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-3374d38700530262af17" style="width:750px;height:800px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-3374d38700530262af17">{"x":{"diagram":"digraph G{\n\t\t\t\n\tgraph[ranksep=0.35, newrank=true, nodesep=0.25, splines=ortho]\n\t\t\t\n\tsubgraph cluster_searching{\n\tlabel=\"\"; style=filled; color=mintcream; fontsize=18\n\tnode[label=\"Scopus\n(n = 1,876)\", shape=box, width=1.25, \n\tfillcolor=grey95]searching_A;\n\tnode[label=\"Web of Science\n(n = 1,013)\", shape=box, width=1.25]searching_B;\n\tnode[label=\"Total records\n(n = 2,888)\", shape=box, width=3]searching_C;\n\tsearching_A -> searching_C\n\tsearching_B -> searching_C\n\t{rank=same;searching_A;searching_B}\n\t}\n\t\n\tsubgraph cluster_screening{\n\tlabel=\"\"; style=filled; color=lightyellow; shape=box; fontsize=18\n\tnode[label=\"Records after duplicates removed \n (n = 2,171)\", shape=box, \n\twidth=3]screening_1\n\tnode[label=\"Records after title screening \n (n = 375)\", shape=box, \n\twidth=3]screening_2\n\tnode[label=\"Records after abstract screening \n (n = 111)\",shape=box, \n\twidth=3]screening_3\n\tnode[label=\"Articles retrieved at full text \n (n = 100)\",shape=box, \n\twidth=3]screening_4\n\tnode[label=\"Articles after full text screening \n (n = 40)\",shape=box, \n\twidth=3]screening_5\n\tsearching_C -> screening_1[minlen=1, label=\"    Screening\"]\n\tscreening_1 -> screening_2 -> screening_3 -> screening_4 -> screening_5\n\t}\n\t\n\tnode[label=\"Duplicates \n (n = 717)\", shape=box, width=2, style=filled,\n\tfillcolor=seashell]screening_a\n\tnode[label=\"Excluded titles \n (n = 1,796)\", shape=box, width=2, style=filled,\n\tfillcolor=seashell]screening_b\n\tnode[label=\"Excluded abstracts \n (n = 264)\", shape=box, width=2, style=filled,\n\tfillcolor=seashell]screening_c\n\tnode[label=\"Unretrievable full text \n (n = 11)\", shape=box, width=2, style=filled,\n\tfillcolor=seashell]screening_d\n\tnode[label=\"Excluded articles \n (n = 71)\", shape=box, width=2, style=filled,\n\tfillcolor=seashell]screening_e\n\t\n\tscreening_1 -> screening_a\n\tscreening_2 -> screening_b\n\tscreening_3 -> screening_c\n\tscreening_4 -> screening_d\n\tscreening_5 -> screening_e\n\t\n\t{rank=same;screening_1;screening_a;}\n\t{rank=same;screening_2;screening_b;}\n\t{rank=same;screening_3;screening_c;}\n\t{rank=same;screening_4;screening_d;}\n\t{rank=same;screening_5;screening_e;}\n\t\n\tsubgraph cluster_articles{\n\tlabel=\"\"; style=filled; color=grey95;\n\tnode[label=\"Studies after full text screening \n (n = 40)\", shape=box, width=3, \n\tstyle=filled, fillcolor=grey95]articles_A\n\tnode[label=\"Studies included in synthesis \n (n = 39)\", shape=box, width=3, \n\tstyle=filled, fillcolor=grey40, color=grey20, fontcolor=white]articles_B\n\tscreening_5 -> articles_A[minlen=1, label=\"    Synthesis\"]\n\tarticles_A -> articles_B\n\t}\n\t\n\tnode[label=\"Excluded studies \n (n = 1)\", shape=box, width=2, style=filled,\n\tfillcolor=seashell]studies_e\n\tarticles_A -> studies_e\n\t{rank=same;articles_A;studies_e}\t\n\t\n\t}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 ```
 
 <p class="caption">(\#fig:fig21)Schematic flow diagram for literature search, screening and inclusion process [modified from @haddaway2018]</p>
@@ -244,7 +244,7 @@ we developed the following common search string for
 
 ### Article screening
 
-We used the package *revtools* [@revtools2019] in R programming environment [@R-base]
+We used the package *revtools* [@westgate2019] in R programming environment [@R-base]
 for article screening phase. This phase included de-duplication, title screening,
 abstract screening and full text screening. For article screening phase, we adhered 
 to the previously proposed eligibility criteria (Table \@ref(tab:ec22)).
@@ -452,7 +452,7 @@ ecological domain according the above classification system (Table
 
 
 
-### Bibliometric data analysis
+### Data analysis
 
 We developed a search string based on the doi (digital object identifier) and 
 title (if doi is not available) of included studies to  extract bibliometric metadata from the 
@@ -461,13 +461,44 @@ However, we were not able to extract metadata for an article because it was not 
 in Scopus; therefore, we excluded it from the final systematic map and narrative 
 synthesis (Figure \@ref(fig:fig21)). This bibliometric data had several missing 
 values (marked as `NA`), these values were manually added from the full text, if 
-available. Further, we cited references were not in uniform format due to different
-reference styles of journals; therefore, we manually formatted them.
+available.
 
-The bibliometric data analysis was conducted using the R package *bibliometrix*
+The bibliometric data analysis was conducted using the package *bibliometrix*
 [@bibliometrix2017] in R programming environment [@R-base]. The bibliometric data 
 was converted to a dataframe using the function `convert2df()` and saved for 
-further analysis.
+further analysis. The attributes of manuscript (e.g. title, authors, citations, 
+keywords) are connected with manuscript itself, such connections can be 
+represented as rectangular matrices (Manuscripts $\times$ Attributes). For example, 
+consider a rectangular binary matrix $A$, where rows represent the manuscripts 
+and columns represent the authors. The generic element $A_{ij}$ is 1 if the 
+manuscript $i$ has author $j$ and 0 otherwise. The $j^{th}$ column sum $A_j$ is 
+the number of manuscripts authored by author $j$. This rectangular matrix 
+represents as a bipartite network of Manuscripts $\times$ Authors 
+[@bibliometrix2017; @glanzel2005]. The authors' collaboration network was calculated 
+by multiplying the bipartite matrix by its transpose (the same matrix flipped 
+along its diagonal).
+
+$$AC = A^T \times A$$
+
+where $A$ is a bipartite network of Manuscripts $\times$ Authors and $A^T$ is 
+transpose of $A$. The diagonal element $AC_i$ is the number of manuscripts 
+authored or co-authored by researcher $i$. 
+
+Authors' collaboration network is useful for identifying the groups of researchers 
+or teams as some authors are highly connected to each other. This is why scientific 
+collaboration is frequently represented as the author collaboration networks 
+[@glanzel2005]. In a collaboration network of authors, each node (or vertex) 
+represents an author and the edges between the nodes reflect the collaboration 
+relationships among the authors. The weight of edge reflects the number of 
+manuscripts in which the connected authors have appeared (i.e., the number of 
+manuscripts authored by both researchers).
+
+Similarly, the keyword co-occurrence network was estimated from the bipartite 
+network of Manuscripts $\times$ Keywords [@bibliometrix2017]. These keywords can 
+be either provided by authors (Author Keywords) or chosen by database third parties 
+(Indexed Keywords in Scopus and Keywords Plus in case of Web of Science). We considered
+'Indexed Keywords' for keyword co-occurrence because these are standardized by 
+taking additional considerations such as synonyms, spelling variants and plurals.
 
 
 
@@ -480,7 +511,7 @@ these records were reduced to 40 studies (Figure \@ref(fig:fig21)). However, onl
 39 studies were included in the final synthesis as bibliographic metadata was not 
 available for a study (Figure \@ref(fig:fig21)). Thus, this synthesis is based on 
 total 39 studies published in 26 sources (journals) during 1988 to 2021. The results
-of descriptive analysis of bibliometric indicators for selected studies is represented
+of descriptive analysis of bibliometric indicators for selected studies are presented
 in Table \@ref(tab:gendesc24).
 
 <table>
@@ -579,112 +610,58 @@ in Table \@ref(tab:gendesc24).
 The studies identified for the present review were published in 26 different 
 journals. Further, only nine journals had represented more than one study 
 identified in this article (Figure \@ref(fig:2-journals)). These nine journals
-(about 34.6%) represented about 56.4% of the total studies (n = 22) included.
+(about 34.6%) represented about 56.4% of the total studies (n = 22) included. The
+maximum number of studies (n = 4) were published in 
+'International Journal of Remote Sensing' (Figure \@ref(fig:2-journals)).
 
 <div class="figure" style="text-align: center">
 <img src="02-siwalik-ecology_files/figure-html/2-journals-1.svg" alt="Publication sources (journals) representing at least two studies identified in the present article. The number of publications in a particular journal is represented in parenthesis" width="90%" />
 <p class="caption">(\#fig:2-journals)Publication sources (journals) representing at least two studies identified in the present article. The number of publications in a particular journal is represented in parenthesis</p>
 </div>
 
+Citations of an article usually related with its impact and influence on a specific
+research field. Highly cited articles are considered to have substantially contributed
+to the advancement of the field. The articles identified in this review exhibited
+about 20 citations per article at the average rate of about two citations per article
+per year (Table \@ref(tab:gendesc24)). The present analysis found that the article 
+by @yang2013 had the highest citation (n = 236) in which they used maxent modelling 
+to predict the distribution of *Justicia adhatoda* (Figure \@ref(fig:2-citation)). 
+Other highly cited articles with their respective citations are represented in 
+Figure \@ref(fig:2-citation).
+
 
 
 <div class="figure" style="text-align: center">
-<img src="02-siwalik-ecology_files/figure-html/2-authcol-1.svg" alt="Collaboration network of first 25 authors from the selected studies. The size of each vertex is proportional to its degree (i.e. the frequency of authors appearance)" width="90%" />
-<p class="caption">(\#fig:2-authcol)Collaboration network of first 25 authors from the selected studies. The size of each vertex is proportional to its degree (i.e. the frequency of authors appearance)</p>
+<img src="02-siwalik-ecology_files/figure-html/2-citation-1.svg" alt="Most cited articles (with at least 25 citations) from idenitfied peer-reviewed publications" width="90%" />
+<p class="caption">(\#fig:2-citation)Most cited articles (with at least 25 citations) from idenitfied peer-reviewed publications</p>
 </div>
 
 
-
+A total of 368 'indexed keywords' and 160 'author's keywords' were identified from 
+selected studies (Table \@ref(tab:gendesc24)). The connections among keywords were 
+analysed using a keyword co-occurrence network of 'indexed keyword' which revealed 
+three distinct patterns about the research field (Figure \@ref(fig:2-keyocc)). The
+keyword 'India' and 'himalayas' were most dominant as suggested by largest nodes
+(Figure \@ref(fig:2-keyocc)).
 
 <div class="figure" style="text-align: center">
-<img src="02-siwalik-ecology_files/figure-html/2-keyocc-1.svg" alt="Co-occurrence network of keywords (n = 25). The size of each vertex is proportional to its degree (i.e. the frequency of keywords)" width="90%" />
-<p class="caption">(\#fig:2-keyocc)Co-occurrence network of keywords (n = 25). The size of each vertex is proportional to its degree (i.e. the frequency of keywords)</p>
+<img src="02-siwalik-ecology_files/figure-html/2-keyocc-1.svg" alt="Co-occurrence network of indexed keywords (n = 25) from Scopus. The size of each vertex is proportional to its degree (i.e. the frequency of keywords)" width="90%" />
+<p class="caption">(\#fig:2-keyocc)Co-occurrence network of indexed keywords (n = 25) from Scopus. The size of each vertex is proportional to its degree (i.e. the frequency of keywords)</p>
 </div>
 
+Our study identified a total of 111 distinct authors (Table \@ref(tab:gendesc24)).
+An analysis of the authors' collaboration network suggested that authors form 
+five distinct research groups working in different domains of plant ecology 
+(Figure \@ref(fig:2-authcol)). The largest node for author 'padalia h' suggests 
+that this researcher is highly productive and has published highest number of 
+documents. Further, high weight of edges among the authors 'padalia h', 'nandy s', 
+'chauhan p' and 'srinet r' manifests that these authors frequently appear together
+i.e., they work as a team (Figure \@ref(fig:2-authcol)).
 
-<table>
- <thead>
-  <tr>
-   <th style="text-align:left;"> Paper          </th>
-   <th style="text-align:left;"> DOI </th>
-   <th style="text-align:right;"> TC </th>
-   <th style="text-align:right;"> TCperYear </th>
-   <th style="text-align:right;"> NTC </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:left;"> YANG XQ, 2013, ECOL ENG </td>
-   <td style="text-align:left;"> 10.1016/j.ecoleng.2012.12.004 </td>
-   <td style="text-align:right;"> 236 </td>
-   <td style="text-align:right;"> 26.22 </td>
-   <td style="text-align:right;"> 1.91 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> SHARMA CM, 2010, FOR ECOL MANAGE </td>
-   <td style="text-align:left;"> 10.1016/j.foreco.2010.09.014 </td>
-   <td style="text-align:right;"> 103 </td>
-   <td style="text-align:right;"> 8.58 </td>
-   <td style="text-align:right;"> 2.53 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> LAMSAL P, 2018, AMBIO </td>
-   <td style="text-align:left;"> 10.1007/s13280-018-1017-z </td>
-   <td style="text-align:right;"> 51 </td>
-   <td style="text-align:right;"> 12.75 </td>
-   <td style="text-align:right;"> 2.43 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> LODHIYAL N, 2003, FOR ECOL MANAGE </td>
-   <td style="text-align:left;"> 10.1016/S0378-1127(02)00267-0 </td>
-   <td style="text-align:right;"> 42 </td>
-   <td style="text-align:right;"> 2.21 </td>
-   <td style="text-align:right;"> 1.00 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> MISHRA NB, 2015, APPL GEOGR </td>
-   <td style="text-align:left;"> 10.1016/j.apgeog.2014.10.007 </td>
-   <td style="text-align:right;"> 36 </td>
-   <td style="text-align:right;"> 5.14 </td>
-   <td style="text-align:right;"> 1.60 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> SANYAL P, 2005, PALAEOGEOGR PALAEOCLIMATOL PALAEOECOL </td>
-   <td style="text-align:left;"> 10.1016/j.palaeo.2005.06.007 </td>
-   <td style="text-align:right;"> 35 </td>
-   <td style="text-align:right;"> 2.06 </td>
-   <td style="text-align:right;"> 1.00 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> BARGALI SS, 1993, J VEG SCI </td>
-   <td style="text-align:left;"> 10.2307/3235730 </td>
-   <td style="text-align:right;"> 31 </td>
-   <td style="text-align:right;"> 1.07 </td>
-   <td style="text-align:right;"> 1.77 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> SINGH A, 1995, VEGETATIO </td>
-   <td style="text-align:left;"> 10.1007/BF00033459 </td>
-   <td style="text-align:right;"> 27 </td>
-   <td style="text-align:right;"> 1.00 </td>
-   <td style="text-align:right;"> 1.00 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> KIMOTHI MM, 2010, INT J REMOTE SENS </td>
-   <td style="text-align:left;"> 10.1080/01431160903121126 </td>
-   <td style="text-align:right;"> 25 </td>
-   <td style="text-align:right;"> 2.08 </td>
-   <td style="text-align:right;"> 0.61 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> GUPTA RD, 2010, TROP ECOL </td>
-   <td style="text-align:left;"> NA </td>
-   <td style="text-align:right;"> 24 </td>
-   <td style="text-align:right;"> 2.00 </td>
-   <td style="text-align:right;"> 0.59 </td>
-  </tr>
-</tbody>
-</table>
+<div class="figure" style="text-align: center">
+<img src="02-siwalik-ecology_files/figure-html/2-authcol-1.svg" alt="Collaboration network of authors (n = 25) from the selected studies. The size of each vertex is proportional to its degree (i.e. the frequency of authors appearance)" width="90%" />
+<p class="caption">(\#fig:2-authcol)Collaboration network of authors (n = 25) from the selected studies. The size of each vertex is proportional to its degree (i.e. the frequency of authors appearance)</p>
+</div>
 
 
 

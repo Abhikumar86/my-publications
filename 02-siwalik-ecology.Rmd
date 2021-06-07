@@ -1,6 +1,6 @@
 ---
-editor_options: 
-  markdown: 
+editor_options:
+  markdown:
     wrap: 80
 ---
 
@@ -26,7 +26,7 @@ cbf_1 <- c("#999999", "#E69F00", "#56B4E9", "#009E73",
            "#F0E442", "#0072B2", "#D55E00", "#CC79A7") # colour palette
 
 ## citations for the used packages
-#knitr::write_bib(c(.packages(), "bookdown"), "packages.bib") 
+#knitr::write_bib(c(.packages(), "bookdown"), "packages.bib")
 ```
 
 ## Abstract
@@ -302,7 +302,7 @@ we developed the following common search string for
 
 ### Article screening
 
-We used the package *revtools* [@revtools2019] in R programming environment [@R-base]
+We used the package *revtools* [@westgate2019] in R programming environment [@R-base]
 for article screening phase. This phase included de-duplication, title screening,
 abstract screening and full text screening. For article screening phase, we adhered 
 to the previously proposed eligibility criteria (Table \@ref(tab:ec22)).
@@ -529,12 +529,9 @@ included_articles <- read.csv("./data/siwalik-ecology/screened_fulltext.csv") %>
 	filter(screened_fulltext == "selected") %>% dplyr::select(-c(X, screened_fulltext))
 ## write the selected articles for data extraction
 #write.csv(x = included_articles, "./data/siwalik-ecology/included_articles.csv")
-
-## read the extracted data
-extracted_data <- read.csv("./data/siwalik-ecology/extracted_data.csv")
 ```
 
-### Bibliometric data analysis
+### Data analysis
 
 We developed a search string based on the doi (digital object identifier) and 
 title (if doi is not available) of included studies to  extract bibliometric metadata from the 
@@ -543,13 +540,44 @@ However, we were not able to extract metadata for an article because it was not 
 in Scopus; therefore, we excluded it from the final systematic map and narrative 
 synthesis (Figure \@ref(fig:fig21)). This bibliometric data had several missing 
 values (marked as `NA`), these values were manually added from the full text, if 
-available. Further, we cited references were not in uniform format due to different
-reference styles of journals; therefore, we manually formatted them.
+available.
 
-The bibliometric data analysis was conducted using the R package *bibliometrix*
+The bibliometric data analysis was conducted using the package *bibliometrix*
 [@bibliometrix2017] in R programming environment [@R-base]. The bibliometric data 
 was converted to a dataframe using the function `convert2df()` and saved for 
-further analysis.
+further analysis. The attributes of manuscript (e.g. title, authors, citations, 
+keywords) are connected with manuscript itself, such connections can be 
+represented as rectangular matrices (Manuscripts $\times$ Attributes). For example, 
+consider a rectangular binary matrix $A$, where rows represent the manuscripts 
+and columns represent the authors. The generic element $A_{ij}$ is 1 if the 
+manuscript $i$ has author $j$ and 0 otherwise. The $j^{th}$ column sum $A_j$ is 
+the number of manuscripts authored by author $j$. This rectangular matrix 
+represents as a bipartite network of Manuscripts $\times$ Authors 
+[@bibliometrix2017; @glanzel2005]. The authors' collaboration network was calculated 
+by multiplying the bipartite matrix by its transpose (the same matrix flipped 
+along its diagonal).
+
+$$AC = A^T \times A$$
+
+where $A$ is a bipartite network of Manuscripts $\times$ Authors and $A^T$ is 
+transpose of $A$. The diagonal element $AC_i$ is the number of manuscripts 
+authored or co-authored by researcher $i$. 
+
+Authors' collaboration network is useful for identifying the groups of researchers 
+or teams as some authors are highly connected to each other. This is why scientific 
+collaboration is frequently represented as the author collaboration networks 
+[@glanzel2005]. In a collaboration network of authors, each node (or vertex) 
+represents an author and the edges between the nodes reflect the collaboration 
+relationships among the authors. The weight of edge reflects the number of 
+manuscripts in which the connected authors have appeared (i.e., the number of 
+manuscripts authored by both researchers).
+
+Similarly, the keyword co-occurrence network was estimated from the bipartite 
+network of Manuscripts $\times$ Keywords [@bibliometrix2017]. These keywords can 
+be either provided by authors (Author Keywords) or chosen by database third parties 
+(Indexed Keywords in Scopus and Keywords Plus in case of Web of Science). We considered
+'Indexed Keywords' for keyword co-occurrence because these are standardized by 
+taking additional considerations such as synonyms, spelling variants and plurals.
 
 ```{r, include=FALSE}
 library(bibliometrix)
@@ -567,7 +595,7 @@ these records were reduced to 40 studies (Figure \@ref(fig:fig21)). However, onl
 39 studies were included in the final synthesis as bibliographic metadata was not 
 available for a study (Figure \@ref(fig:fig21)). Thus, this synthesis is based on 
 total 39 studies published in 26 sources (journals) during 1988 to 2021. The results
-of descriptive analysis of bibliometric indicators for selected studies is represented
+of descriptive analysis of bibliometric indicators for selected studies are presented
 in Table \@ref(tab:gendesc24).
 
 ```{r gendesc24}
@@ -587,7 +615,9 @@ knitr::kable(mi_trimmed,
 The studies identified for the present review were published in 26 different 
 journals. Further, only nine journals had represented more than one study 
 identified in this article (Figure \@ref(fig:2-journals)). These nine journals
-(about 34.6%) represented about 56.4% of the total studies (n = 22) included.
+(about 34.6%) represented about 56.4% of the total studies (n = 22) included. The
+maximum number of studies (n = 4) were published in 
+'International Journal of Remote Sensing' (Figure \@ref(fig:2-journals)).
 
 ```{r 2-journals, fig.cap="Publication sources (journals) representing at least two studies identified in the present article. The number of publications in a particular journal is represented in parenthesis"}
 set.seed(254)
@@ -608,37 +638,59 @@ ggplot(ex_data, aes(label = journal, size = Freq, color = as.factor(Freq))) +
 rm(list = ls())
 ```
 
+Citations of an article usually related with its impact and influence on a specific
+research field. Highly cited articles are considered to have substantially contributed
+to the advancement of the field. The articles identified in this review exhibited
+about 20 citations per article at the average rate of about two citations per article
+per year (Table \@ref(tab:gendesc24)). The present analysis found that the article 
+by @yang2013 had the highest citation (n = 236) in which they used maxent modelling 
+to predict the distribution of *Justicia adhatoda* (Figure \@ref(fig:2-citation)). 
+Other highly cited articles with their respective citations are represented in 
+Figure \@ref(fig:2-citation).
 
+```{r, results='hide'}
+library(bibliometrix)
+M <- convert2df(file = "data/siwalik-ecology/scopus_trimmed.bib", 
+		    dbsource = "scopus", format = "bibtex")
+```
 
-```{r 2-authcol, fig.height=8, fig.width=8, fig.cap="Collaboration network of first 25 authors from the selected studies. The size of each vertex is proportional to its degree (i.e. the frequency of authors appearance)"}
-M <- read.csv("./data/siwalik-ecology/bibdata.csv")
-NetMatrix <- biblioNetwork(M, analysis = "collaboration", network = "authors", 
-				   sep = ";")
-net <- networkPlot(NetMatrix,  normalize = NULL, n = 25, weighted = NULL, 
-			 Title = NA, type = "circle",
-			 # labels
-			 label = TRUE, labelsize = 1, label.cex = F, label.color = TRUE,
-			 # clustering
-			 halo = F, cluster = "optimal",
-			 # vertices
-			 size = T, size.cex = T, remove.isolates = T, alpha = 0.5,
-			 # edges
-			 curved = F, noloops = T, remove.multiple = F,
-			 edgesize = 5, edges.min = 0)
+```{r 2-citation, fig.height=6, fig.width=8, fig.cap="Most cited articles (with at least 25 citations) from idenitfied peer-reviewed publications"}
+library(ggplot2)
+results <- bibliometrix::biblioAnalysis(M, sep = ";")
+df <- results$MostCitedPapers[1:9,]
+names(df)[1] <- "Paper"
+ggplot(data = df, aes(x = TC, y = reorder(Paper, TC))) +
+	geom_segment(aes(x = 0, xend = TC, y = reorder(Paper, TC), 
+			     yend = reorder(Paper, TC)), size = 1.2, color = "grey") +
+	geom_point(aes(size = TC, color = TC), show.legend = F) +
+	geom_text(aes(label = TC), color = "white", size = 4.5) +
+	geom_vline(xintercept = 0) +
+	scale_size(range = c(10, 20)) +
+	lims(x = c(0, 255)) +
+	expand_limits(y = c(10, 10)) +
+	theme_minimal() +
+	theme(axis.title = element_blank(), 
+		axis.text.y = element_text(size = 11),
+		axis.text.x = element_blank(),
+		panel.grid.major.y = element_blank())
 ```
 
 
+A total of 368 'indexed keywords' and 160 'author's keywords' were identified from 
+selected studies (Table \@ref(tab:gendesc24)). The connections among keywords were 
+analysed using a keyword co-occurrence network of 'indexed keyword' which revealed 
+three distinct patterns about the research field (Figure \@ref(fig:2-keyocc)). The
+keyword 'India' and 'himalayas' were most dominant as suggested by largest nodes
+(Figure \@ref(fig:2-keyocc)).
 
-
-```{r 2-keyocc, fig.height=8, fig.width=8, fig.cap="Co-occurrence network of keywords (n = 25). The size of each vertex is proportional to its degree (i.e. the frequency of keywords)"}
-# keywords
+```{r 2-keyocc, fig.height=8, fig.width=8, fig.cap="Co-occurrence network of indexed keywords (n = 25) from Scopus. The size of each vertex is proportional to its degree (i.e. the frequency of keywords)"}
+M <- read.csv("./data/siwalik-ecology/bibdata.csv")
 NetMatrix <- biblioNetwork(M, analysis = "co-occurrences", network = "keywords", sep = ";")
 
 # Plot the network
-#set.seed(1235)
-set.seed(1237)
+set.seed(1111)
 net <- networkPlot(NetMatrix, normalize="association", weighted=T, 
-			 n = 30, Title = NA, type = "fruchterman", 
+			 n = 25, Title = NA, type = "fruchterman", 
 			 # labels
 			 label = TRUE, labelsize = 1.2, label.cex = F, label.color = F,
 			 # clustering
@@ -650,12 +702,30 @@ net <- networkPlot(NetMatrix, normalize="association", weighted=T,
 			 edgesize = 5, edges.min = 1)
 ```
 
+Our study identified a total of 111 distinct authors (Table \@ref(tab:gendesc24)).
+An analysis of the authors' collaboration network suggested that authors form 
+five distinct research groups working in different domains of plant ecology 
+(Figure \@ref(fig:2-authcol)). The largest node for author 'padalia h' suggests 
+that this researcher is highly productive and has published highest number of 
+documents. Further, high weight of edges among the authors 'padalia h', 'nandy s', 
+'chauhan p' and 'srinet r' manifests that these authors frequently appear together
+i.e., they work as a team (Figure \@ref(fig:2-authcol)).
 
-```{r 2-frecit}
-M <- convert2df(file = "./data/siwalik-ecology/scopus_trimmed.bib", 
-		    dbsource = "scopus", format = "bibtex")
-results <- biblioAnalysis(M, sep = ";")
-knitr::kable(results$MostCitedPapers[1:10,], digits = 2)
+```{r 2-authcol, fig.height=8, fig.width=8, fig.cap="Collaboration network of authors (n = 25) from the selected studies. The size of each vertex is proportional to its degree (i.e. the frequency of authors appearance)"}
+M <- read.csv("./data/siwalik-ecology/bibdata.csv")
+NetMatrix <- bibliometrix::biblioNetwork(M, analysis = "collaboration", network = "authors", 
+				   sep = ";")
+net <- bibliometrix::networkPlot(NetMatrix,  normalize = NULL, n = 25, weighted = NULL, 
+			 Title = NA, type = "circle",
+			 # labels
+			 label = TRUE, labelsize = 1, label.cex = F, label.color = TRUE,
+			 # clustering
+			 halo = F, cluster = "optimal",
+			 # vertices
+			 size = T, size.cex = T, remove.isolates = T, alpha = 0.5,
+			 # edges
+			 curved = F, noloops = T, remove.multiple = F,
+			 edgesize = 5, edges.min = 0)
 ```
 
 

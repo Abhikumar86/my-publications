@@ -24,7 +24,7 @@
 <meta name="author" content="Abhishek Kumar" />
 
 
-<meta name="date" content="2021-05-21" />
+<meta name="date" content="2021-06-03" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +33,7 @@
   
 <link rel="prev" href="introduction.html"/>
 <link rel="next" href="results-and-discussion.html"/>
-<script src="libs/header-attrs-2.7/header-attrs.js"></script>
+<script src="libs/header-attrs-2.8/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -124,15 +124,17 @@ div.csl-indent {
 <li class="chapter" data-level="2.4.3" data-path="methodology.html"><a href="methodology.html#literature-search"><i class="fa fa-check"></i><b>2.4.3</b> Literature search</a></li>
 <li class="chapter" data-level="2.4.4" data-path="methodology.html"><a href="methodology.html#article-screening"><i class="fa fa-check"></i><b>2.4.4</b> Article screening</a></li>
 <li class="chapter" data-level="2.4.5" data-path="methodology.html"><a href="methodology.html#data-extraction"><i class="fa fa-check"></i><b>2.4.5</b> Data extraction</a></li>
-<li class="chapter" data-level="2.4.6" data-path="methodology.html"><a href="methodology.html#bibliometric-data"><i class="fa fa-check"></i><b>2.4.6</b> Bibliometric data</a></li>
+<li class="chapter" data-level="2.4.6" data-path="methodology.html"><a href="methodology.html#data-analysis"><i class="fa fa-check"></i><b>2.4.6</b> Data analysis</a></li>
 </ul></li>
 <li class="chapter" data-level="2.5" data-path="results.html"><a href="results.html"><i class="fa fa-check"></i><b>2.5</b> Results</a>
 <ul>
-<li class="chapter" data-level="2.5.1" data-path="results.html"><a href="results.html#temporal-distribution-of-studies"><i class="fa fa-check"></i><b>2.5.1</b> Temporal distribution of studies</a></li>
-<li class="chapter" data-level="2.5.2" data-path="results.html"><a href="results.html#geographical-distribution-of-the-studies"><i class="fa fa-check"></i><b>2.5.2</b> Geographical distribution of the studies</a></li>
+<li class="chapter" data-level="2.5.1" data-path="results.html"><a href="results.html#geographical-distribution-of-the-studies"><i class="fa fa-check"></i><b>2.5.1</b> Geographical distribution of the studies</a></li>
+<li class="chapter" data-level="2.5.2" data-path="results.html"><a href="results.html#temporal-distribution-of-studies"><i class="fa fa-check"></i><b>2.5.2</b> Temporal distribution of studies</a></li>
 <li class="chapter" data-level="2.5.3" data-path="results.html"><a href="results.html#domains-of-ecology"><i class="fa fa-check"></i><b>2.5.3</b> Domains of ecology</a></li>
-<li class="chapter" data-level="2.5.4" data-path="results.html"><a href="results.html#taxonomic-groups-of-plants"><i class="fa fa-check"></i><b>2.5.4</b> Taxonomic groups of plants</a></li>
-<li class="chapter" data-level="2.5.5" data-path="results.html"><a href="results.html#knowledge-gaps"><i class="fa fa-check"></i><b>2.5.5</b> Knowledge gaps</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="discussion.html"><a href="discussion.html"><i class="fa fa-check"></i><b>2.6</b> Discussion</a>
+<ul>
+<li class="chapter" data-level="2.6.1" data-path="discussion.html"><a href="discussion.html#knowledge-gaps"><i class="fa fa-check"></i><b>2.6.1</b> Knowledge gaps</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>3</b> Methods</a></li>
@@ -166,15 +168,15 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="data-and-methods" class="section level2" number="1.3">
 <h2><span class="header-section-number">1.3</span> Data and Methods</h2>
-<p>We have explored the literature using all the variant terms as keywords (Shivalik*, Shiwalik*, Sivalik* and Siwalik*) from available databases: Google Scholar, Web of Science [v5.30] (WoS) and Scopus. Since we had access to Scopus (1878-2019) and Web of Science (1989-2019) databases, a bibliometric analysis of both the databases was performed using the package bibliometrix <span class="citation">(<a href="#ref-aria2017" role="doc-biblioref">Aria &amp; Cuccurullo, 2017</a>)</span> in R programming language <span class="citation">(<a href="#ref-R-base" role="doc-biblioref">R Core Team, 2020</a>)</span>. The data were acquired from both the databases on 16 July 2019. Specifically, the distribution of these terms has been analysed across different databases, year (yearly production of publications and documents), countries (country of the corresponding author from publications) and sources like journals, books, proceedings, etc.</p>
+<p>We have explored the literature using all the variant terms as keywords (Shivalik*, Shiwalik*, Sivalik* and Siwalik*) from available databases: Google Scholar, Web of Science [v5.30] (WoS) and Scopus. Since we had access to Scopus (1878-2019) and Web of Science (1989-2019) databases, a bibliometric analysis of both the databases was performed using the package bibliometrix <span class="citation">(<a href="#ref-bibliometrix2017" role="doc-biblioref">Aria &amp; Cuccurullo, 2017</a>)</span> in R programming language <span class="citation">(<a href="#ref-R-base" role="doc-biblioref">R Core Team, 2021</a>)</span>. The data were acquired from both the databases on 16 July 2019. Specifically, the distribution of these terms has been analysed across different databases, year (yearly production of publications and documents), countries (country of the corresponding author from publications) and sources like journals, books, proceedings, etc.</p>
 </div>
 <h3>References</h3>
 <div id="refs" class="references csl-bib-body hanging-indent" line-spacing="2">
-<div id="ref-aria2017" class="csl-entry">
-Aria, M., &amp; Cuccurullo, C. (2017). bibliometrix : An R-tool for comprehensive science mapping analysis. <em>Journal of Informetrics</em>, <em>11</em>(4), 959–975. <a href="https://doi.org/10.1016/j.joi.2017.08.007">https://doi.org/10.1016/j.joi.2017.08.007</a>
+<div id="ref-bibliometrix2017" class="csl-entry">
+Aria, M., &amp; Cuccurullo, C. (2017). <span class="nocase">b</span>ibliometrix: An r-tool for comprehensive science mapping analysis. <em>Journal of Informetrics</em>, <em>11</em>(4), 959–975. Retrieved from <a href="https://doi.org/10.1016/j.joi.2017.08.007">https://doi.org/10.1016/j.joi.2017.08.007</a>
 </div>
 <div id="ref-R-base" class="csl-entry">
-R Core Team. (2020). <em>R: A language and environment for statistical computing</em>. Vienna, Austria: R Foundation for Statistical Computing. Retrieved from <a href="https://www.R-project.org/">https://www.R-project.org/</a>
+R Core Team. (2021). <em>R: A language and environment for statistical computing</em>. Vienna, Austria: R Foundation for Statistical Computing. Retrieved from <a href="https://www.R-project.org/">https://www.R-project.org/</a>
 </div>
 </div>
             </section>
@@ -234,6 +236,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>
